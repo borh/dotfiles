@@ -1,0 +1,9 @@
+[submodule "zprezto"]
+	path = zprezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "emacs.d/github/html5-el"]
+	path = emacs.d/github/html5-el
+	url = https://github.com/purcell/html5-el.git
+[submodule "emacs.d/github/artbollocks-mode"]
+	path = emacs.d/github/artbollocks-mode
+	url = https://github.com/sachac/artbollocks-mode.git

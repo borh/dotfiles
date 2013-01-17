@@ -1,0 +1,74 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+unsetopt correct_all # disable autocorrect
+setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
+setopt no_cdable_vars # don't use named directories in cd autocompletion
+
+export PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/games/bin
+
+alias nfc="perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'"
+alias nfd="perl -MUnicode::Normalize -CSA -E 'say NFD( qq(@ARGV) )'"
+alias nfkd="perl -MUnicode::Normalize -CSA -E 'say NFKC( qq(@ARGV) )'"
+
+alias xtime="/usr/bin/time -f '%Uu %Ss %er %MkB %C'"
+alias top="htop"
+alias vi="vim"
+alias tmux="tmux -2"
+alias y="youtube-dl --no-mtime -t"
+
+export LC_ALL=en_US.utf8
+export LANGUAGE=en_US.utf8
+export LANG=en_US.utf8
+export TZ='Asia/Tokyo'
+
+# IM
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+# or using ibus...
+#export XMODIFIERS="@im=ibus"
+#export GTK_IM_MODULE="ibus"
+#export QT_IM_MODULE="ibus"
+#export QT4_IM_MODULE="ibus"
+#export XIM="ibus"
+#export XIM_ARGS="--xim"
+#export XIM_PROGRAM="/usr/bin/ibus-daemon"
+
+# sane compile flags
+export CFLAGS="-O2 -march=native -pipe"
+export CXXFLAGS="-O2 -march=native -pipe"
+export CHOST="x86_64-pc-linux-gnu"
+
+# go
+export GOROOT=$HOME/go
+export GOBIN=$GOROOT/bin
+export GOOS=linux
+export GOARCH=amd64
+export GOPATH=$HOME/go-progs
+export PATH=$GOROOT/bin:$HOME/go-progs/bin:$PATH
+
+# texlive
+export PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+export MANPATH=$HOME/texlive/texmf/doc/man:$MANPATH
+export INFOPATH=$HOME/texlive/texmf/doc/info:$INFOPATH
+
+# perlbrew
+source "$HOME/perl5/perlbrew/etc/bashrc"
+
+# node.js
+export NODE_PATH=$HOME/node-dist:$HOME/node-dist/lib/node_modules
+export PATH=$HOME/node-dist/bin:$PATH
+
+# tmuxinator
+export SHELL=/bin/zsh
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+PATH=$HOME/.gem/ruby/1.8/bin/:$PATH
+
+# xmonad
+export PATH=$PATH:~/.xmonad/bin
+
+# source local config
+source $HOME/.zshrc.local
