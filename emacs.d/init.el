@@ -53,7 +53,7 @@
                                         ; git
     magit
                                         ; org/latex
-    ; org org-table-comment
+    org org-table-comment
     htmlize
                                         ; yasnippet
     yasnippet-bundle yasnippet
