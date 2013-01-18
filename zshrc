@@ -7,7 +7,7 @@ unsetopt correct_all # disable autocorrect
 setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
 setopt no_cdable_vars # don't use named directories in cd autocompletion
 
-export PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/games/bin
+export PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/games/bin:/usr/sbin
 
 alias nfc="perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'"
 alias nfd="perl -MUnicode::Normalize -CSA -E 'say NFD( qq(@ARGV) )'"

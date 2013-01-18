@@ -1,0 +1,8 @@
+vo=xv
+overlapsub=on
+loop=0
+#af=volume=10:0
+subfont-osd-scale=2
+#heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+heartbeat-cmd="qdbus org.freedesktop.ScreenSaver /ScreenSaver SimulateUserActivity"
+stop-xscreensaver=1
