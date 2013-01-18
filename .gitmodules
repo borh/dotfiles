@@ -7,3 +7,6 @@
 [submodule "emacs.d/github/artbollocks-mode"]
 	path = emacs.d/github/artbollocks-mode
 	url = https://github.com/sachac/artbollocks-mode.git
+[submodule "vim/bundle/vundle"]
+	path = vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git

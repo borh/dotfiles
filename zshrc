@@ -62,10 +62,12 @@ source "$HOME/perl5/perlbrew/etc/bashrc"
 export NODE_PATH=$HOME/node-dist:$HOME/node-dist/lib/node_modules
 export PATH=$HOME/node-dist/bin:$PATH
 
-# tmuxinator
+# ruby gem path
+export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+
+# tmuxinator (depends on ruby)
 export SHELL=/bin/zsh
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-PATH=$HOME/.gem/ruby/1.8/bin/:$PATH
 
 # xmonad
 export PATH=$PATH:~/.xmonad/bin
