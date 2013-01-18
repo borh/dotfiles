@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML"/>
+$for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css"/>
+    <link rel="stylesheet" href="css/theme/sky-bor.css" id="theme"/>
+    <link rel="stylesheet" href="css/theme/bor.css" id="theme"/>
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+
+    $if(highlighting-css)$
+    <style type="text/css">
+      $highlighting-css$
+      h1 {
+      font-size: 1em;
+      }
+    </style>
+    $endif$
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print"/>' );
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</h1>
+          <h3>$date$</h3>
+          <p>
+            <small>Created by <a href="http://www2.mr.hum.titech.ac.jp/~bor/">Bor Hodošček</a> / <a href="https://github.com/borh">@borh</a></small>
+          </p>
+        </section>
+$for(include-before)$
+$include-before$
+$endfor$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+
+        <section>
+          <h1>Thanks for listening.</h1>
+          <h1>ご清聴ありがとうございました</h1>
+          <h3>$date$</h3>
+          <p>
+            <small>Created by <a href="http://www2.mr.hum.titech.ac.jp/~bor/">Bor Hodošček</a> / <a href="https://github.com/borh">@borh</a></small>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      //{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }//,
+      //{ src: '/socket.io/socket.io.js', async: true },
+      //{ src: 'plugin/notes-server/client.js', async: true }
+      ]
+      });
+
+      [].forEach.call(document.querySelectorAll('table'), function(e){e.className = 'table table-hover table-bordered';});
+
+    </script>
+
+  </body>
+</html>
