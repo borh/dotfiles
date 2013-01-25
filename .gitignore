@@ -3,9 +3,14 @@ emacs.d/elpa
 emacs.d/places
 emacs.d/swank
 emacs.d/url
+emacs.d/auto-save-list
+emacs.d/ac-comphist.dat
+emacs.d/.smex-items
+emacs.d/backups
 lein/indices
 lein/self-installs
 ssh/id_*
 ssh/authorized_keys
 ssh/known_hosts
 netrc
+*.pyc
