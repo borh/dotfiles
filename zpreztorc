@@ -40,8 +40,8 @@ zstyle ':prezto:load' pmodule \
   'pacman' \
   'python' \
   'node' \
-  'gpg-agent' \
   'git'
+#  'gpg-agent' \
 
 #
 # Editor
@@ -96,7 +96,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Enable SSH-Agent protocol emulation.
-zstyle ':prezto:module:gpg-agent' ssh-support 'yes'
+# zstyle ':prezto:module:gpg-agent' ssh-support 'yes'
 
 #
 # SSH-Agent
