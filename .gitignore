@@ -1,0 +1,11 @@
+emacs.d/emacs-visited-files
+emacs.d/elpa
+emacs.d/places
+emacs.d/swank
+emacs.d/url
+lein/indices
+lein/self-installs
+ssh/id_*
+ssh/authorized_keys
+ssh/known_hosts
+netrc
