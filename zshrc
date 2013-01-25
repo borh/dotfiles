@@ -7,7 +7,10 @@ unsetopt correct_all # disable autocorrect
 setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
 setopt no_cdable_vars # don't use named directories in cd autocompletion
 
-export PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/games/bin:/usr/sbin
+export PATH=$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/games/bin:/usr/sbin:/sbin
+export SHELL=/bin/zsh
+export EDITOR=/usr/bin/vim
+export MAILDIR=$HOME/Mail
 
 alias nfc="perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'"
 alias nfd="perl -MUnicode::Normalize -CSA -E 'say NFD( qq(@ARGV) )'"
@@ -24,18 +27,22 @@ export LANGUAGE=en_US.utf8
 export LANG=en_US.utf8
 export TZ='Asia/Tokyo'
 
-# IM
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
+# IME (mozc)
+# using fcitx
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS="@im=fcitx"
 # or using ibus...
-#export XMODIFIERS="@im=ibus"
-#export GTK_IM_MODULE="ibus"
-#export QT_IM_MODULE="ibus"
-#export QT4_IM_MODULE="ibus"
-#export XIM="ibus"
-#export XIM_ARGS="--xim"
-#export XIM_PROGRAM="/usr/bin/ibus-daemon"
+export XMODIFIERS="@im=ibus"
+export GTK_IM_MODULE="ibus"
+export QT_IM_MODULE="ibus"
+export QT4_IM_MODULE="ibus"
+export XIM="ibus"
+export XIM_ARGS="--xim"
+export XIM_PROGRAM="/usr/bin/ibus-daemon"
+
+# vbox
+export VBOX_USB=usbfs
 
 # sane compile flags
 export CFLAGS="-O2 -march=native -pipe"
@@ -43,12 +50,10 @@ export CXXFLAGS="-O2 -march=native -pipe"
 export CHOST="x86_64-pc-linux-gnu"
 
 # go
-export GOROOT=$HOME/go
-export GOBIN=$GOROOT/bin
 export GOOS=linux
 export GOARCH=amd64
-export GOPATH=$HOME/go-progs
-export PATH=$GOROOT/bin:$HOME/go-progs/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOROOT/bin:$PATH
 
 # texlive
 export PATH=$HOME/texlive/bin/x86_64-linux:$PATH
