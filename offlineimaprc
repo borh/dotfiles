@@ -2,6 +2,7 @@
 accounts = Gmail
 maxsyncaccounts = 1
 pythonfile = ~/dotfiles/offlineimap/utf7.py
+ui = quiet
 
 [DEFAULT]
 # Translates imap4-utf-7 (remote) to utf-8 (local)
@@ -41,7 +42,8 @@ nametrans = lambda foldername: re.sub('^Gmail.Drafts', '[Gmail]/Drafts',
 type = Gmail
 remoteuser = bor.hodoscek@gmail.com
 realdelete = no
-maxconnections = 5
+maxconnections = 3
+#maxconnections = 1
 keepalive = 60
 holdconnectionopen = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt

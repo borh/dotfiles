@@ -14,9 +14,14 @@
 ;;(add-hook 'clojure-mode-hook (lambda () (rainbow-delimiters-mode t) (paredit-mode t)))
 ;(add-hook 'paredit-mode-hook)
 
-(setq nrepl-popup-stacktraces nil)
+(setq nrepl-popup-stacktraces 1)
 
 (add-to-list 'same-window-buffer-names "*nrepl*")
+
+(add-hook 'nrepl-mode-hook 'subword-mode)
+
+;(add-hook 'nrepl-mode-hook 'comint-truncate-buffer)
+;(setq comint-buffer-maximum-size 2000)
 
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)

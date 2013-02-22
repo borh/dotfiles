@@ -36,3 +36,25 @@
     (transpose-words arg)))
 
 (define-key clojure-mode-map (kbd "M-t") 'live-transpose-words-with-hyphens)
+
+;; kibit integration
+;; Teach compile the syntax of the kibit output
+(require 'compile)
+(add-to-list 'compilation-error-regexp-alist-alist
+             '(kibit "At \\([^:]+\\):\\([[:digit:]]+\\):" 1 2 nil 0))
+(add-to-list 'compilation-error-regexp-alist 'kibit)
+
+;; A convenient command to run "lein kibit" in the project to which
+;; the current emacs buffer belongs to.
+(defun kibit ()
+  "Run kibit on the current project.
+Display the results in a hyperlinked *compilation* buffer."
+  (interactive)
+  (compile "lein kibit"))
+
+
+;; clj-refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-m")))

@@ -39,7 +39,7 @@ $endif$
     \setmonofont{Inconsolata} 
     \usepackage{luatexja}
     \usepackage{luatexja-fontspec}
-    \setmainjfont{HiraMinPro-W3}
+    %\setmainjfont{HiraMinPro-W3}
   \fi
   \typearea[current]{last} % recalculate type area based on these new fonts
   \newcommand{\euro}{€}
@@ -52,7 +52,12 @@ $if(natbib)$
 \bibliographystyle{plainnat}
 $endif$
 $if(biblatex)$
-\usepackage{biblatex}
+\usepackage[normalem]{ulem} % to underline my name
+\usepackage{hyphenat}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber,autocite=inline,hyperref=false]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
 $if(biblio-files)$
 \bibliography{$biblio-files$}
 $endif$
@@ -197,7 +202,7 @@ $endif$
 $endif$
 $endif$
 $if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+%\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 
 $endif$
 $for(include-after)$

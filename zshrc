@@ -29,17 +29,17 @@ export TZ='Asia/Tokyo'
 
 # IME (mozc)
 # using fcitx
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
-#export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
 # or using ibus...
-export XMODIFIERS="@im=ibus"
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-export QT4_IM_MODULE="ibus"
-export XIM="ibus"
-export XIM_ARGS="--xim"
-export XIM_PROGRAM="/usr/bin/ibus-daemon"
+#export XMODIFIERS="@im=ibus"
+#export GTK_IM_MODULE="ibus"
+#export QT_IM_MODULE="ibus"
+#export QT4_IM_MODULE="ibus"
+#export XIM="ibus"
+#export XIM_ARGS="--xim"
+#export XIM_PROGRAM="/usr/bin/ibus-daemon"
 
 # vbox
 export VBOX_USB=usbfs
@@ -53,19 +53,26 @@ export CHOST="x86_64-pc-linux-gnu"
 export GOOS=linux
 export GOARCH=amd64
 export GOPATH=$HOME/go
-export PATH=$GOROOT/bin:$PATH
+#export PATH=$GOROOT/bin:$PATH
 
 # texlive
 export PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-export MANPATH=$HOME/texlive/texmf/doc/man:$MANPATH
+unset MANPATH # unset and get from manpath directly
+export MANPATH=$HOME/texlive/texmf/doc/man:$(manpath)
 export INFOPATH=$HOME/texlive/texmf/doc/info:$INFOPATH
 
 # perlbrew
 source "$HOME/perl5/perlbrew/etc/bashrc"
 
 # node.js
-export NODE_PATH=$HOME/node-dist:$HOME/node-dist/lib/node_modules
-export PATH=$HOME/node-dist/bin:$PATH
+export NPM_PACKAGES=$HOME/node
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+export PATH=$NPM_PACKAGES/bin:$PATH
+export MANPATH=$NPM_PACKAGES/share/man:$MANPATH
+
+# cabal
+export PATH=$HOME/.cabal/bin:$PATH
+export MANPATH=$HOME/.cabal/share/man:$MANPATH
 
 # ruby gem path
 export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin

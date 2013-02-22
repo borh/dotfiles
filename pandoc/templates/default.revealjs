@@ -18,7 +18,9 @@ $endif$
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <link rel="stylesheet" href="css/reveal.css"/>
-    <link rel="stylesheet" href="css/theme/sky-bor.css" id="theme"/>
+    <!--<link rel="stylesheet" href="css/theme/sky-bor.css" id="theme"/>
+    -->
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
     <link rel="stylesheet" href="css/theme/bor.css" id="theme"/>
     <link rel="stylesheet" href="../../css/bootstrap.css"/>
 
@@ -88,7 +90,7 @@ $endfor$
       history: true,
 
       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+      transition: Reveal.getQueryHash().transition || 'page', // default/cube/page/concave/zoom/linear/none
 
       // Optional libraries used to extend on reveal.js
       dependencies: [

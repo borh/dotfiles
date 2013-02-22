@@ -1,6 +1,7 @@
 ;;(load-theme 'sanityinc-tomorrow-eighties t)
+(load-theme 'sanityinc-tomorrow-day t)
 ;;(load-theme 'twilight-anti-bright t)
-(load-theme 'subatomic t)
+;;(load-theme 'subatomic t)
 ;;(load-theme 'sanityinc-solarized-light t)
 ;;(load-theme 'birds-of-paradise-plus t)
 
