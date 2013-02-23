@@ -17,6 +17,7 @@
 
 (if (display-graphic-p)
     (progn
+      (scroll-bar-mode nil)
       (set-fontset-font "fontset-default"
                         'unicode
                         (font-spec :family "Source Code Pro"
@@ -49,7 +50,6 @@
 ; (menu-bar-mode nil) ; already in misc-recommended??
 (tool-bar-mode nil)
 (tool-bar-mode 0)
-(scroll-bar-mode nil)
 (column-number-mode)
 (show-paren-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
