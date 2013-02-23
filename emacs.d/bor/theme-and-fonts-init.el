@@ -15,16 +15,18 @@
 ;; '(variable-pitch ((t (:height 120 :weight light :family "Source Sans Pro"))))
  )
 
-(set-fontset-font "fontset-default" 'unicode (font-spec :family "Source Code Pro"
-                                                        :width 'normal
-                                                        :size 12.0
-                                                        :weight 'normal))
-
-(set-fontset-font (frame-parameter nil 'font)
-                   'japanese-jisx0208
-                   ;;'("Ricty Discord" . "unicode-bmp")
-                   '("Hiragino Kaku Gothic Pro W3" . "unicode-bmp")
-                   )
+(if (display-graphic-p)
+    (progn
+      (set-fontset-font "fontset-default"
+                        'unicode
+                        (font-spec :family "Source Code Pro"
+                                   :width 'normal
+                                   :size 12.0
+                                   :weight 'normal))
+      (set-fontset-font (frame-parameter nil 'font)
+                        'japanese-jisx0208
+                        ;;'("Ricty Discord" . "unicode-bmp")
+                        '("Hiragino Kaku Gothic Pro W3" . "unicode-bmp"))))
 
 (dolist (hook '(erc-mode-hook
         LaTeX-mode-hook
