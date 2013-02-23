@@ -11,7 +11,7 @@
 (defvar
   my-packages
   '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-perl
-    auto-complete
+    auto-complete exec-path-from-shell
                                         ; clojure related
     clojure-mode clojurescript-mode paredit rainbow-delimiters rainbow-mode
     clojure-test-mode align-cljlet cljsbuild-mode clj-refactor
