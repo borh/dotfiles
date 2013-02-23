@@ -74,7 +74,7 @@
  '(ebib-preload-bib-search-dirs (quote ("/work/projects/github/borh/bibliography/")))
  '(safe-local-variable-values (quote ((whitespace-style face tabs spaces trailing lines space-before-tab::space newline indentation::space empty space-after-tab::space space-mark tab-mark newline-mark) (whitespace-line-column . 100) (lexical-binding . t)))))
 
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
 
 ;; if on Gentoo
 ;(require 'site-gentoo)
