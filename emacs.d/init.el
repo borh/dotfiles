@@ -32,7 +32,7 @@
     annoying-arrows-mode volatile-highlights browse-kill-ring
                                         ; language related
     ess go-mode js2-mode js3-mode latex-pretty-symbols
-    ipython python python-mode python-pep8
+    ipython python python-mode python-pep8 ein
     cperl-mode
     coffee-mode less-css-mode scss-mode
     yaml-mode haskell-mode
