@@ -14,7 +14,7 @@
     auto-complete
                                         ; clojure related
     clojure-mode clojurescript-mode paredit rainbow-delimiters rainbow-mode
-    clojure-test-mode align-cljlet cljsbuild-mode
+    clojure-test-mode align-cljlet cljsbuild-mode clj-refactor
     slime slime-ritz
     nrepl nrepl-ritz midje-mode
     ac-nrepl ac-slime
