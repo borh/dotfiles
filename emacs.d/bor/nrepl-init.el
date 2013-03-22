@@ -20,6 +20,10 @@
 
 (add-hook 'nrepl-mode-hook 'subword-mode)
 
+(setq nrepl-hide-special-buffers t)
+
+(setq nrepl-popup-stacktraces-in-repl t)
+
 ;(add-hook 'nrepl-mode-hook 'comint-truncate-buffer)
 ;(setq comint-buffer-maximum-size 2000)
 

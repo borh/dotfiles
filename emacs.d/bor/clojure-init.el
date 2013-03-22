@@ -1,12 +1,19 @@
 (require 'clojure-mode)
 
+(setq initial-scratch-message nil) ; *scratch* starts empty
+(when (locate-library "clojure-mode") ; Set *scratch* to Clojure mode
+  (setq initial-major-mode 'clojure-mode))
+
+(setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist)) ; *.edn are Clojure files
+(setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
+
 ;; https://github.com/overtone/emacs-live/blob/master/packs/dev/clojure-pack/config/clojure-conf.el
 
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
     'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
                      (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "λ")
+                                               (match-end 1) "ƒ") ; λ
                                nil))))))
 
 (eval-after-load 'clojure-mode
