@@ -20,7 +20,8 @@ alias xtime="/usr/bin/time -f '%Uu %Ss %er %MkB %C'"
 alias top="htop"
 alias vi="vim"
 alias tmux="tmux -2"
-alias y="youtube-dl --no-mtime -t"
+alias y="youtube-dl --prefer-free-formats --no-mtime -t"
+alias pstree="pstree -U"
 
 export LC_ALL=en_US.utf8
 export LANGUAGE=en_US.utf8
