@@ -12,27 +12,26 @@
   my-packages
   '(starter-kit starter-kit-lisp starter-kit-bindings starter-kit-js starter-kit-perl
     auto-complete exec-path-from-shell
-                                        ; clojure related
+    ;; clojure related
     clojure-mode clojurescript-mode paredit rainbow-delimiters rainbow-mode
     clojure-test-mode align-cljlet cljsbuild-mode clj-refactor
     slime
     nrepl nrepl-ritz midje-mode
     ac-nrepl ac-slime
-                                        ; color themes
+    ;; color themes
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
     twilight-bright-theme twilight-anti-bright-theme
-                                        ; general interface improvements
+    ;; general interface improvements
     projectile
     helm helm-themes helm-projectile
     ido-ubiquitous smex ; needed by starter-kit
-    ; icicles zlc ; <- replaced by helm
     iy-go-to-char popup typopunct
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
-                                        ; language related
-    ess go-mode js2-mode js3-mode latex-pretty-symbols
+    ;; language related
+    ess go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein
     cperl-mode
     coffee-mode less-css-mode scss-mode
@@ -43,20 +42,21 @@
     apache-mode
     ssh-config-mode
     nxml-mode
-                                        ; flymake
+    ;; flymake
     flymake-coffee flymake-css flymake-sass flymake-jshint
     flymake-perlcritic
     flymake-shell
     flymake-go
     pep8 flymake-python-pyflakes
-                                        ; jabber
+    ;; jabber
     jabber
-                                        ; git
+    ;; git
     magit
-                                        ; org/latex
+    ;; org/latex
     org org-table-comment
     htmlize
-                                        ; yasnippet
+    ac-math
+    ;; yasnippet
     yasnippet-bundle yasnippet
     tomatinho
     nterm
