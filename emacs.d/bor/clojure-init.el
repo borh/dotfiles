@@ -44,6 +44,17 @@
 
 (define-key clojure-mode-map (kbd "M-t") 'live-transpose-words-with-hyphens)
 
+;; Fix alignment for special cases
+(define-clojure-indent
+  (defroutes 'defun)
+  (GET 2)
+  (POST 2)
+  (PUT 2)
+  (DELETE 2)
+  (HEAD 2)
+  (ANY 2)
+  (context 2))
+
 ;; kibit integration
 ;; Teach compile the syntax of the kibit output
 (require 'compile)
