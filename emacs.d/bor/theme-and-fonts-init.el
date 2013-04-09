@@ -39,6 +39,14 @@
 ;;(setq jit-lock-defer-time 0.05)
 (setq bidi-display-reordering nil)
 
+;; Let's see what we're running on
+(setq on-console (null window-system))
+
+;; No splash screen
+(setq inhibit-startup-message t)
+
+;; Don't defer screen updates when performing operations
+(setq redisplay-dont-pause t)
 
 ;; Standard Emacs functionality
 (setq-default comint-prompt-read-only t)
