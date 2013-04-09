@@ -1,8 +1,16 @@
 {:user {:deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                           :creds :gpg}]]
-        :dependencies [[spyscope "0.1.2"]]
-        :injections [(require 'spyscope.core)
-                     (require 'clojure.pprint)]
+        :dependencies [[spyscope "0.1.2" :exclusions [org.clojure/clojure]]
+                       [print-foo "0.3.2" :exclusions [org.clojure/clojure]]
+                       [ritz/ritz-nrepl-middleware "0.7.0"]
+                       [clojure-complete "0.2.2"]
+                       [slamhound "1.3.1"]]
+        :aliases {"slamhound" ["run" "-m" "slam.hound"]}
+        :injections [[(require 'spyscope.core)]
+                     ;;[(use 'clojure.pprint)]
+                     ;;[(use 'print.foo)]
+                     ;;[(use '[bbloom.fipp.edn])]
+                     ]
         :plugins [[lein-difftest "1.3.8"]
                   [lein-clojars "0.9.1"]
                   [lein-marginalia "0.7.1"]
@@ -20,4 +28,9 @@
                   [lein-exec "0.3.0"]
                   [lein-bin "0.3.2"]
                   [org.clojars.strongh/lein-init-script "1.3.1"]
-                  [lein-ritz "0.5.0"]]}}
+                  [http-kit/lein-template "1.0.0-SNAPSHOT"]
+                  [lein-ritz "0.7.0"]]
+        :repl-options {:custom-eval (require '[bbloom.fipp.edn :refer (pprint) :rename {pprint fipp}])
+                       :nrepl-middleware
+                       [ritz.nrepl.middleware.javadoc/wrap-javadoc
+                        ritz.nrepl.middleware.simple-complete/wrap-simple-complete]}}}
