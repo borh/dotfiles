@@ -1,13 +1,15 @@
 ;;(load-theme 'sanityinc-tomorrow-eighties t)
-(load-theme 'sanityinc-tomorrow-day t)
+;;(load-theme 'sanityinc-tomorrow-day t)
+;;(load-theme 'occidental t)
+(load-theme 'sanityinc-tomorrow-bright t)
 ;;(load-theme 'twilight-anti-bright t)
 ;;(load-theme 'subatomic t)
 ;;(load-theme 'sanityinc-solarized-light t)
 ;;(load-theme 'birds-of-paradise-plus t)
 
 (custom-set-faces
- '(default ((t (:height 120 :weight normal :family "Ricty Discord"))))
- '(variable-pitch ((t (:height 135 :weight normal :family "Ricty Discord"))))
+ '(default ((t (:height 120 :weight normal :family "Envy Code R"))))
+ '(variable-pitch ((t (:height 180 :weight normal :family "Source Sans Pro"))))
 ;; '(variable-pitch ((t (:height 130 :family "Segoe"))))
 ;; '(default ((t (:height 120 :family "Ricty Discord"))))
 ;; '(default ((t (:height 120 :weight normal :family "Ricty Discord"))))
