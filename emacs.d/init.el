@@ -27,14 +27,14 @@
     projectile
     helm helm-themes helm-projectile helm-R
     ido-ubiquitous smex ; needed by starter-kit
-    iy-go-to-char popup typopunct
+    iy-go-to-char popup typopunct expand-region
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
     ;; language related
     ess go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein
-    cperl-mode
+    cperl-mode dart-mode
     coffee-mode less-css-mode scss-mode
     yaml-mode haskell-mode
     markdown-mode
