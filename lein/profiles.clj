@@ -1,6 +1,6 @@
 {:user {:deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                           :creds :gpg}]]
-        :dependencies [[spyscope "0.1.2" :exclusions [org.clojure/clojure]]
+        :dependencies [[spyscope "0.1.3" :exclusions [org.clojure/clojure]]
                        [print-foo "0.3.2" :exclusions [org.clojure/clojure]]
                        [ritz/ritz-nrepl-middleware "0.7.0"]
                        [clojure-complete "0.2.2"]
