@@ -54,7 +54,7 @@ export CHOST="x86_64-pc-linux-gnu"
 export GOOS=linux
 export GOARCH=amd64
 export GOPATH=$HOME/go
-#export PATH=$GOROOT/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # texlive
 export PATH=$HOME/texlive/bin/x86_64-linux:$PATH
