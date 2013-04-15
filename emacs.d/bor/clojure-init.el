@@ -76,3 +76,8 @@ Display the results in a hyperlinked *compilation* buffer."
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
+
+;; Flyspell
+(require 'flyspell)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (flyspell-prog-mode)))
