@@ -1,35 +1,8 @@
-;;(load-theme 'sanityinc-tomorrow-eighties t)
-;;(load-theme 'sanityinc-tomorrow-day t)
-;;(load-theme 'occidental t)
-(load-theme 'sanityinc-tomorrow-bright t)
-;;(load-theme 'twilight-anti-bright t)
-;;(load-theme 'subatomic t)
-;;(load-theme 'sanityinc-solarized-light t)
-;;(load-theme 'birds-of-paradise-plus t)
-
-(custom-set-faces
- '(default ((t (:height 120 :weight normal :family "Envy Code R"))))
- '(variable-pitch ((t (:height 180 :weight normal :family "Source Sans Pro"))))
-;; '(variable-pitch ((t (:height 130 :family "Segoe"))))
-;; '(default ((t (:height 120 :family "Ricty Discord"))))
-;; '(default ((t (:height 120 :weight normal :family "Ricty Discord"))))
-;; '(variable-pitch ((t (:height 120 :weight light :family "Ricty Discord"))))
-;; '(variable-pitch ((t (:height 120 :weight light :family "Source Sans Pro"))))
- )
-
 (if (display-graphic-p)
     (progn
-      (scroll-bar-mode nil)
-      (set-fontset-font "fontset-default"
-                        'unicode
-                        (font-spec :family "Source Code Pro"
-                                   :width 'normal
-                                   :size 12.0
-                                   :weight 'normal))
-      (set-fontset-font (frame-parameter nil 'font)
-                        'japanese-jisx0208
-                        ;;'("Ricty Discord" . "unicode-bmp")
-                        '("Hiragino Kaku Gothic Pro W3" . "unicode-bmp"))))
+      (scroll-bar-mode -1)
+      (load-theme 'twilight-anti-bright t)
+      (set-default-font "Envy Code R 13")))
 
 (dolist (hook '(erc-mode-hook
         LaTeX-mode-hook
