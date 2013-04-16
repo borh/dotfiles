@@ -63,7 +63,9 @@ export MANPATH=$HOME/texlive/texmf/doc/man:$(manpath)
 export INFOPATH=$HOME/texlive/texmf/doc/info:$INFOPATH
 
 # perlbrew
-source "$HOME/perl5/perlbrew/etc/bashrc"
+if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+    source "$HOME/perl5/perlbrew/etc/bashrc"
+fi
 
 # node.js
 export NPM_PACKAGES=$HOME/node
