@@ -2,7 +2,8 @@
     (progn
       (scroll-bar-mode -1)
       (load-theme 'twilight-anti-bright t)
-      (set-default-font "Envy Code R 13")))
+      ;;(set-default-font "Envy Code R 13")
+      (set-default-font "Source Code Pro")))
 
 (dolist (hook '(erc-mode-hook
         LaTeX-mode-hook

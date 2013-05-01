@@ -32,10 +32,10 @@
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
-    litable sublimity
+    litable sublimity paredit-everywhere
     ;; language related
     ess go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
-    ipython python python-mode python-pep8 ein
+    ipython python python-mode python-pep8 ein jedi
     cperl-mode dart-mode
     coffee-mode less-css-mode scss-mode
     yaml-mode haskell-mode
@@ -51,6 +51,7 @@
     flymake-shell
     flymake-go
     pep8 flymake-python-pyflakes
+    flycheck
     ;; jabber
     jabber
     ;; git

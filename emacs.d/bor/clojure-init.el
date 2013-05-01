@@ -47,6 +47,7 @@
 ;; Fix alignment for special cases
 (define-clojure-indent
   (defroutes 'defun)
+  (describe 'defun)
   (GET 2)
   (POST 2)
   (PUT 2)

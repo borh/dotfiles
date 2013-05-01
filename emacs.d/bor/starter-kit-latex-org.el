@@ -46,7 +46,7 @@
       '(("frame" "lines")
         ("fontsize" "\\scriptsize")
         ("linenos" "")))
-(add-to-list 'org-export-latex-packages-alist '("" "minted"))
+;;(add-to-list 'org-export-latex-packages-alist '("" "minted"))
 ;;(setq org-export-latex-custom-lang-environments
 ;;      '(
 ;;         (R "r")
