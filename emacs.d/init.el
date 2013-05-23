@@ -23,7 +23,8 @@
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
     twilight-bright-theme twilight-anti-bright-theme
-    grandshell-theme
+    grandshell-theme noctilux-theme
+    theme-park-mode
     ;; general interface improvements
     projectile
     helm helm-themes helm-projectile helm-R
@@ -32,9 +33,9 @@
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
-    litable sublimity paredit-everywhere
+    litable sublimity paredit-everywhere pangu-spacing
     ;; language related
-    ess go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
+    ess ess-R-data-view go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein jedi
     cperl-mode dart-mode
     coffee-mode less-css-mode scss-mode
