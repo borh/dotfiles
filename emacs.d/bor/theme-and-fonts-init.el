@@ -1,7 +1,7 @@
 (if (display-graphic-p)
     (progn
       (scroll-bar-mode -1)
-      (load-theme 'twilight-anti-bright t)
+      (load-theme 'noctilux t)
       ;;(set-default-font "Envy Code R 13")
       (set-default-font "Source Code Pro")))
 
