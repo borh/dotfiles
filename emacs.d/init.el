@@ -16,7 +16,6 @@
     clojure-mode clojurescript-mode paredit rainbow-delimiters rainbow-mode
     clojure-test-mode align-cljlet cljsbuild-mode clj-refactor latest-clojars
     slamhound
-    slime
     nrepl nrepl-ritz midje-mode
     ac-nrepl ac-slime
     ;; color themes
@@ -27,7 +26,7 @@
     theme-park-mode
     ;; general interface improvements
     projectile
-    helm helm-themes helm-projectile helm-R
+    helm helm-themes ac-helm helm-projectile helm-R
     ido-ubiquitous smex ; needed by starter-kit
     iy-go-to-char popup typopunct expand-region
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
