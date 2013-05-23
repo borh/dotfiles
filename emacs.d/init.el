@@ -34,6 +34,7 @@
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
     litable sublimity paredit-everywhere pangu-spacing
+    diff-hl
     ;; language related
     ess ess-R-data-view go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein jedi
