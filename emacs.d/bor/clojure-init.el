@@ -30,6 +30,20 @@
                                                (match-end 1) "∈")
                                nil))))))
 
+(eval-after-load 'clojure-mode
+  '(font-lock-add-keywords
+    'clojure-mode `(("(\\(partial\\)[[:space:]]"
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "Ƥ")
+                               nil))))))
+
+(eval-after-load 'clojure-mode
+  '(font-lock-add-keywords
+    'clojure-mode `(("(\\(comp\\)[[:space:]]"
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "∘")
+                               nil))))))
+
 ;;Treat hyphens as a word character when transposing words
 (defvar clojure-mode-with-hyphens-as-word-sep-syntax-table
   (let ((st (make-syntax-table clojure-mode-syntax-table)))
@@ -70,7 +84,6 @@
 Display the results in a hyperlinked *compilation* buffer."
   (interactive)
   (compile "lein kibit"))
-
 
 ;; clj-refactor
 (require 'clj-refactor)
