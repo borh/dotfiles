@@ -27,7 +27,6 @@
                   [lein-expectations "0.0.8"]
                   [lein-autoexpect "0.2.5"]
                   [lein-outdated "1.0.0"]
-                  [lein-pedantic "0.0.5"]
                   [lein-exec "0.3.0"]
                   [lein-bin "0.3.2"]
                   [org.clojars.strongh/lein-init-script "1.3.1"]
