@@ -57,10 +57,10 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
 # texlive
-export PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+export PATH=$HOME/texlive/2013/bin/x86_64-linux:$PATH
 unset MANPATH # unset and get from manpath directly
-export MANPATH=$HOME/texlive/texmf/doc/man:$(manpath)
-export INFOPATH=$HOME/texlive/texmf/doc/info:$INFOPATH
+export MANPATH=$HOME/texlive/2013/texmf/doc/man:$(manpath)
+export INFOPATH=$HOME/texlive/2013/texmf/doc/info:$INFOPATH
 
 # perlbrew
 if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
