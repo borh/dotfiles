@@ -18,7 +18,7 @@
                   [lein-kibit "0.0.8" :exclusions [org.clojure/clojure]]
                   [lein-bikeshed "0.1.3"]
                   [lazytest "1.2.3"]
-                  [lein-ancient "0.4.0"]
+                  [lein-ancient "0.4.4"]
                   [lein-exec "0.3.0"]
                   [lein-bin "0.3.4"]
                   [org.clojars.strongh/lein-init-script "1.3.1"]
