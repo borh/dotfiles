@@ -87,5 +87,11 @@ export SHELL=/bin/zsh
 # xmonad
 export PATH=$PATH:~/.xmonad/bin
 
+# Android
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SWT=/usr/share/java
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:/opt/android-sdk/platform-tools
+
 # source local config
 source $HOME/.zshrc.local
