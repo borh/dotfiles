@@ -14,7 +14,7 @@
     auto-complete exec-path-from-shell
     ;; clojure related
     clojure-mode clojurescript-mode paredit rainbow-delimiters rainbow-mode
-    clojure-test-mode align-cljlet cljsbuild-mode clj-refactor latest-clojars
+    align-cljlet cljsbuild-mode clj-refactor latest-clojars
     slamhound
     nrepl nrepl-ritz midje-mode
     ac-nrepl ac-slime
@@ -32,7 +32,7 @@
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree
     annoying-arrows-mode volatile-highlights browse-kill-ring
-    litable sublimity paredit-everywhere pangu-spacing
+    litable sublimity paredit-everywhere parscope pangu-spacing
     diff-hl
     ;; language related
     ess ess-R-data-view go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
@@ -65,6 +65,8 @@
     yasnippet-bundle yasnippet
     tomatinho
     nterm
+    ;; other
+    mmm-mode
     )
   "A list of packages to ensure are installed at launch.")
 
