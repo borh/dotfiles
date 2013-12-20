@@ -33,6 +33,7 @@ export TZ='Asia/Tokyo'
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+export LOO_FORCE_DESKTOP=gnome
 # or using ibus...
 #export XMODIFIERS="@im=ibus"
 #export GTK_IM_MODULE="ibus"
