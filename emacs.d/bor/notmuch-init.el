@@ -1,7 +1,0 @@
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/notmuch")
-(if (boundp 'image-load-path)
-    (add-to-list 'image-load-path "/usr/share/emacs/etc/notmuch" t))
-(autoload 'notmuch "notmuch" nil t)
-(autoload 'notmuch-search "notmuch" nil t)
-(autoload 'notmuch-hello "notmuch-hello" nil t)
-(autoload 'notmuch-show "notmuch-show" nil t)
