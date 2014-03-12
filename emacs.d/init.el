@@ -33,8 +33,9 @@
     litable sublimity parscope pangu-spacing
     diff-hl
     ;; language related
-    ess ess-R-data-view go-mode go-autocomplete js2-mode ac-js2 js3-mode latex-pretty-symbols
+    ess ess-R-data-view go-mode go-autocomplete js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein jedi
+    ac-octave
     cperl-mode dart-mode
     coffee-mode less-css-mode scss-mode
     yaml-mode haskell-mode
