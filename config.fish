@@ -69,13 +69,14 @@ set -x CHOST "x86_64-pc-linux-gnu"
 set -x GOOS linux
 set -x GOARCH amd64
 set -x GOPATH $HOME/go
-set -x PATH $GOPATH/bin $PATH
+set -x GOBIN $GOPATH/bin
+set -x PATH $GOBIN $PATH
 
 # texlive
-set -x PATH $HOME/texlive/2013/bin/x86_64-linux $PATH
+set -x PATH $HOME/texlive/2014/bin/x86_64-linux $PATH
 set -x -e MANPATH # unset and get from manpath directly
-set -x MANPATH $HOME/texlive/2013/texmf/doc/man (manpath)
-set -x INFOPATH $HOME/texlive/2013/texmf/doc/info $INFOPATH
+set -x MANPATH $HOME/texlive/2014/texmf/doc/man (manpath)
+set -x INFOPATH $HOME/texlive/2014/texmf/doc/info $INFOPATH
 
 ## perlbrew
 #if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
@@ -109,6 +110,7 @@ set -x PATH $PATH /opt/java/bin /opt/java/db/bin /opt/java/jre/bin
 set -x JAVA_HOME /opt/java
 set -x DERBY_HOME /opt/java/db
 set -x LD_LIBRARY_PATH /usr/lib
+set -x _JAVA_OPTIONS '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 
@@ -131,3 +133,24 @@ alias pacrep 'pacman -Si'              # Display information about a given packa
 alias pacreps 'pacman -Ss'             # Search for package(s) in the repositories
 alias pacloc 'pacman -Qi'              # Display information about a given package in the local database
 alias paclocs 'pacman -Qs'             # Search for package(s) in the local database
+
+
+set fish_color_autosuggestion '666'  'green'
+set fish_color_command afffff
+set fish_color_comment red
+set fish_color_cwd green
+set fish_color_cwd_root red
+set fish_color_error 'red'  '--bold'
+set fish_color_escape cyan
+set fish_color_history_current cyan
+set fish_color_host '-o'  'cyan'
+set fish_color_match cyan
+set fish_color_normal normal
+set fish_color_operator cyan
+set fish_color_param '00afff'  'cyan'
+set fish_color_quote brown
+set fish_color_redirection normal
+set fish_color_search_match --background=purple
+set fish_color_status red
+set fish_color_user '-o'  'green'
+set fish_color_valid_path --underline
