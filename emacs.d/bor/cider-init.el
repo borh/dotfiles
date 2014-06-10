@@ -17,12 +17,17 @@
                'cider-turn-on-eldoc-mode)
 
      (add-hook 'cider-repl-mode-hook 'subword-mode)
-     ;;(setq cider-hide-special-buffers t)
+     (setq nrepl-hide-special-buffers t)
      (setq cider-popup-stacktraces t)
      (setq cider-popup-stacktraces-in-repl t)
      (setq cider-auto-select-error-buffer t)
+     (setq cider-stacktrace-default-filters nil)
      (eval-after-load "auto-complete"
        '(add-to-list 'ac-modes 'clojure-mode))
+
+     (setq cider-repl-toggle-print-length-limiting t)
+     (setq cider-repl-print-length 100)
+     (setq cider-repl-toggle-pretty-printing t)
 
      (require 'ac-nrepl)
      (add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
@@ -33,6 +38,7 @@
      (require 'auto-complete)
 
      (require 'ac-cider-compliment)
+     (add-hook 'cider-repl-mode-hook 'ac-cider-compliment-repl-setup)
      (add-hook 'cider-mode-hook 'ac-cider-compliment-setup)
      (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
      (eval-after-load "auto-complete"
