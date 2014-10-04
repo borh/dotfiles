@@ -22,21 +22,24 @@ $endif$
     \newfontfeature{Microtype}{protrusion=quality;expansion=quality;}
     \defaultfontfeatures{Microtype,Fractions=Off,Scale=MatchLowercase,Ligatures=TeX}
     \setmainfont[
-      BoldFont={SourceSansPro-Bold},
-      ItalicFont={SourceSansPro-It},
-      BoldItalicFont={SourceSansPro-BoldIt}
-    ]{SourceSansPro-Regular}
+      BoldFont={MinionPro_Bold},
+      ItalicFont={MinionPro_It},
+      BoldItalicFont={MinionPro_BoldIt}
+    ]{MinionPro_Regular}
+    % \setmainfont[
+    %   BoldFont={SourceSansPro-Bold},
+    %   ItalicFont={SourceSansPro-It},
+    %   BoldItalicFont={SourceSansPro-BoldIt}
+    % ]{SourceSansPro-Regular}
     \setsansfont[
       BoldFont={SourceSansPro-Bold},
       ItalicFont={SourceSansPro-It},
       BoldItalicFont={SourceSansPro-BoldIt}
     ]{SourceSansPro-Regular}
-    %\setmonofont[
-    %  BoldFont={SourceCodePro-Bold},
-    %  ItalicFont={SourceCodePro-It},
-    %  BoldItalicFont={SourceCodePro-BoldIt}
-    %]{SourceCodePro-Regular}
-    \setmonofont{Inconsolata} 
+    \setmonofont[
+      BoldFont={SourceCodePro-Bold},
+    ]{SourceCodePro-Regular}
+    %\setmonofont{Inconsolata}
     \usepackage{luatexja}
     \usepackage{luatexja-fontspec}
     %\setmainjfont{HiraMinPro-W3}
@@ -170,6 +173,7 @@ $endif$
 \pagestyle{empty}
  % end copact formatting
 
+\usepackage{cleveref}
 
 \begin{document}
 $if(title)$
