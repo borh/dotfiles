@@ -78,12 +78,12 @@
            (interactive)
            (compile "lein kibit"))
 
-         ;; clj-refactor
-         (require 'clj-refactor)
-         (setq cljr-sort-comparator 'cljr--semantic-comparator)
-         (add-hook 'clojure-mode-hook (lambda ()
-                                        (clj-refactor-mode 1)
-                                        (cljr-add-keybindings-with-prefix "C-c C-m")))
+         ;; ;; clj-refactor
+         ;; (require 'clj-refactor)
+         ;; (setq cljr-sort-comparator 'cljr--semantic-comparator)
+         ;; (add-hook 'clojure-mode-hook (lambda ()
+         ;;                                (clj-refactor-mode 1)
+         ;;                                (cljr-add-keybindings-with-prefix "C-c C-m")))
 
          ;; Flyspell
          (require 'flyspell)
