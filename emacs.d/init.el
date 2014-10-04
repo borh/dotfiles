@@ -15,14 +15,15 @@
     ;; clojure related
     clojure-mode clojurescript-mode smartparens
     rainbow-delimiters rainbow-mode rainbow-identifiers
-    align-cljlet cljsbuild-mode clj-refactor latest-clojars
+    align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
+    latest-clojars
     cider ac-nrepl ac-cider-compliment
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
     twilight-bright-theme twilight-anti-bright-theme
     grandshell-theme noctilux-theme
-    ;; theme-park-mode 
+    ;; theme-park-mode
     alect-themes ample-theme ample-zen-theme
     base16-theme calmer-forest-theme clues-theme
     cyberpunk-theme monokai-theme noctilux-theme
@@ -53,7 +54,8 @@
     ssh-config-mode
     graphviz-dot-mode
     omn-mode
-    ;;ansible ;;-> yasnippets error 
+    dockerfile-mode
+    ;;ansible ;;-> yasnippets error
     ;; nxml-mode
     ;; flymake
     flymake-coffee flymake-css flymake-sass flymake-jshint
@@ -73,8 +75,7 @@
     htmlize
     ac-math
     ;; yasnippet
-    yasnippet-bundle yasnippet
-    tomatinho
+    ;;yasnippet
     nterm
     ;; other
     mmm-mode
