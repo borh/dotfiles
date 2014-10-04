@@ -104,13 +104,8 @@ set -x PATH $PATH /opt/android-sdk/platform-tools
 # local config
 
 ## Arch Oracle JDK (AUR)
-set -x J2SDKDIR /opt/java
-set -x J2REDIR /opt/java/jre
-set -x PATH $PATH /opt/java/bin /opt/java/db/bin /opt/java/jre/bin
-set -x JAVA_HOME /opt/java
-set -x DERBY_HOME /opt/java/db
+set -x JAVA_HOME /usr/lib/jvm/default
 set -x LD_LIBRARY_PATH /usr/lib
-set -x _JAVA_OPTIONS '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 
