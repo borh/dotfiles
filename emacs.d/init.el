@@ -13,7 +13,7 @@
   my-packages
   '(auto-complete exec-path-from-shell s
     ;; clojure related
-    clojure-mode clojurescript-mode smartparens
+    clojure-mode smartparens
     rainbow-delimiters rainbow-mode rainbow-identifiers
     align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
     latest-clojars
