@@ -63,6 +63,11 @@
            (ANY 2)
            (context 2))
 
+         (require 'clj-refactor)
+         (add-hook 'clojure-mode-hook (lambda ()
+                                        (clj-refactor-mode 1)
+                                        (cljr-add-keybindings-with-prefix "C-c C-m")))
+
          ;; kibit integration
          ;; Teach compile the syntax of the kibit output
          (require 'compile)
