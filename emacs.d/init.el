@@ -17,7 +17,7 @@
     rainbow-delimiters rainbow-mode rainbow-identifiers
     align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
     latest-clojars
-    cider ac-nrepl ac-cider-compliment
+    cider ac-cider ac-cider-compliment
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
