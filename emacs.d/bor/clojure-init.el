@@ -93,4 +93,6 @@
          ;; Flyspell
          (require 'flyspell)
          (add-hook 'clojure-mode-hook (lambda ()
-                                        (flyspell-prog-mode)))))
+                                        (flyspell-prog-mode)))
+
+         (eval-after-load 'flycheck '(flycheck-clojure-setup))))

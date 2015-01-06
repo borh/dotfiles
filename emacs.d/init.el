@@ -13,10 +13,10 @@
   my-packages
   '(auto-complete exec-path-from-shell s
     ;; clojure related
-    clojure-mode smartparens
+    clojure-mode
     rainbow-delimiters rainbow-mode rainbow-identifiers
     align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
-    latest-clojars
+    latest-clojars flycheck-clojure
     cider ac-nrepl ac-cider-compliment
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
