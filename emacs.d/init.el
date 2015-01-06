@@ -18,6 +18,7 @@
     align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
     latest-clojars flycheck-clojure
     cider ac-cider ac-cider-compliment
+    clj-refactor
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
