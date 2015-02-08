@@ -1,6 +1,6 @@
 {:user {:deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                           :creds :gpg}]]
-        :dependencies [[io.aviso/pretty "0.1.14"]
+        :dependencies [[io.aviso/pretty "0.1.16"]
                        [fipp "0.5.1"]
                        [compliment "0.2.0"]
                        [table "0.4.0"]
@@ -8,11 +8,11 @@
                        [cider/cider-nrepl "0.8.2" :exclusions [org.clojure/java.classpath]]]
         :plugins [[lein-typed "0.3.5"]
                   [lein-clojars "0.9.1"]
-                  [lein-cljfmt "0.1.3"]
+                  [lein-cljfmt "0.1.7"]
                   [lein-kibit "0.0.8" :exclusions [org.clojure/clojure]]
                   [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
                   [lein-bikeshed "0.2.0"]
-                  [lein-ancient "0.6.1" :exclusions [org.clojure/tools.reader org.clojure/clojure]]
+                  [lein-ancient "0.6.2" :exclusions [org.clojure/tools.reader org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
                   [cider/cider-nrepl "0.8.2"]]
         :datomic {:install-location "../datomic-free-0.9.4556"}
