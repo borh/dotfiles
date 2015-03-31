@@ -3,7 +3,8 @@
       (scroll-bar-mode -1)
       ;;(load-theme 'gandalf t)
       ;;(load-theme 'ir-black t)
-      (load-theme 'sanityinc-tomorrow-bright t)
+      ;;(load-theme 'sanityinc-tomorrow-bright t)
+      (load-theme 'base16-default t)
       ;;(setq show-paren-style 'expression)
       ;;(set-default-font "Envy Code R 13")
       ;;(set-default-font "Ricty 15")
@@ -11,10 +12,11 @@
       ;; https://gist.github.com/yoshinari-nomura/3465571
       ;; フォントセットを作る
       (let* ((fontset-name "myfonts") ; フォントセットの名前
-             (size 11) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
-             (asciifont "Source Code Pro") ; ASCIIフォント
-             (jpfont "Hiragino Kaku Gothic Pro") ; 日本語フォント
-             (font (format "%s-%d:weight=light:slant=normal" asciifont size))
+             (size 18) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
+             (asciifont "Ricty Discord") ; ASCIIフォント
+             ;;(jpfont "Hiragino Kaku Gothic Pro") ; 日本語フォント
+             (jpfont "Ricty Discord")
+             (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
              (fontspec (font-spec :family asciifont))
              (jp-fontspec (font-spec :family jpfont))
              (fsn (create-fontset-from-ascii-font font nil fontset-name)))
@@ -28,10 +30,11 @@
       ;; デフォルトのフレームパラメータでフォントセットを指定
       (add-to-list 'default-frame-alist '(font . "fontset-myfonts"))
 
-      ;; フォントサイズの比を設定
-      (dolist (elt '(("^-apple-hiragino.*" . 1.2)
-                     (".*source-code.*" . 0.9)))
-        (add-to-list 'face-font-rescale-alist elt))
+      ;; Disable when using Ricty Discord:
+      ;; ;; フォントサイズの比を設定
+      ;; (dolist (elt '(("^-apple-hiragino.*" . 1.2)
+      ;;                (".*source-code.*" . 0.9)))
+      ;;   (add-to-list 'face-font-rescale-alist elt))
 
       ;; デフォルトフェイスにフォントセットを設定
       ;; # これは起動時に default-frame-alist に従ったフレームが
