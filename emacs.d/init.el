@@ -76,6 +76,7 @@
     org org-table-comment
     htmlize
     ac-math
+    ac-mozc
     ;; yasnippet
     ;;yasnippet
     nterm
