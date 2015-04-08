@@ -57,6 +57,7 @@
     omn-mode
     dockerfile-mode
     rust-mode flymake-rust flycheck-rust
+    nix-mode
     ;;ansible ;;-> yasnippets error
     ;; nxml-mode
     ;; flymake
