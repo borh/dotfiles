@@ -2,55 +2,55 @@
 #accounts = Osaka, Gmail
 accounts = Osaka
 maxsyncaccounts = 1
-pythonfile = ~/dotfiles/offlineimap/utf7.py
-ui = quiet
+# pythonfile = ~/dotfiles/offlineimap/utf7.py
+# ui = quiet
 
-[DEFAULT]
-# Translates imap4-utf-7 (remote) to utf-8 (local)
-default_remote_nametrans = lambda foldername: foldername.decode('imap4-utf-7').encode('utf-8')
-# Translates utf-8 (local) back to imap4-utf-7 (remote)
-default_local_nametrans = lambda foldername: foldername.decode('utf-8').encode('imap4-utf-7')
-
-[Account Gmail]
-localrepository = Gmail-Local
-remoterepository = Gmail-Remote
-status_backend = sqlite
-autorefresh = 5
-quick = 10
-
-[Repository Gmail-Local]
-type = Maildir
-localfolders = ~/Mail/Gmail-Local
-
-nametrans = lambda foldername: re.sub('^Gmail.Drafts', '[Gmail]/Drafts',
-                               re.sub('^Gmail.Important', '[Gmail]/Important',
-                               re.sub('^Gmail.Sent Mail', '[Gmail]/Sent Mail',
-                               re.sub('^Gmail.Spam', '[Gmail]/Spam',
-                               re.sub('^Gmail.Starred', '[Gmail]/Starred',
-                               re.sub('^Gmail.Trash', '[Gmail]/Trash',
-                               re.sub('^Gmail.Administration$', 'Administration',
-                               re.sub('^Gmail.INBOX$', 'INBOX',
-                               re.sub('^Gmail.Journal$', 'Journal',
-                               re.sub('^Gmail.Social$', 'Social',
-                               re.sub('^Gmail.Github$', 'Github',
-                               re.sub('^Gmail.東工大$', '東工大',
-                               re.sub('^Gmail.東工大.EC101 2012$', '東工大/EC101 2012',
-                               re.sub('^Gmail.東工大.Homework$', '東工大/Homework',
-                               re.sub('^Gmail.論文変換作業$', '論文変換作業',
-                                      foldername.decode('utf-8')))))))))))))))).encode('imap4-utf-7')
-
-[Repository Gmail-Remote]
-type = Gmail
-remoteuser = bor.hodoscek@gmail.com
-realdelete = no
-maxconnections = 3
-#maxconnections = 1
-keepalive = 60
-holdconnectionopen = yes
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-nametrans = lambda foldername: 'Gmail/' + re.sub('^.?Gmail.?/', '', foldername.decode('imap4-utf-7')).encode('utf-8')
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+# [DEFAULT]
+# # Translates imap4-utf-7 (remote) to utf-8 (local)
+# default_remote_nametrans = lambda foldername: foldername.decode('imap4-utf-7').encode('utf-8')
+# # Translates utf-8 (local) back to imap4-utf-7 (remote)
+# default_local_nametrans = lambda foldername: foldername.decode('utf-8').encode('imap4-utf-7')
+# 
+# [Account Gmail]
+# localrepository = Gmail-Local
+# remoterepository = Gmail-Remote
+# status_backend = sqlite
+# autorefresh = 5
+# quick = 10
+# 
+# [Repository Gmail-Local]
+# type = Maildir
+# localfolders = ~/Mail/Gmail-Local
+# 
+# nametrans = lambda foldername: re.sub('^Gmail.Drafts', '[Gmail]/Drafts',
+#                                re.sub('^Gmail.Important', '[Gmail]/Important',
+#                                re.sub('^Gmail.Sent Mail', '[Gmail]/Sent Mail',
+#                                re.sub('^Gmail.Spam', '[Gmail]/Spam',
+#                                re.sub('^Gmail.Starred', '[Gmail]/Starred',
+#                                re.sub('^Gmail.Trash', '[Gmail]/Trash',
+#                                re.sub('^Gmail.Administration$', 'Administration',
+#                                re.sub('^Gmail.INBOX$', 'INBOX',
+#                                re.sub('^Gmail.Journal$', 'Journal',
+#                                re.sub('^Gmail.Social$', 'Social',
+#                                re.sub('^Gmail.Github$', 'Github',
+#                                re.sub('^Gmail.東工大$', '東工大',
+#                                re.sub('^Gmail.東工大.EC101 2012$', '東工大/EC101 2012',
+#                                re.sub('^Gmail.東工大.Homework$', '東工大/Homework',
+#                                re.sub('^Gmail.論文変換作業$', '論文変換作業',
+#                                       foldername.decode('utf-8')))))))))))))))).encode('imap4-utf-7')
+# 
+# [Repository Gmail-Remote]
+# type = Gmail
+# remoteuser = bor.hodoscek@gmail.com
+# realdelete = no
+# maxconnections = 3
+# #maxconnections = 1
+# keepalive = 60
+# holdconnectionopen = yes
+# sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# 
+# nametrans = lambda foldername: 'Gmail/' + re.sub('^.?Gmail.?/', '', foldername.decode('imap4-utf-7')).encode('utf-8')
+# folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
 
 [Account Osaka]
 localrepository = Osaka-Local
@@ -71,3 +71,8 @@ localfolders = ~/Mail/Osaka
 type = IMAP
 remotehost = cc.mail.osaka-u.ac.jp
 remoteuser = bor+lang
+remoteport = 993
+ssl = yes
+cert_fingerprint = a5c816747261cd142bdc3a35449277b751c3335f
+# sslcacertfile = OS-DEFAULT
+auth_mechanisms = LOGIN
