@@ -1,5 +1,6 @@
 [general]
-accounts = Gmail
+#accounts = Osaka, Gmail
+accounts = Osaka
 maxsyncaccounts = 1
 pythonfile = ~/dotfiles/offlineimap/utf7.py
 ui = quiet
@@ -50,3 +51,23 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 nametrans = lambda foldername: 'Gmail/' + re.sub('^.?Gmail.?/', '', foldername.decode('imap4-utf-7')).encode('utf-8')
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+
+[Account Osaka]
+localrepository = Osaka-Local
+remoterepository = Osaka-Remote
+status_backend = sqlite
+autorefresh = 5
+quick = 10
+
+
+[Repository Osaka-Local]
+# Currently, offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Mail/Osaka
+
+[Repository Osaka-Remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = cc.mail.osaka-u.ac.jp
+remoteuser = bor+lang
