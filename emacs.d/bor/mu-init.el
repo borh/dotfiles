@@ -22,10 +22,15 @@
       smtpmail-auth-credentials    "~/.netrc"
       smtpmail-smtp-service        465
 
+      mu4e-sent-folder   "/Osaka/INBOX.Sent"       ;; sent messages
+      mu4e-drafts-folder "/Osaka/INBOX.Drafts"     ;; unfinished messages
+      mu4e-trash-folder  "/Osaka/INBOX.Trash"      ;; trashed messages
+      mu4e-refile-folder "/archive"    ;; saved messages
       ;; if you need offline mode, set these -- and create the queue dir
       ;; with 'mu mkdir', i.e.. mu mkdir /home/user/Mail/queue
       smtpmail-queue-mail  nil
       smtpmail-queue-dir  "/home/bor/Mail/queue/cur")
+
 
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
