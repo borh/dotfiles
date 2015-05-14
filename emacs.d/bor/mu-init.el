@@ -9,7 +9,7 @@
       user-mail-address "bor@lang.osaka-u.ac.jp"
       user-full-name  "Bor Hodošček")
 (setq mu4e-compose-signature
-      "Bor Hodošček, Lecturer,\nGraduate School for Language and Culture,\nOsaka University")
+      "Bor Hodošček,\nGraduate School for Language and Culture,\nOsaka University")
 
 ;; allow for updating mail using 'U' in the main view:
 (setq mu4e-get-mail-command "offlineimap")
