@@ -48,3 +48,6 @@
   (lambda ()
     (unless (yes-or-no-p "Sure you want to send this?")
       (signal 'quit nil))))
+
+(require 'mu4e-contrib)
+(setq mu4e-html2text-command 'mu4e-shr2text)
