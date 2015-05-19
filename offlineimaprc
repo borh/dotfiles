@@ -76,5 +76,4 @@ ssl = yes
 cert_fingerprint = a5c816747261cd142bdc3a35449277b751c3335f
 # sslcacertfile = OS-DEFAULT
 auth_mechanisms = LOGIN
-
-# FIXME: INBOX.spam INBOX.nospam folders cannot be selected
+folderfilter = lambda folder: folder not in ['INBOX.spam', 'INBOX.nospam']
