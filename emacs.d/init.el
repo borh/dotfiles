@@ -56,6 +56,7 @@
     graphviz-dot-mode
     omn-mode
     dockerfile-mode
+    systemd
     rust-mode flymake-rust flycheck-rust
     nix-mode
     ;;ansible ;;-> yasnippets error
