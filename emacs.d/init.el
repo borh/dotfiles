@@ -17,7 +17,7 @@
     rainbow-delimiters rainbow-mode rainbow-identifiers
     align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
     latest-clojars flycheck-clojure
-    cider ac-cider ac-cider-compliment
+    cider ac-cider
     clj-refactor
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
@@ -56,6 +56,7 @@
     graphviz-dot-mode
     omn-mode
     dockerfile-mode
+    systemd
     rust-mode flymake-rust flycheck-rust
     nix-mode
     ;;ansible ;;-> yasnippets error
