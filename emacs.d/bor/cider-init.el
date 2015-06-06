@@ -12,49 +12,29 @@
                     (rainbow-delimiters-mode t)
                     (smartparens-strict-mode t))))
 
-     (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
-     (add-hook 'cider-interaction-mode-hook
-               'cider-turn-on-eldoc-mode)
+     (add-hook 'cider-mode-hook #'eldoc-mode)
 
-     (add-hook 'cider-repl-mode-hook 'subword-mode)
+     (setq nrepl-log-messages t)
      (setq nrepl-hide-special-buffers t)
+
+     (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
+     (add-hook 'cider-interaction-mode-hook #'cider-turn-on-eldoc-mode)
+
+     (add-hook 'cider-repl-mode-hook #'subword-mode)
+
      (setq cider-popup-stacktraces t)
      (setq cider-popup-stacktraces-in-repl t)
+     (setq cider-stacktrace-default-filters '(tooling dup))
+
      (setq cider-auto-select-error-buffer t)
      (setq cider-stacktrace-default-filters nil)
-     (eval-after-load "auto-complete"
-       '(add-to-list 'ac-modes 'clojure-mode))
-
+     (setq cider-prompt-save-file-on-load nil)
      (setq cider-repl-toggle-print-length-limiting t)
      (setq cider-repl-print-length 100)
      (setq cider-repl-toggle-pretty-printing t)
 
-     (require 'ac-nrepl)
-     (add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-     (add-hook 'cider-mode-hook 'ac-nrepl-setup)
-     (eval-after-load "auto-complete"
-       '(add-to-list 'ac-modes 'cider-repl-mode))
-
-     (require 'auto-complete)
-
-     (require 'ac-cider-compliment)
-     (add-hook 'cider-repl-mode-hook 'ac-cider-compliment-repl-setup)
-     (add-hook 'cider-mode-hook 'ac-cider-compliment-setup)
-     (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-     (eval-after-load "auto-complete"
-       '(add-to-list 'ac-modes cider-mode))
-     (defun set-auto-complete-as-completion-at-point-function ()
-       (setq completion-at-point-functions '(auto-complete)))
-     (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-     (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-     (add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-     (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
-     (add-hook 'cider-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
-     (define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-
-     ;; Help with alignment
-     (require 'align-cljlet)
+     (add-hook 'cider-repl-mode-hook #'company-mode)
+     (add-hook 'cider-mode-hook #'company-mode)
 
      ;; (defun repl-reset ()
      ;;   (interactive)
@@ -65,4 +45,6 @@
      ;;     (cider-repl-return)))
      ;;
      ;; (global-set-key (kbd "C-c C-l") cider-repl-reset)
-     ))
+
+     ;; Help with alignment
+     (require 'align-cljlet)))
