@@ -9,6 +9,7 @@ emacs.d/.smex-items
 emacs.d/backups
 lein/indices
 lein/self-installs
+boot/cache
 ssh/id_*
 ssh/authorized_keys
 ssh/known_hosts
