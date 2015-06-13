@@ -30,6 +30,7 @@
     cyberpunk-theme monokai-theme noctilux-theme
     ;; general interface improvements
     projectile
+    company
     ;;helm helm-themes ac-helm helm-projectile helm-R
     ;;ido-ubiquitous smex ; needed by starter-kit
     iy-go-to-char popup typopunct expand-region
@@ -41,6 +42,7 @@
     dash dash-functional
     color-identifiers-mode
     langtool
+    hungry-delete
     ;; language related
     ess ess-R-data-view go-mode go-autocomplete js3-mode latex-pretty-symbols
     ipython python python-mode python-pep8 ein jedi
