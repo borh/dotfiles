@@ -15,7 +15,6 @@
                   [lein-ancient "0.6.7" :exclusions [org.clojure/tools.reader org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
                   [cider/cider-nrepl "0.8.2"]]
-        :datomic {:install-location "../datomic-free-0.9.4556"}
         :repl-options {:nrepl-middleware
                        [;;io.aviso.nrepl/pretty-middleware
                         cider.nrepl.middleware.apropos/wrap-apropos
