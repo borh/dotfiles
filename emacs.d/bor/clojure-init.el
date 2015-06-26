@@ -6,6 +6,7 @@
 
          (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist)) ; *.edn are Clojure files
          (setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
+         (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist)) ; *.boot are Clojure files
 
          (font-lock-add-keywords
           'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
@@ -54,6 +55,7 @@
          (define-clojure-indent
            (defroutes 'defun)
            (describe 'defun)
+           (register-handler 'defun)
            (for-map 2)
            (GET 2)
            (POST 2)

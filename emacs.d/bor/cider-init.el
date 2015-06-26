@@ -36,6 +36,8 @@
      (add-hook 'cider-repl-mode-hook #'company-mode)
      (add-hook 'cider-mode-hook #'company-mode)
 
+     (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
+
      ;; (defun repl-reset ()
      ;;   (interactive)
      ;;   (save-some-buffers)
