@@ -9,6 +9,7 @@
         :plugins [[lein-typed "0.3.5"]
                   [lein-clojars "0.9.1"]
                   [lein-cljfmt "0.1.10"]
+		  [venantius/yagni "0.1.2"]
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
                   [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
                   [lein-bikeshed "0.2.0"]
