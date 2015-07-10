@@ -10,7 +10,7 @@
                   [lein-clojars "0.9.1"]
                   [lein-cljfmt "0.2.0"]
                   [venantius/yagni "0.1.2" :exclusions [org.clojure/clojure org.clojure/tools.logging]]
-                  [lein-collisions "0.1.1" :exclusions [org.clojure/clojure]]
+                  [lein-collisions "0.1.2" :exclusions [org.clojure/clojure]]
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
                   [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
                   [lein-bikeshed "0.2.0"]
