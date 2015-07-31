@@ -61,7 +61,7 @@
     dockerfile-mode
     systemd
     rust-mode flymake-rust flycheck-rust
-    nix-mode
+    nix-mode company-nixos-options
     ;;ansible ;;-> yasnippets error
     ;; nxml-mode
     ;; flymake
@@ -176,3 +176,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'erase-buffer 'disabled nil)
