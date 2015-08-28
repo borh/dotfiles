@@ -30,6 +30,7 @@
     cyberpunk-theme monokai-theme noctilux-theme
     ;; general interface improvements
     projectile
+    telephone-line
     ;;helm helm-themes ac-helm helm-projectile helm-R
     ;;ido-ubiquitous smex ; needed by starter-kit
     company
