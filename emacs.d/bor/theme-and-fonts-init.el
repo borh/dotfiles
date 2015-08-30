@@ -1,10 +1,8 @@
 (if (display-graphic-p)
     (progn
       (scroll-bar-mode -1)
-      ;;(load-theme 'gandalf t)
-      ;;(load-theme 'ir-black t)
       ;;(load-theme 'sanityinc-tomorrow-bright t)
-      (load-theme 'base16-default t)
+      (load-theme 'material t)
       ;;(setq show-paren-style 'expression)
       ;;(set-default-font "Envy Code R 13")
       ;;(set-default-font "Ricty 15")
@@ -13,9 +11,16 @@
       ;; フォントセットを作る
       (let* ((fontset-name "myfonts") ; フォントセットの名前
              (size 18) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
-             (asciifont "Ricty Discord") ; ASCIIフォント
-             ;;(jpfont "Hiragino Kaku Gothic Pro") ; 日本語フォント
-             (jpfont "Ricty Discord")
+
+             ;; ASCIIフォント
+             ;;(asciifont "Ricty Discord")
+             (asciifont "Fantasque Sans Mono")
+
+             ;; 日本語フォント
+             ;;(jpfont "Hiragino Kaku Gothic Pro")
+             (jpfont "Hiragino Mincho Pro W3")
+             ;;(jpfont "Ricty Discord")
+
              (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
              (fontspec (font-spec :family asciifont))
              (jp-fontspec (font-spec :family jpfont))

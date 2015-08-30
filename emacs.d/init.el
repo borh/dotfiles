@@ -22,12 +22,7 @@
     ;; color themes
     color-theme color-theme-sanityinc-tomorrow
     color-theme-sanityinc-solarized
-    twilight-bright-theme twilight-anti-bright-theme
-    grandshell-theme noctilux-theme
-    ;; theme-park-mode
-    alect-themes ample-theme ample-zen-theme
-    base16-theme calmer-forest-theme clues-theme
-    cyberpunk-theme monokai-theme noctilux-theme
+    material-theme
     ;; general interface improvements
     projectile
     telephone-line
