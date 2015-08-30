@@ -5,6 +5,10 @@ set -x MAILDIR $HOME/Mail
 set -x PAGER less
 
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
+
+#envoy -t ssh-agent -a id_ecdsa.osaka
+#. <(envoy -pf)
+
 function run_gpg-agent
     if [ -x /usr/bin/gpg-agent ]
         set -l PINENTRY /usr/bin/pinentry-kwallet
@@ -73,15 +77,17 @@ set -x GOBIN $GOPATH/bin
 set -x PATH $GOBIN $PATH
 
 # texlive
-set -x PATH $HOME/texlive/2014/bin/x86_64-linux $PATH
+set -x PATH $HOME/texlive/2015/bin/x86_64-linux $PATH
 set -x -e MANPATH # unset and get from manpath directly
-set -x MANPATH $HOME/texlive/2014/texmf/doc/man (manpath)
-set -x INFOPATH $HOME/texlive/2014/texmf/doc/info $INFOPATH
+set -x MANPATH $HOME/texlive/2015/texmf/doc/man (manpath)
+set -x INFOPATH $HOME/texlive/2015/texmf/doc/info $INFOPATH
 
+# Perl
+set -x PATH /usr/bin/vendor_perl $PATH
 ## perlbrew
-#if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
-#    source "$HOME/perl5/perlbrew/etc/bashrc"
-#fi
+#if test -e "$HOME/perl5/perlbrew/etc/perlbrew.fish"
+#    source "$HOME/perl5/perlbrew/etc/perlbrew.fish"
+#end
 
 # node.js
 set -x NPM_PACKAGES $HOME/node
