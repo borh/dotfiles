@@ -29,6 +29,7 @@
     ;;helm helm-themes ac-helm helm-projectile helm-R
     ;;ido-ubiquitous smex ; needed by starter-kit
     company
+    adaptive-wrap
     iy-go-to-char popup typopunct expand-region
     smooth-scrolling tidy typing writegood-mode wc-mode wtf flyspell-lazy
     save-visited-files thesaurus smart-tab smart-tabs-mode undo-tree

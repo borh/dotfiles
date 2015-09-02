@@ -87,6 +87,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-visual-line-mode 1) ; 1 for on, 0 for off.
 (global-linum-mode 0) ; always show line numbers
+(adaptive-wrap-prefix-mode t)
 
 (defface org-block-begin-line
   '((t (:underline "#003f8e" :foreground "#ffffff" :background "#002451")))
