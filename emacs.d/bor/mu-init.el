@@ -39,10 +39,10 @@
 (setq mu4e-attachment-dir "~/Downloads")
 (setq mu4e-view-show-images t)
 
-(add-hook 'mu4e-compose-mode-hook
-          ;;"Outgoing mails get format=flowed."
-          (defun cpb-compose-setup ()
-            (use-hard-newlines t 'guess)))
+;; (add-hook 'mu4e-compose-mode-hook
+;;           ;;"Outgoing mails get format=flowed."
+;;           (defun cpb-compose-setup ()
+;;             (use-hard-newlines t 'guess)))
 
 (add-hook 'message-send-hook
   (lambda ()
