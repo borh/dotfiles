@@ -51,6 +51,7 @@
     markdown-mode+ pandoc-mode
     puppet-mode
     apache-mode
+    nginx-mode
     ssh-config-mode
     graphviz-dot-mode
     omn-mode
