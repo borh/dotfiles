@@ -14,7 +14,7 @@
                   [lein-bikeshed "0.2.0"]
                   [lein-ancient "0.6.7" :exclusions [org.clojure/tools.reader org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
-                  [refactor-nrepl "1.2.0-SNAPSHOT"]
+                  [refactor-nrepl "1.2.0"]
                   [cider/cider-nrepl "0.10.0-SNAPSHOT"]]
         :repl-options {:nrepl-middleware
                        [cider.nrepl.middleware.apropos/wrap-apropos
