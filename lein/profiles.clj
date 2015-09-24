@@ -3,6 +3,7 @@
         :dependencies [[fipp "0.6.2"]
                        [table "0.5.0"]
                        [criterium "0.4.3"]
+                       [acyclic/squiggly-clojure "0.1.4"]
                        [cider/cider-nrepl "0.10.0-SNAPSHOT" :exclusions [org.clojure/java.classpath]]]
         :plugins [[lein-typed "0.3.5"]
                   [lein-clojars "0.9.1"]
