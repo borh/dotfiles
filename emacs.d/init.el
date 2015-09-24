@@ -70,6 +70,7 @@
     pep8 flymake-python-pyflakes
     flycheck
     flycheck-status-emoji
+    flycheck-pos-tip
     flyspell-lazy
     ;; jabber
     jabber
