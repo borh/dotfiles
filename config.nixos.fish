@@ -1,4 +1,5 @@
-set -x PATH /var/setuid-wrappers $HOME/local/bin /home/bor/.nix-profile/bin /home/bor/.nix-profile/sbin /home/bor/.nix-profile/usr/bin /nix/var/nix/profiles/default/bin /nix/var/nix/profiles/default/sbin /run/current-system/sw/bin /run/current-system/sw/sbin
+set -x PATH /var/setuid-wrappers $HOME/local/bin /home/bor/.nix-profile/bin /home/bor/.nix-profile/sbin /home/bor/.nix-profile/usr/bin /home/bor/.nix-profile/lib /nix/var/nix/profiles/default/bin /nix/var/nix/profiles/default/sbin /run/current-system/sw/bin /run/current-system/sw/sbin
+set -x LD_LIBRARY_PATH "/home/bor/.nix-profile/lib:/run/current-system/sw/lib:$LD_LIBRARY_PATH"
 set -x SHELL /run/current-system/sw/bin/bash
 set -x EDITOR /run/current-system/sw/bin/nvim
 set -x MAILDIR $HOME/Mail
@@ -18,7 +19,8 @@ end
 
 alias xtime "/run/current-system/sw/bin/time -f '%Uu %Ss %er %MkB %C'"
 alias top "htop"
-alias vi "vim"
+alias vi "nvim"
+alias vim "nvim"
 alias tmux "tmux -2"
 alias y "youtube-dl --prefer-free-formats --no-mtime -t"
 alias pstree "pstree -U"
@@ -29,10 +31,10 @@ set -x LANG en_US.utf8
 set -x TZ 'Asia/Tokyo'
 
 # IME (mozc)
-# using fcitx
-set -x GTK_IM_MODULE fcitx
-set -x QT_IM_MODULE fcitx
-set -x XMODIFIERS "@im=fcitx"
+# using ibus
+set -x GTK_IM_MODULE ibus
+set -x QT_IM_MODULE ibus
+set -x XMODIFIERS "@im=ibus"
 set -x LOO_FORCE_DESKTOP gnome
 set -x OOO_FORCE_DESKTOP gnome
 
@@ -52,10 +54,10 @@ set -x GOBIN $GOPATH/bin
 set -x PATH $GOBIN $PATH
 
 # texlive
-set -x PATH $HOME/texlive/2014/bin/x86_64-linux $PATH
-# set -x -e MANPATH # unset and get from manpath directly
-# set -x MANPATH $HOME/texlive/2014/texmf/doc/man (manpath)
-# set -x INFOPATH $HOME/texlive/2014/texmf/doc/info $INFOPATH
+set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
+#set -x -e MANPATH # unset and get from manpath directly
+#set -x MANPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/man (manpath)
+set -x INFOPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/info $INFOPATH
 
 ## perlbrew
 #if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
@@ -82,9 +84,10 @@ set -x PATH $PATH $ANDROID_HOME/tools
 set -x PATH $PATH /opt/android-sdk/platform-tools
 # local config
 
-### Arch Oracle JDK (AUR)
+# JDK
 #set -x JAVA_HOME /usr/lib/jvm/default
 #set -x LD_LIBRARY_PATH /usr/lib
+set -x CLASSPATH "/home/bor/.nix-profile/lib/:/run/current-system/sw/lib:$CLASSPATH"
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/run/current-system/sw/bin/bash emacs'
 

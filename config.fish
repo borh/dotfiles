@@ -77,10 +77,10 @@ set -x GOBIN $GOPATH/bin
 set -x PATH $GOBIN $PATH
 
 # texlive
-set -x PATH $HOME/texlive/2015/bin/x86_64-linux $PATH
+set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
 set -x -e MANPATH # unset and get from manpath directly
-set -x MANPATH $HOME/texlive/2015/texmf/doc/man (manpath)
-set -x INFOPATH $HOME/texlive/2015/texmf/doc/info $INFOPATH
+set -x MANPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/man (manpath)
+set -x INFOPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/info $INFOPATH
 
 # Perl
 set -x PATH /usr/bin/vendor_perl $PATH
