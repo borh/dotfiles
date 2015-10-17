@@ -59,6 +59,7 @@
     systemd
     rust-mode flymake-rust flycheck-rust
     nix-mode company-nixos-options
+    sql-indent format-sql
     ;;ansible ;;-> yasnippets error
     ;; nxml-mode
     ;; flymake
