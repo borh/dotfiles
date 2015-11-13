@@ -75,7 +75,9 @@
         mouse-yank-at-point t
         save-place-file (concat user-emacs-directory "places")
         backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                                 "backups")))))
+                                                 "backups"))))
+
+  (global-auto-revert-mode t))
 
 (provide 'better-defaults)
 ;;; better-defaults.el ends here
