@@ -13,6 +13,12 @@
 (define-key sp-keymap (kbd "C-k") 'sp-kill-sexp)
 (define-key sp-keymap (kbd "M-w") 'sp-copy-sexp)
 
+(define-key sp-keymap (kbd "C-<backspace>") 'sp-backward-kill-word)
+(define-key sp-keymap (kbd "M-d") 'sp-kill-word)
+
+(define-key sp-keymap (kbd "<backspace>") 'sp-backward-delete-char)
+(define-key sp-keymap (kbd "C-d") 'sp-delete-char)
+
 ;;;;;;;;;;;;;;;;;;
 ;; pair management
 
