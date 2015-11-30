@@ -28,6 +28,7 @@
     telephone-line
     ;;helm helm-themes ac-helm helm-projectile helm-R
     ;;ido-ubiquitous smex ; needed by starter-kit
+    swiper
     company
     adaptive-wrap
     iy-go-to-char popup typopunct expand-region
@@ -76,9 +77,11 @@
     ;; jabber
     jabber
     ;; git
-    egg
+    magit
     ;; org/latex
-    org org-table-comment
+    org
+    org-table-comment org-beautify-theme org-bullets
+    org-gcal org-mime org-pandoc ox-pandoc org-tracktable
     htmlize
     ac-math
     ac-mozc
