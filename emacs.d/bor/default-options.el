@@ -12,7 +12,8 @@
       (menu-bar-mode -1)
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
-      (toggle-fullscreen)))
+      ;;(toggle-fullscreen)
+      ))
 
 (add-hook 'text-mode-hook
           '(lambda() (set-fill-column 100))) ; better, longer default

@@ -28,7 +28,7 @@
     telephone-line
     ;;helm helm-themes ac-helm helm-projectile helm-R
     ;;ido-ubiquitous smex ; needed by starter-kit
-    swiper
+    swiper counsel
     company
     adaptive-wrap
     iy-go-to-char popup typopunct expand-region
