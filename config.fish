@@ -6,28 +6,32 @@ set -x PAGER less
 
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
 
-#envoy -t ssh-agent -a id_ecdsa.osaka
-#. <(envoy -pf)
+envoy -t gpg-agent -a id_ecdsa.osaka
+envoy -t gpg-agent -a id_rsa.bitbucket
+envoy -t gpg-agent -a id_rsa.github
+envoy -t gpg-agent -a id_rsa.gitlab
+envoy -t gpg-agent -a id_rsa
+source (envoy -pf)
 
-function run_gpg-agent
-    if [ -x /usr/bin/gpg-agent ]
-        set -l PINENTRY /usr/bin/pinentry-kwallet
-        set -l GPGINFO /tmp/gpg-agent.info
-        if not pgrep -u $USER gpg-agent >/dev/null ^&1
-            gpg-agent --daemon --enable-ssh-support --pinentry-program $PINENTRY --write-env-file $GPGINFO >/dev/null
-            chmod 600 $GPGINFO
-        end
-        if [ -f $GPGINFO ]
-            for l in (cat $GPGINFO)
-                set -gx (echo $l | cut -d= -f1) (echo $l | cut -d= -f2)
-            end
-        else
-            echo 'ERROR: gpg-agent info file not found'
-        end
-    else
-        echo 'WARN: gpg-agent not found/installed'
-    end
-end
+#function run_gpg-agent
+#    if [ -x /usr/bin/gpg-agent ]
+#        set -l PINENTRY /usr/bin/pinentry-kwallet
+#        set -l GPGINFO /tmp/gpg-agent.info
+#        if not pgrep -u $USER gpg-agent >/dev/null ^&1
+#            gpg-agent --daemon --enable-ssh-support --pinentry-program $PINENTRY --write-env-file $GPGINFO >/dev/null
+#            chmod 600 $GPGINFO
+#        end
+#        if [ -f $GPGINFO ]
+#            for l in (cat $GPGINFO)
+#                set -gx (echo $l | cut -d= -f1) (echo $l | cut -d= -f2)
+#            end
+#        else
+#            echo 'ERROR: gpg-agent info file not found'
+#        end
+#    else
+#        echo 'WARN: gpg-agent not found/installed'
+#    end
+#end
 
 function nfc
         perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'
