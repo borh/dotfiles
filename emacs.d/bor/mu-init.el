@@ -10,6 +10,7 @@
       user-full-name  "Bor Hodošček")
 (setq mu4e-compose-signature
       "Bor Hodošček,\nGraduate School for Language and Culture,\nOsaka University")
+(setq mu4e-compose-keep-self-cc 0)
 
 ;; allow for updating mail using 'U' in the main view:
 (setq mu4e-get-mail-command "offlineimap")

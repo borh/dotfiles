@@ -16,6 +16,12 @@
 (setq org-default-notes-file (concat org-directory "/Notes.org"))
 (define-key global-map (kbd "<f2>") 'org-capture)
 
+(setq org-refile-targets '((nil :maxlevel . 3)
+                           ;; all top-level headlines in the
+                           ;; current buffer are used (first) as a
+                           ;; refile target
+                           (org-agenda-files :maxlevel . 3)))
+
 (setq org-caldav-calendars
   '((:calendar-id "<<Calendar-id>>"
      :url         "<<Main url>>"
