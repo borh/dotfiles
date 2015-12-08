@@ -31,3 +31,10 @@
      :url         "<<Main url>>"
      :inbox       "<<LOCAL ORG FILE TO RECEIVE EVENTS>>"
      :files       ("<<LOCAL FILE TO PUSH EVENTS>>"))))
+
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (org-multiple-keymap-minor-mode 0)))
+
+(require 'org-alert)
+(setq alert-default-style 'libnotify)
