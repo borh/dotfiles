@@ -91,6 +91,7 @@
     nterm
     ;; other
     mmm-mode
+    fountain-mode
     )
   "A list of packages to ensure are installed at launch.")
 
