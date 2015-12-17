@@ -82,6 +82,7 @@
     org
     org-table-comment org-beautify-theme org-bullets
     org-gcal org-mime org-pandoc ox-pandoc org-tracktable
+    ox-impress-js ox-reveal
     org-dashboard org-multiple-keymap org-alert org-wc
     htmlize
     ac-math
