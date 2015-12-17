@@ -68,3 +68,19 @@ With a prefix argument, insert a newline above the current line."
     (vi-open-line-below)))
 
 (define-key global-map [(meta o)] 'vi-open-line)
+
+(defun eval-region-or-buffer ()
+  (interactive)
+  (let ((debug-on-error t))
+    (cond
+     (mark-active
+      (call-interactively 'eval-region)
+      (message "Region evaluated!")
+      (setq deactivate-mark t))
+     (t
+      (eval-buffer)
+      (message "Buffer evaluated!")))))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-x x") 'eval-region-or-buffer)))
