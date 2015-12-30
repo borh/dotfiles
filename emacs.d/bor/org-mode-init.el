@@ -22,6 +22,11 @@
                            ;; refile target
                            (org-agenda-files :maxlevel . 3)))
 
+(setq org-todo-keywords
+      '((sequence "TODO" "WAITING" "NEXT" "|" "DONE" "CANCELED")))
+
+(setq org-enforce-todo-checkbox-dependencies t)
+
 (setq org-caldav-calendars
   '((:calendar-id "<<Calendar-id>>"
      :url         "<<Main url>>"
