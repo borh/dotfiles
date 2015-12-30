@@ -8,12 +8,13 @@
 
      (require 's)
      (let ((default-headers "\\usepackage[no-math]{fontspec}
+%%\\usepackage{microtype}
 
 \\usepackage[default,osf]{sourceserifpro}
 \\usepackage[osf]{sourcesanspro}
 \\usepackage[osf,scale=.8]{sourcecodepro}
 
-%%\\usepackage{luatexja}
+\\usepackage{luatexja}
 \\usepackage{lualatex-math}
 \\usepackage{unicode-math}
 \\usepackage[fleqn,tbtags]{mathtools}
@@ -23,13 +24,13 @@
 \\usepackage{hyperref}
 \\usepackage{color}
 
-\\renewcommand*{\\glossaryname}{Dictionary}
-\\usepackage[xindy,toc]{glossaries}
-\\newcommand{\\w}[2]{%
-  \\newglossaryentry{#1}{name=#1,description={#2}}%
-  \\glslink{#1}{}%
-}
-\\makeglossaries
+%% \\renewcommand*{\\glossaryname}{Dictionary}
+%% \\usepackage[xindy,toc]{glossaries}
+%% \\newcommand{\\w}[2]{%
+%%   \\newglossaryentry{#1}{name=#1,description={#2}}%
+%%   \\glslink{#1}{}%
+%% }
+%% \\makeglossaries
 
 \\makeatletter
 \\def\\maxwidth{\\ifdim\\Gin@nat@width>\\linewidth\\linewidth
@@ -44,10 +45,11 @@
   {\\endminipage\\par\\medskip}
 
 \\usepackage{csquotes}
-\\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber,autocite=inline,hyperref=true,backref=true]{biblatex}
+%%\\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber,autocite=inline,hyperref=true,backref=true]{biblatex}
+\\usepackage[style=ieee,sortcites=true,sorting=nyt,backend=biber,autocite=inline,hyperref=true,backref=false]{biblatex}
 \\DeclareLanguageMapping{american}{american-apa}
 \\let\\autocite=\\parencite
-\\bibliography{~/Dropbox/papers/bibliography/doctors-bibliography}
+\\bibliography{/home/bor/Dropbox/Org/Bibliography/bibliography}
 
 \\usepackage{enumitem}
 \\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
@@ -72,9 +74,9 @@
 %%  \\setlength{\\beforechapskip}{-\\baselineskip}
 %%  \\setlength{\\afterchapskip}{-\\baselineskip}}
 %%\\chapterstyle{mychapterstyle}
-\\chapterstyle{chappell}
+%%\\chapterstyle{dowding}
 
-\\linespread{1.6}
+\\linespread{1.3}
 
 \\setlength{\\parskip}{0.5em}
 
@@ -83,7 +85,7 @@
 \\makeoddhead {mystyle}{\\sffamily\\textit{\\textbf{\\thepage}\\hspace{.2em}{\\sourcesansprolight/\\hspace {.2em}\\thelastpage}\\hspace {1em}\\small\\rightmark}}
                        {}%{\\small\\textit\\textcopyright Bor Hodošček}
                        {\\small\\sffamily\\textit{{\\sourcesansprolight Created on:} \\today}}
-\\makeheadrule{mystyle}{\\textwidth}{1.5pt}{}
+\\makeheadrule{mystyle}{\\stockwidth}{1.5pt}{}
 %%\\makeoddfoot  {mystyle}{}{}{}
 %%\\makeevenfoot {mystyle}{}{}{}
 
@@ -99,15 +101,12 @@
   \\createplainmark {lot} {both} {\\listtablename}
   \\createplainmark {bib} {both} {\\bibname}
   \\createplainmark {index} {both} {\\indexname}
-  \\createplainmark {glossary} {both} {\\glossaryname}
+  %%\\createplainmark {glossary} {both} {\\glossaryname}
 }
 \\makeatother
 \\setsecnumdepth{subsubsection}
 
-\\pagestyle{mystyle}
-
-\\usepackage[right,modulo]{lineno}
-\\linenumbers")
+\\pagestyle{mystyle}")
 
            ;;"paperwidth=15cm,paperheight=20cm,textwidth=15cm,textheight=20cm,showframe,portrait"
            ;;"\\usepackage[top=13mm,bottom=5mm,left=5mm,right=10mm,headsep=2mm,paperwidth=20cm,paperheight=15cm,textwidth=20cm,textheight=15cm,showframe,landscape]{geometry}"
@@ -120,7 +119,23 @@
 \\setulmarginsandblock{*}{15mm}{*}
 \\settypeblocksize{18cm}{13.75cm}{*}
 \\checkandfixthelayout
-\\fixpdflayout")
+\\fixpdflayout
+
+\\usepackage[right,modulo]{lineno}
+\\linenumbers")
+                           ("portrait-print"  . "
+\\setstocksize{297mm}{210mm}
+\\settrimmedsize{297mm}{210mm}{*}
+\\settrims{0mm}{0mm}
+\\setheadfoot{14pt}{0mm}
+\\setlrmarginsandblock{*}{20mm}{*}
+\\setulmarginsandblock{*}{20mm}{*}
+\\settypeblocksize{25cm}{16cm}{*}
+\\checkandfixthelayout
+\\fixpdflayout
+
+\\usepackage[right,modulo]{lineno}
+\\linenumbers")
                            ("landscape" . "
 \\setstocksize{15cm}{20cm}
 \\settrimmedsize{15cm}{20cm}{*}
@@ -130,18 +145,42 @@
 \\setulmarginsandblock{*}{15mm}{*}
 \\settypeblocksize{13.2cm}{18.5cm}{*}
 \\checkandfixthelayout
-\\fixpdflayout")))
+\\fixpdflayout
+
+\\usepackage[right,modulo]{lineno}
+\\linenumbers")
+                           ("landscape-margin" . "
+\\setstocksize{15cm}{20cm}
+\\settrimmedsize{15cm}{20cm}{*}
+\\settrims{0mm}{0mm}
+\\setheadfoot{14pt}{0mm}
+\\setlrmarginsandblock{6mm}{35mm}{*}
+\\setulmarginsandblock{11mm}{4mm}{*}
+\\settypeblocksize{13.9cm}{15.5cm}{*}
+\\setmarginnotes{2mm}{35mm}{1mm}
+\\checkandfixthelayout[fixed]
+\\fixpdflayout
+
+\\renewcommand{\\sideparfont}{\\footnotesize\\selectfont}
+
+\\usepackage[left,modulo]{lineno}
+\\renewcommand{\\makeLineNumber}{\\llap{\\linenumberfont\\rlap{\\LineNumber}\\hspace{5mm}}}
+\\linenumbers")
+                           ("bibliography" . "\\pagestyle{empty}")))
            (document-t-m '(("portrait"  . "11pt")
-                           ("landscape" . "12pt,extrafontsizes"))))
-       (dolist (class '("portrait" "landscape"))
+                           ("portrait-print" . "11pt")
+                           ("landscape" . "12pt") ;; extrafontsizes
+                           ("landscape-margin" . "10pt")
+                           ("bibliography" . "9pt"))))
+       (dolist (class '("portrait" "portrait-print" "landscape" "landscape-margin" "bibliography"))
          (let ((geometry-header (cdr (assoc class geometry-t-m)))
                (document-options (cdr (assoc class document-t-m))))
            (add-to-list 'org-latex-classes
                         `(,class
                           ,(s-lex-format
                             "\\documentclass[oneside,${document-options}]{memoir}\n
-${geometry-header}\n
 ${default-headers}\n
+${geometry-header}\n
 [NO-DEFAULT-PACKAGES]
 [NO-PACKAGES]")
                     ("\\chapter{%s}" . "\\chapter*{%s}")
