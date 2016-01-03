@@ -9,6 +9,10 @@
        'cider.nrepl/cider-middleware
        'refactor-nrepl.middleware/wrap-refactor)
 
+(merge-env!
+ :mirrors {#"clojars" {:name "clojars mirror"
+                       :url "https://clojars-mirror.tcrawley.org/repo/"}})
+
 (set-env! :dependencies '[[boot-deps "0.1.6"]])
 (require '[boot-deps :refer [ancient]])
 
