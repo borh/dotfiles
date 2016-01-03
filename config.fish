@@ -6,12 +6,12 @@ set -x PAGER less
 
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
 
-envoy -t gpg-agent -a id_ecdsa.osaka
-envoy -t gpg-agent -a id_rsa.bitbucket
-envoy -t gpg-agent -a id_rsa.github
-envoy -t gpg-agent -a id_rsa.gitlab
-envoy -t gpg-agent -a id_rsa
-source (envoy -pf)
+# envoy -t gpg-agent -a id_ecdsa.osaka
+# envoy -t gpg-agent -a id_rsa.bitbucket
+# envoy -t gpg-agent -a id_rsa.github
+# envoy -t gpg-agent -a id_rsa.gitlab
+# envoy -t gpg-agent -a id_rsa
+# source (envoy -pf)
 
 #function run_gpg-agent
 #    if [ -x /usr/bin/gpg-agent ]
