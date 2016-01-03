@@ -1,5 +1,6 @@
 (eval-after-load "cider-mode"
   '(progn
+     (require 'clj-refactor)
      (dolist
          (hook '(clojure-mode-hook
                  cider-nrepl-mode-hook
@@ -8,6 +9,8 @@
        (add-hook hook
                  '(lambda ()
                     (cider-mode t)
+                    (clj-refactor-mode 1)
+                    (yas-minor-mode 1)
                     (auto-complete-mode t)
                     (rainbow-delimiters-mode t)
                     (smartparens-strict-mode t))))
