@@ -41,6 +41,8 @@
 
      (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
 
+     (define-key cider-repl-mode-map (kbd "C-c M-o") 'cider-repl-clear-buffer)
+
      ;; (defun repl-reset ()
      ;;   (interactive)
      ;;   (save-some-buffers)
