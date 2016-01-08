@@ -8,10 +8,19 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
+
+;; Global to download and load all packages defined with use-package.
+(setq use-package-always-ensure t)
+
 ;; Add in your own as you wish:
 (defvar
   my-packages
   '(auto-complete exec-path-from-shell s
+    use-package
     ;; clojure related
     clojure-mode
     rainbow-delimiters rainbow-mode rainbow-identifiers
