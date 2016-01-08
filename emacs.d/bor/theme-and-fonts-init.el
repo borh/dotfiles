@@ -1,7 +1,17 @@
+;; Load color scheme in console and GUI modes
+(load-theme 'sanityinc-tomorrow-night t)
+
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 (if (display-graphic-p)
     (progn
       (scroll-bar-mode -1)
-      (load-theme 'sanityinc-tomorrow-night t)
+
       ;;(load-theme 'material t)
       ;;(setq show-paren-style 'expression)
       ;;(set-default-font "Envy Code R 13")
@@ -46,17 +56,34 @@
       ;; # 作成されない現象への対処
       (set-face-font 'default "fontset-myfonts")
 
-      (setq locale-coding-system 'utf-8)
-      (set-terminal-coding-system 'utf-8)
-      (set-buffer-file-coding-system 'utf-8)
-      (set-keyboard-coding-system 'utf-8)
-      (set-selection-coding-system 'utf-8)
-      (prefer-coding-system 'utf-8)))
+      ;; (let ((alist '((33 . ".\\(?:\\(?:==\\)\\|[!=]\\)")
+      ;;                (35 . ".\\(?:[(?[_{]\\)")
+      ;;                (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+      ;;                (42 . ".\\(?:\\(?:\\*\\*\\)\\|[*/]\\)")
+      ;;                (43 . ".\\(?:\\(?:\\+\\+\\)\\|\\+\\)")
+      ;;                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+      ;;                ;;(46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=]\\)")
+      ;;                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+      ;;                (58 . ".\\(?:[:=]\\)")
+      ;;                (59 . ".\\(?:;\\)")
+      ;;                (60 . ".\\(?:\\(?:!--\\)\\|\\(?:\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[/<=>|-]\\)")
+      ;;                (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+      ;;                (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+      ;;                (63 . ".\\(?:[:=?]\\)")
+      ;;                (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+      ;;                (94 . ".\\(?:=\\)")
+      ;;                (123 . ".\\(?:-\\)")
+      ;;                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+      ;;                (126 . ".\\(?:[=@~-]\\)"))))
+      ;;   (dolist (char-regexp alist)
+      ;;     (set-char-table-range composition-function-table (car char-regexp)
+      ;;                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
+      ))
 
 (dolist (hook '(erc-mode-hook
-        LaTeX-mode-hook
-        edit-server-start-hook
-        markdown-mode-hook))
+                LaTeX-mode-hook
+                edit-server-start-hook
+                markdown-mode-hook))
   (add-hook hook (lambda () (variable-pitch-mode t))))
 
 ;; TODO check if this fixes slow font rendering
