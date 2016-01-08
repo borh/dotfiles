@@ -84,3 +84,8 @@ With a prefix argument, insert a newline above the current line."
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (local-set-key (kbd "C-x x") 'eval-region-or-buffer)))
+
+(global-set-key (kbd "M--") 'shrink-window-horizontally)
+(global-set-key (kbd "M-=") 'enlarge-window-horizontally)
+;; (global-set-key (kbd "-<down>") 'shrink-window)
+;; (global-set-key (kbd "-<up>") 'enlarge-window)
