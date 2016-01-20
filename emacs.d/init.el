@@ -71,7 +71,8 @@
     nix-mode company-nixos-options
     sql-indent format-sql
     ;;ansible ;;-> yasnippets error
-    ;; nxml-mode
+    nxml-mode
+    html5-schema
     ;; flymake
     flymake-coffee flymake-css flymake-sass flymake-jshint
     flymake-sass
