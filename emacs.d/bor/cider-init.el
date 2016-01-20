@@ -45,15 +45,15 @@
 
      (define-key cider-repl-mode-map (kbd "C-c M-o") 'cider-repl-clear-buffer)
 
-     ;; (defun repl-reset ()
-     ;;   (interactive)
-     ;;   (save-some-buffers)
-     ;;   (with-current-buffer (cider-current-repl-buffer)
-     ;;     (goto-char (point-max))
-     ;;     (insert "(user/reset)")
-     ;;     (cider-repl-return)))
-     ;;
-     ;; (global-set-key (kbd "C-c C-l") cider-repl-reset)
+     (defun cider-repl-reset ()
+       (interactive)
+       (save-some-buffers)
+       (with-current-buffer (cider-current-repl-buffer)
+         (goto-char (point-max))
+         (insert "(user/reset)")
+         (cider-repl-return)))
+
+     (global-set-key (kbd "M-r") 'cider-repl-reset)
 
      ;; Help with alignment
      (require 'align-cljlet)))
