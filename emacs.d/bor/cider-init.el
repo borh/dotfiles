@@ -27,7 +27,7 @@
 
      (setq cider-popup-stacktraces t)
      (setq cider-popup-stacktraces-in-repl t)
-     (setq cider-stacktrace-default-filters '(tooling dup))
+     (setq cider-stacktrace-default-filters '(tooling dup repl))
 
      (setq cider-auto-select-error-buffer t)
      (setq cider-stacktrace-default-filters nil)
@@ -35,6 +35,8 @@
      (setq cider-repl-toggle-print-length-limiting t)
      (setq cider-repl-print-length 100)
      (setq cider-repl-toggle-pretty-printing t)
+
+     (setq cider-overlays-use-font-lock t)
 
      (add-hook 'cider-repl-mode-hook #'company-mode)
      (add-hook 'cider-mode-hook #'company-mode)
