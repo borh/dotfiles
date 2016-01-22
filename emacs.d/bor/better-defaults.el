@@ -74,8 +74,8 @@
         apropos-do-all t
         mouse-yank-at-point t
         save-place-file (concat user-emacs-directory "places")
-        backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                                 "backups"))))
+        backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
+        auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "autosaves") t)))
 
   (global-auto-revert-mode t))
 
