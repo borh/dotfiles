@@ -53,7 +53,7 @@
          (insert "(user/reset)")
          (cider-repl-return)))
 
-     (global-set-key (kbd "M-r") 'cider-repl-reset)
+     (define-key cider-repl-mode-map (kbd "M-r") 'cider-repl-reset)
 
      ;; Help with alignment
      (require 'align-cljlet)))
