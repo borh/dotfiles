@@ -94,6 +94,7 @@
     org-gcal org-mime org-pandoc ox-pandoc org-tracktable
     ox-impress-js ox-reveal
     org-dashboard org-multiple-keymap org-alert org-wc
+    cl-generic ;; needed for org-store-link to function for mu4e
     htmlize
     ac-math
     ac-mozc
