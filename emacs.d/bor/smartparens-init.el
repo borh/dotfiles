@@ -11,7 +11,7 @@
 (define-key sp-keymap (kbd "C-M-<right>") 'sp-backward-barf-sexp)
 
 (define-key sp-keymap (kbd "C-k") 'sp-kill-sexp)
-(define-key sp-keymap (kbd "M-w") 'sp-copy-sexp)
+;;(define-key sp-keymap (kbd "M-w") 'sp-copy-sexp)
 
 (define-key sp-keymap (kbd "C-<backspace>") 'sp-backward-kill-word)
 (define-key sp-keymap (kbd "M-d") 'sp-kill-word)
