@@ -74,11 +74,11 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+## toggle tiling / floating
+#bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+## change focus between tiling / floating windows
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -155,13 +155,12 @@ bar {
 }
 
 assign [class="emacs"] → 2
-assign [class="firefox"] → 3
+assign [class="firefox-developer-edition"] → 3
 
 exec --no-startup-id i3-msg 'exec dropbox; exec dbus-launch ibus-daemon'
 exec --no-startup-id i3-msg 'exec feh --bg-scale Dropbox/Wallpapers/lake_mountains_grass_sky_summer_90415_3840x2160.jpg'
 exec --no-startup-id i3-msg 'workspace 1; exec konsole'
-exec --no-startup-id i3-msg 'workspace 2; exec emacs'
-exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec konsole'
 exec --no-startup-id i3-msg 'workspace 4; exec dolphin; exec dolphin'
 
 # KDE compatibility
