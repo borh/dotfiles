@@ -47,3 +47,5 @@
 (require 'ox-reveal)
 (setq org-reveal-root "file:///home/bor/Dropbox/Org/reveal.js-3.2.0/")
 (setq org-reveal-hlevel 2)
+
+(setq org-src-fontify-natively t)
