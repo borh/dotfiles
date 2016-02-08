@@ -9,4 +9,4 @@
 (global-set-key (kbd "M-SPC") 'other-window) ; cursor to other pane
 (global-set-key (kbd "M-0") 'delete-window) ; close current pane
 
-(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key (kbd "C-w") 'backward-kill-word)

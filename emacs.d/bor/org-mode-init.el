@@ -6,9 +6,9 @@
 (set-register ?a (cons 'file "~/Dropbox/Org/Administration.org"))
 (set-register ?p (cons 'file "~/Dropbox/Org/Private.org"))
 
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-c\C-l" 'org-insert-link)
-(global-set-key "\C-c\C-o" 'org-open-at-point-global)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c C-l") 'org-insert-link)
+(global-set-key (kbd "C-c C-o") 'org-open-at-point-global)
 (global-set-key (kbd "<f1>") 'org-agenda)
 (global-set-key (kbd "<f3>") 'calendar)
 (global-set-key (kbd "<f12>") 'org-clock-goto)
