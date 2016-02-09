@@ -5,7 +5,7 @@
         :dependencies [[fipp "0.6.4"]
                        [table "0.5.0"]
                        [criterium "0.4.3"]
-                       [acyclic/squiggly-clojure "0.1.4"]
+                       [acyclic/squiggly-clojure "0.1.5"]
                        [org.clojure/tools.nrepl "0.2.12"]
                        [cider/cider-nrepl "0.11.0-SNAPSHOT" :exclusions [org.clojure/java.classpath]]]
         :plugins [[lein-typed "0.3.5"]
@@ -18,7 +18,7 @@
                   [lein-bikeshed "0.2.0"]
                   [lein-ancient "0.6.8" :exclusions [org.clojure/tools.reader org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
-                  [refactor-nrepl "2.0.0-SNAPSHOT" :exclusions [org.clojure/tools.reader]]
+                  [refactor-nrepl "2.0.0" :exclusions [org.clojure/tools.reader]]
                   [cider/cider-nrepl "0.11.0-SNAPSHOT"]]
         :repl-options {:nrepl-middleware
                        [cider.nrepl.middleware.apropos/wrap-apropos
