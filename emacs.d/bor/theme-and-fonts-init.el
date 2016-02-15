@@ -78,7 +78,9 @@
       ;;   (dolist (char-regexp alist)
       ;;     (set-char-table-range composition-function-table (car char-regexp)
       ;;                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
-      ))
+      )
+  ;; Fixes colors in terminal under some environments.
+  (tty-run-terminal-initialization (selected-frame) "xterm"))
 
 (dolist (hook '(erc-mode-hook
                 LaTeX-mode-hook
