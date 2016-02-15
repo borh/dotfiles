@@ -2,10 +2,11 @@
 
 (swap! boot.repl/*default-dependencies*
        concat '[[cider/cider-nrepl "0.11.0-SNAPSHOT"]
-                [refactor-nrepl "2.0.0-SNAPSHOT"]])
+                [refactor-nrepl "2.2.0-SNAPSHOT"]])
 
 (swap! boot.repl/*default-middleware*
        conj
+       ;;'cemerick.piggieback/wrap-cljs-repl
        'cider.nrepl/cider-middleware
        'refactor-nrepl.middleware/wrap-refactor)
 
