@@ -6,6 +6,11 @@ set -x PAGER less
 
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
 
+set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
+setxkbmap -option ctrl:nocaps
+
+set -x XDG_CURRENT_DESKTOP kde
+
 # envoy -t gpg-agent -a id_ecdsa.osaka
 # envoy -t gpg-agent -a id_rsa.bitbucket
 # envoy -t gpg-agent -a id_rsa.github
