@@ -2,7 +2,8 @@
 
 (swap! boot.repl/*default-dependencies*
        concat '[[cider/cider-nrepl "0.11.0-SNAPSHOT"]
-                [refactor-nrepl "2.2.0-SNAPSHOT"]])
+                [refactor-nrepl "2.2.0-SNAPSHOT"]
+                [acyclic/squiggly-clojure "0.1.5"]])
 
 (swap! boot.repl/*default-middleware*
        conj
