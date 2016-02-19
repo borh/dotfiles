@@ -4,7 +4,7 @@
                               :url "https://clojars-mirror.tcrawley.org/repo/"}}
         :dependencies [[fipp "0.6.4"]
                        [table "0.5.0"]
-                       [criterium "0.4.3"]
+                       [criterium "0.4.4"]
                        [acyclic/squiggly-clojure "0.1.5"]
                        [org.clojure/tools.nrepl "0.2.12"]
                        [cider/cider-nrepl "0.11.0-SNAPSHOT"]]
