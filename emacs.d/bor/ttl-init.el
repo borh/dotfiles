@@ -19,3 +19,13 @@
           '("\\.n3" . n3-mode)
           '("\\.owl" . n3-mode))
          auto-mode-alist)))
+
+(use-package
+  sparql-mode
+  :config
+  (setq auto-mode-alist
+        (append
+         (list
+          '("\\.sparql" . sparql-mode)
+          '("\\.rq" . sparql-mode))
+         auto-mode-alist)))
