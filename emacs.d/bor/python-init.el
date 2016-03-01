@@ -1,2 +1,4 @@
 (use-package
-  elpy)
+  elpy
+  :config
+  (elpy-enable))
