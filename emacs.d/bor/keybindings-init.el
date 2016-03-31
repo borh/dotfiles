@@ -40,7 +40,7 @@ User buffers are those whose name does not start with *."
 
 (global-set-key (kbd "M-a") 'backward-char) ; was indent-new-comment-line
 (global-set-key (kbd "M-o") 'forward-char)  ; was downcase-word
-(global-set-key (kbd "M-u") 'previous-line) ; was tab-to-tab-stop
+;;(global-set-key (kbd "M-u") 'previous-line) ; was tab-to-tab-stop
 (global-set-key (kbd "M-e") 'next-line) ; was kill-sentence
 
 (defun vi-open-line-above ()
