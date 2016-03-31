@@ -9,7 +9,7 @@
       user-mail-address "bor@lang.osaka-u.ac.jp"
       user-full-name  "Bor Hodošček")
 (setq mu4e-compose-signature
-      "Bor Hodošček,\nGraduate School for Language and Culture,\nOsaka University")
+      "Bor Hodošček\nGraduate School of Language and Culture, Osaka University\nbor@lang.osaka-u.ac.jp | osaka@bor.space")
 (setq mu4e-compose-keep-self-cc 0)
 
 ;; allow for updating mail using 'U' in the main view:
@@ -23,9 +23,9 @@
       smtpmail-auth-credentials    "~/.netrc"
       smtpmail-smtp-service        465
 
-      mu4e-sent-folder   "/Osaka/INBOX.Sent"       ;; sent messages
-      mu4e-drafts-folder "/Osaka/INBOX.Drafts"     ;; unfinished messages
-      mu4e-trash-folder  "/Osaka/INBOX.Trash"      ;; trashed messages
+      mu4e-sent-folder   "/Fastmail/INBOX.Sent"       ;; sent messages
+      mu4e-drafts-folder "/Fastmail/INBOX.Drafts"     ;; unfinished messages
+      mu4e-trash-folder  "/Fastmail/INBOX.Trash"      ;; trashed messages
       mu4e-refile-folder "/archive"    ;; saved messages
       ;; if you need offline mode, set these -- and create the queue dir
       ;; with 'mu mkdir', i.e.. mu mkdir /home/user/Mail/queue
