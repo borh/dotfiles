@@ -2,7 +2,7 @@
                                           :creds :gpg}]]
         :mirrors {#"clojars" {:name "clojars mirror"
                               :url "https://clojars-mirror.tcrawley.org/repo/"}}
-        :dependencies [[fipp "0.6.4"]
+        :dependencies [[fipp "0.6.5"]
                        [table "0.5.0"]
                        [criterium "0.4.4"]
                        [acyclic/squiggly-clojure "0.1.5"]
@@ -16,7 +16,7 @@
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
                   [jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
                   [lein-bikeshed "0.3.0"]
-                  [lein-ancient "0.6.9" :exclusions [org.clojure/clojure]]
+                  [lein-ancient "0.6.10" :exclusions [org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
                   [refactor-nrepl "2.2.0"]
                   [cider/cider-nrepl "0.11.0"]]
