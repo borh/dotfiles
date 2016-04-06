@@ -41,11 +41,17 @@
 ;;           (lambda ()
 ;;             (org-multiple-keymap-minor-mode 0)))
 
-(require 'org-alert)
-(setq alert-default-style 'libnotify)
+(use-package org-alert
+  :config
+  (setq alert-default-style 'libnotify))
 
-(require 'ox-reveal)
-(setq org-reveal-root "file:///home/bor/Dropbox/Org/reveal.js-3.2.0/")
-(setq org-reveal-hlevel 2)
+(use-package ox-reveal
+  :config
+  (setq org-reveal-root "file:///home/bor/Dropbox/Org/reveal.js-3.2.0/")
+  (setq org-reveal-hlevel 2)
 
-(setq org-src-fontify-natively t)
+  (setq org-src-fontify-natively t))
+
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
