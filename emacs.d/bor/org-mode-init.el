@@ -41,6 +41,8 @@
 ;;           (lambda ()
 ;;             (org-multiple-keymap-minor-mode 0)))
 
+(setq org-export-in-background t)
+
 (use-package org-alert
   :config
   (setq alert-default-style 'libnotify))
