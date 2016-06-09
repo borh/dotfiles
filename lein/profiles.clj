@@ -7,10 +7,10 @@
                        [criterium "0.4.4"]
                        [acyclic/squiggly-clojure "0.1.5"]
                        [org.clojure/tools.nrepl "0.2.12"]
-                       [cider/cider-nrepl "0.11.0"]]
+                       [cider/cider-nrepl "0.12.0"]]
         :plugins [[lein-typed "0.3.5"]
                   [lein-clojars "0.9.1"]
-                  [lein-cljfmt "0.5.0"]
+                  [lein-cljfmt "0.5.3"]
                   ;;[venantius/yagni "0.1.4" :exclusions [org.clojure/clojure org.clojure/tools.logging]]
                   [lein-collisions "0.1.4" :exclusions [org.clojure/clojure]]
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
@@ -19,7 +19,7 @@
                   [lein-ancient "0.6.10" :exclusions [org.clojure/clojure]]
                   [lein-localrepo "0.5.3"]
                   [refactor-nrepl "2.2.0"]
-                  [cider/cider-nrepl "0.11.0"]]
+                  [cider/cider-nrepl "0.12.0"]]
         :repl-options {:nrepl-middleware
                        [cider.nrepl.middleware.apropos/wrap-apropos
                         cider.nrepl.middleware.classpath/wrap-classpath
