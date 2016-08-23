@@ -58,3 +58,52 @@
 (use-package org-bullets
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package ox-twbs
+  :config
+  ())
+
+;; 1. hook flyspell into org-mode
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'flyspell-buffer)
+
+;; 2. ignore message flags
+(setq flyspell-issue-message-flag nil)
+
+;; 3. ignore tex commands
+(add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
+(defun flyspell-ignore-tex ()
+  (interactive)
+  (set (make-variable-buffer-local 'ispell-parser) 'tex))
+(add-hook 'org-mode-hook 'flyspell-ignore-tex)
+
+(require 'ox-publish)
+(setq org-publish-project-alist
+      '(("org-html"
+         :base-directory "~/Dropbox/Org/nlp/"
+         :base-extension "org" ;; "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Dropbox/Org/Publish/nlp/"
+         :recursive t
+         ;;:html-doctype "html5"
+         ;;:html-html5-fancy t
+         :html-head  "<link rel=\"stylesheet\" href=\"./bower_components/bootstrap/dist/css/bootstrap.min.css\" type=\"text/css\"/>
+<link rel=\"stylesheet\" href=\"./css/styles.css\" type=\"text/css\"/>
+<link rel=\"stylesheet\" href=\"./css/equity-concourse.css\" type=\"text/css\"/>\n
+<script src=\"./bower_components/jquery/dist/jquery.min.js\"></script>
+<script src=\"./bower_components/tether/dist/js/tether.min.js\"></script>
+<script src=\"./bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>"
+         ;; :html-head-extra "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
+         ;;    <script src=\"/js/magic.js\"></script>
+         ;;    <link rel=\"icon\" href=\"/img/dragon.svg\">
+         ;;    <link rel=\"shortcut icon\" href=\"/img/dragon-head.png\">
+         ;;    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+         :publishing-function org-twbs-publish-to-html ;;org-html-publish-to-html ;;org-publish-attachment
+         )
+        ("org-static"
+         :base-directory "~/Dropbox/Org/nlp/"
+         :base-extension "css\\|woff2\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/Dropbox/Org/Publish/nlp/"
+         :recursive t
+         :publishing-function org-publish-attachment
+         )
+        ("org" :components ("org-html" "org-static"))))
