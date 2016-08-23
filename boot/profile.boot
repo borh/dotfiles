@@ -13,7 +13,7 @@
   (require 'boot.repl)
   (swap! @(resolve 'boot.repl/*default-dependencies*)
          concat '[[org.clojure/tools.nrepl "0.2.12"]
-                  [cider/cider-nrepl "0.12.0"]
+                  [cider/cider-nrepl "0.14.0-SNAPSHOT"]
                   [refactor-nrepl "2.2.0"]
                   [acyclic/squiggly-clojure "0.1.6"]])
   (swap! @(resolve 'boot.repl/*default-middleware*)
