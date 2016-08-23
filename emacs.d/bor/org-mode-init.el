@@ -11,6 +11,7 @@
 (global-set-key (kbd "C-c C-o") 'org-open-at-point-global)
 (global-set-key (kbd "<f1>") 'org-agenda)
 (global-set-key (kbd "<f3>") 'calendar)
+(global-set-key (kbd "<f5>") 'org-publish)
 (global-set-key (kbd "<f12>") 'org-clock-goto)
 
 (setq org-default-notes-file (concat org-directory "/Notes.org"))
