@@ -14,6 +14,8 @@
 (global-set-key (kbd "<f5>") 'org-publish)
 (global-set-key (kbd "<f12>") 'org-clock-goto)
 
+(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+
 (setq org-default-notes-file (concat org-directory "/Notes.org"))
 (define-key global-map (kbd "<f2>") 'org-capture)
 
