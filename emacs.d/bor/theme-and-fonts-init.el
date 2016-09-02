@@ -8,84 +8,78 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(defun make-cjk-fontset (font-name western-font-name eastern-font-name font-size scale-factor)
+  "Make a new font combined from WESTERN-FONT-NAME (ascii) and EASTERN-FONT-NAME (Japanese/CJK) font of given FONT-SIZE.  SCALE-FACTOR is the size scale between the fonts, typically making the eastern one smaller."
+  (let* ((font (format "%s-%d:weight=normal:slant=normal" western-font-name font-size))
+         (fontspec (font-spec :family western-font-name))
+         (jp-fontspec (font-spec :family eastern-font-name))
+         (fsn (create-fontset-from-ascii-font font nil font-name)))
+    (set-fontset-font fsn 'japanese-jisx0213.2004-1 jp-fontspec)
+    (set-fontset-font fsn 'japanese-jisx0213-2 jp-fontspec)
+    (set-fontset-font fsn 'katakana-jisx0201 jp-fontspec)
+    (set-fontset-font fsn '(#x0080 . #x024F) fontspec)
+    (set-fontset-font fsn '(#x0370 . #x03FF) fontspec)
+
+    (dolist (elt '(((concat
+                     ".*"
+                     (downcase
+                      (replace-regexp-in-string " " "-" eastern-font-name nil t))
+                     ".*") . scale-factor)
+                   ((concat
+                     ".*"
+                     (downcase
+                      (replace-regexp-in-string " " "-" western-font-name nil t))
+                     ".*") . 1.0)))
+      (add-to-list 'face-font-rescale-alist elt))
+    fsn))
+
 (if (display-graphic-p)
     (progn
       (scroll-bar-mode -1)
 
-      ;;(load-theme 'material t)
-      ;;(setq show-paren-style 'expression)
-      ;;(set-default-font "Envy Code R 13")
-      ;;(set-default-font "Ricty 15")
-      ;;(set-default-font "Source Code Pro Light 13")
-      ;; https://gist.github.com/yoshinari-nomura/3465571
-      ;; フォントセットを作る
-      (let* ((fontset-name "myfonts") ; フォントセットの名前
-             (size 18) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
+      (make-cjk-fontset "fixed" "Fira Code" "Hiragino Kaku Gothic Pro" 14 0.8)
+      (make-cjk-fontset "variable" "Equity Text B" "Hiragino Mincho Pro W3" 14 0.7)
 
-             ;; ASCIIフォント
-             ;;(asciifont "Ricty Discord")
-             (asciifont "Fantasque Sans Mono")
-
-             ;; 日本語フォント
-             ;;(jpfont "Hiragino Kaku Gothic Pro")
-             ;;(jpfont "Hiragino Mincho Pro W3")
-             (jpfont "Ricty Discord")
-
-             (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
-             (fontspec (font-spec :family asciifont))
-             (jp-fontspec (font-spec :family jpfont))
-             (fsn (create-fontset-from-ascii-font font nil fontset-name)))
-        (set-fontset-font fsn 'japanese-jisx0213.2004-1 jp-fontspec)
-        (set-fontset-font fsn 'japanese-jisx0213-2 jp-fontspec)
-        (set-fontset-font fsn 'katakana-jisx0201 jp-fontspec) ; 半角カナ
-        (set-fontset-font fsn '(#x0080 . #x024F) fontspec) ; 分音符付きラテン
-        (set-fontset-font fsn '(#x0370 . #x03FF) fontspec) ; ギリシャ文字
-        )
+      ;; ;; https://gist.github.com/yoshinari-nomura/3465571
+      ;; ;; フォントセットを作る
+      ;; (let* ((fontset-name "myfonts") ; フォントセットの名前
+      ;;        (size 14) ; ASCIIフォントのサイズ [9/10/12/14/15/17/19/20/...]
+      ;;
+      ;;        ;; ASCIIフォント
+      ;;        ;;(asciifont "Ricty Discord")
+      ;;        ;;(asciifont "Fantasque Sans Mono")
+      ;;        (asciifont "Fira Code")
+      ;;        (asciifont-proportional "Equity Text B")
+      ;;
+      ;;        ;; 日本語フォント
+      ;;        (jpfont "Hiragino Kaku Gothic Pro")
+      ;;        (jpfont-proportional "Hiragino Mincho Pro W3")
+      ;;        ;;(jpfont "Ricty Discord")
+      ;;
+      ;;        (font (format "%s-%d:weight=normal:slant=normal" asciifont size))
+      ;;        (font-proportional (format "%s-%d:weight=normal:slant=normal" asciifont size))
+      ;;        (fontspec (font-spec :family asciifont))
+      ;;        (jp-fontspec (font-spec :family jpfont))
+      ;;        (fsn (create-fontset-from-ascii-font font nil fontset-name)))
+      ;;   (set-fontset-font fsn 'japanese-jisx0213.2004-1 jp-fontspec)
+      ;;   (set-fontset-font fsn 'japanese-jisx0213-2 jp-fontspec)
+      ;;   (set-fontset-font fsn 'katakana-jisx0201 jp-fontspec) ; 半角カナ
+      ;;   (set-fontset-font fsn '(#x0080 . #x024F) fontspec) ; 分音符付きラテン
+      ;;   (set-fontset-font fsn '(#x0370 . #x03FF) fontspec) ; ギリシャ文字
+      ;;   )
 
       ;; デフォルトのフレームパラメータでフォントセットを指定
-      (add-to-list 'default-frame-alist '(font . "fontset-myfonts"))
-
-      ;; Disable when using Ricty Discord:
-      ;; ;; フォントサイズの比を設定
-      ;; (dolist (elt '(("^-apple-hiragino.*" . 1.2)
-      ;;                (".*source-code.*" . 0.9)))
-      ;;   (add-to-list 'face-font-rescale-alist elt))
-
-      ;; デフォルトフェイスにフォントセットを設定
-      ;; # これは起動時に default-frame-alist に従ったフレームが
-      ;; # 作成されない現象への対処
-      (set-face-font 'default "fontset-myfonts")
-
-      ;; (let ((alist '((33 . ".\\(?:\\(?:==\\)\\|[!=]\\)")
-      ;;                (35 . ".\\(?:[(?[_{]\\)")
-      ;;                (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
-      ;;                (42 . ".\\(?:\\(?:\\*\\*\\)\\|[*/]\\)")
-      ;;                (43 . ".\\(?:\\(?:\\+\\+\\)\\|\\+\\)")
-      ;;                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-      ;;                ;;(46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=]\\)")
-      ;;                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
-      ;;                (58 . ".\\(?:[:=]\\)")
-      ;;                (59 . ".\\(?:;\\)")
-      ;;                (60 . ".\\(?:\\(?:!--\\)\\|\\(?:\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[/<=>|-]\\)")
-      ;;                (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
-      ;;                (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
-      ;;                (63 . ".\\(?:[:=?]\\)")
-      ;;                (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
-      ;;                (94 . ".\\(?:=\\)")
-      ;;                (123 . ".\\(?:-\\)")
-      ;;                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-      ;;                (126 . ".\\(?:[=@~-]\\)"))))
-      ;;   (dolist (char-regexp alist)
-      ;;     (set-char-table-range composition-function-table (car char-regexp)
-      ;;                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
-      )
+      (add-to-list 'default-frame-alist '(font . "fontset-fixed"))
+      (set-face-font 'default "fontset-fixed")
+      (set-face-font 'variable-pitch "fontset-variable"))
   ;; Fixes colors in terminal under some environments.
   (tty-run-terminal-initialization (selected-frame) "xterm"))
 
 (dolist (hook '(erc-mode-hook
                 LaTeX-mode-hook
                 edit-server-start-hook
-                markdown-mode-hook))
+                markdown-mode-hook
+                org-mode-hook))
   (add-hook hook (lambda () (variable-pitch-mode t))))
 
 ;; TODO check if this fixes slow font rendering
