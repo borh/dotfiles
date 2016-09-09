@@ -6,7 +6,7 @@
 (require '[boot-deps :refer [ancient]])
 
 (set-env! :dependencies '[[criterium "0.4.4" :exclusions [org.clojure/clojure]]
-                          [fipp "0.6.4"]])
+                          [fipp "0.6.6"]])
 
 (deftask cider "CIDER profile"
   []
