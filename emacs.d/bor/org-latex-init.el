@@ -271,6 +271,22 @@ ${geometry-header}\n
                   `("beamer"
                     ,(s-lex-format "\\documentclass[presentation]{beamer}\n
 ${default-headers}\n
+\\usepackage{tcolorbox}
+
+% These options will be applied to all `tcolorboxes`
+\\tcbset{%
+    noparskip,
+    colback=gray!10, %background color of the box
+    colframe=gray!40, %color of frame and title background
+    coltext=black, %color of body text
+    coltitle=black, %color of title text
+    fonttitle=\\bfseries,
+    alerted/.style={coltitle=white,
+                     colframe=uipoppy},
+    example/.style={coltitle=black,
+                     colframe=green!20,
+                     colback=green!5},
+    }
 [NO-DEFAULT-PACKAGES]
 [NO-PACKAGES]")
                     ("\\section{%s}" . "\\section*{%s}")
