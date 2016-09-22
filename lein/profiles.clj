@@ -1,7 +1,7 @@
 {:user {:deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                           :creds :gpg}]]
-        :mirrors {#"clojars" {:name "clojars mirror"
-                              :url "https://clojars-mirror.tcrawley.org/repo/"}}
+        #_:mirrors #_{#"clojars" {:name "clojars mirror"
+                                  :url "https://clojars-mirror.tcrawley.org/repo/"}}
         :dependencies [[fipp "0.6.6"]
                        [table "0.5.0"]
                        [criterium "0.4.4"]
