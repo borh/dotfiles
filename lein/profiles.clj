@@ -10,7 +10,7 @@
                        [cider/cider-nrepl "0.14.0-SNAPSHOT"]]
         :plugins [[lein-typed "0.3.5"]
                   [lein-clojars "0.9.1"]
-                  [lein-cljfmt "0.5.3"]
+                  [lein-cljfmt "0.5.5"]
                   ;;[venantius/yagni "0.1.4" :exclusions [org.clojure/clojure org.clojure/tools.logging]]
                   [lein-collisions "0.1.4" :exclusions [org.clojure/clojure]]
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
