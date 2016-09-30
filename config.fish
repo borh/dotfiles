@@ -90,8 +90,7 @@ set -x CHOST "x86_64-pc-linux-gnu"
 set -x GOOS linux
 set -x GOARCH amd64
 set -x GOPATH $HOME/go
-set -x GOBIN $GOPATH/bin
-set -x PATH $GOBIN $PATH
+set -x PATH $GOPATH/bin $PATH
 
 # texlive
 set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
