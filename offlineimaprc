@@ -7,6 +7,10 @@ maxsyncaccounts = 1
 localrepository = Fastmail-Local
 remoterepository = Fastmail-Remote
 status_backend = sqlite
+presynchook  = ~/.offlineimap/maildir-notmuch-sync pre  ~/Mail/Fastmail
+postsynchook = ~/.offlineimap/maildir-notmuch-sync post ~/Mail/Fastmail
+autorefresh = 5
+quick = 5
 
 [Repository Fastmail-Local]
 type = Maildir
