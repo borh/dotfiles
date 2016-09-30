@@ -1,5 +1,9 @@
 ;; Load color scheme in console and GUI modes
-(load-theme 'sanityinc-tomorrow-night t)
+;;(load-theme 'sanityinc-tomorrow-night t)
+(use-package
+  doom-themes
+  :config
+  (load-theme 'doom-one t))
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
