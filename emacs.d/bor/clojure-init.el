@@ -47,6 +47,13 @@
   (use-package
     flyspell
     :config
-    (add-hook 'clojure-mode-hook (lambda ()
-                                   (flyspell-prog-mode)))
-    (flycheck-clojure-setup)))
+    (use-package
+      flycheck-clojure
+      :config
+      ;; (flycheck-clojure-setup)
+      ;; (add-hook 'clojure-mode-hook (lambda ()
+      ;;                                (flyspell-prog-mode)))
+      (use-package
+        flycheck-pos-tip
+        :config
+        (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))))
