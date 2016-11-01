@@ -4,14 +4,19 @@
 
   (setq notmuch-saved-searches
         (quote
-         ((:name "Osaka" :query "tag:INBOX.INBOX.Osaka" :key "o" :sort-order newest-first)
+         ((:name "Inbox Zero" :query "tag:inbox AND tag:unread" :key "z" :sort-order newest-first)
+          (:name "Osaka" :query "tag:INBOX.INBOX.Osaka" :key "o" :sort-order newest-first)
           (:name "Hinoki Project" :query "tag:INBOX.INBOX.Hinoki\ Project" :key "h" :sort-order newest-first)
           (:name "inbox" :query "tag:inbox" :key "i" :sort-order newest-first)
           (:name "unread" :query "tag:unread" :key "u" :sort-order newest-first)
           (:name "flagged" :query "tag:flagged" :key "f" :sort-order newest-first)
           (:name "sent" :query "tag:sent" :key "t" :sort-order newest-first)
           (:name "drafts" :query "tag:draft" :key "d" :sort-order newest-first)
-          (:name "all mail" :query "*" :key "a" :sort-order newest-first))))
+          (:name "all mail" :query "*" :key "a" :sort-order newest-first)))
+        notmuch-always-prompt-for-sender t
+        notmuch-search-oldest-first nil
+        notmuch-show-all-multipart/alternative-parts nil
+        notmuch-show-all-tags-list t)
 
   (require 'org-notmuch)
 
