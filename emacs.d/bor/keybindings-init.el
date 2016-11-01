@@ -89,3 +89,6 @@ With a prefix argument, insert a newline above the current line."
 (global-set-key (kbd "M-=") 'enlarge-window-horizontally)
 ;; (global-set-key (kbd "-<down>") 'shrink-window)
 ;; (global-set-key (kbd "-<up>") 'enlarge-window)
+
+(setq mac-command-modifier 'super
+      mac-option-modifier 'meta)
