@@ -3,7 +3,12 @@
 (use-package
   doom-themes
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one t)
+  ;; brighter source buffers
+  (add-hook 'find-file-hook 'doom-buffer-mode)
+  ;; brighter minibuffer when active
+  (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
+  (setq doom-enable-brighter-comments t))
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
