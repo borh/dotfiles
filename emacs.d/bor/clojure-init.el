@@ -1,4 +1,9 @@
 (use-package
+  inf-clojure
+  :config
+  (setq inf-clojure-program "lumo"))
+
+(use-package
   clojure-mode
   :config
   (setq initial-scratch-message nil) ; *scratch* starts empty
