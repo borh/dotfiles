@@ -1,10 +1,13 @@
 (eval-after-load "ox-latex"
   '(progn
-     (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+     ;; (use-package
+     ;;   cdlatex
+     ;;   :config
+     ;;   (add-hook 'org-mode-hook 'turn-on-org-cdlatex))
      (setq org-latex-pdf-process
-      '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "biber %b"
-        "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+           '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+             "biber %b"
+             "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
      (require 's)
      (let ((default-headers "\\usepackage[no-math]{fontspec}
