@@ -1,8 +1,6 @@
 (set-env! :dependencies '[[criterium "0.4.4" :exclusions [org.clojure/clojure] :scope "test"]
                           [fipp "0.6.8" :scope "test"]])
 
-(require '[boot-deps :refer [ancient]])
-
 (deftask cider "CIDER profile"
   []
   (require 'boot.repl)
