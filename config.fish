@@ -1,15 +1,17 @@
-set -x PATH $HOME/local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/bin/core_perl
+set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
 set -x SHELL /bin/bash
 set -x EDITOR /usr/bin/vim
 set -x MAILDIR $HOME/Mail
 set -x PAGER less
-
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
-
-set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
-setxkbmap -option ctrl:nocaps
-
+set -x XDG_RUNTIME_DIR /run/user/(id -u)
 set -x XDG_CURRENT_DESKTOP kde
+
+# set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
+# setxkbmap -option ctrl:nocaps
+
+eval (python3 -m virtualfish)
+# source (conda info --root)/bin/conda.fish
 
 # envoy -t gpg-agent -a id_ecdsa.osaka
 # envoy -t gpg-agent -a id_rsa.bitbucket
@@ -132,6 +134,7 @@ set -x LD_LIBRARY_PATH /usr/lib
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 
+alias pg_top 'sudo -u postgres pg_top'
 alias unidic-mecab "mecab -d /usr/lib64/mecab/dic/unidic -Ochasenu"
 alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab/dic/unidic/dicrc -r /etc/cabocharc-unidic -P UNIDIC"
 alias wombat-tunnel "ssh -nNT -R 4040:localhost:22 wombat"
