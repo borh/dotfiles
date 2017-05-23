@@ -55,6 +55,7 @@ alias top "htop"
 alias vi "vim"
 alias tmux "tmux -2"
 alias y "youtube-dl --prefer-free-formats --no-mtime -t"
+alias y-ios "youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' --no-mtime -t"
 alias pstree "pstree -U"
 
 set -x LANG en_US.utf-8
