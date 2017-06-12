@@ -1,14 +1,23 @@
 ;; Load color scheme in console and GUI modes
-;;(load-theme 'sanityinc-tomorrow-night t)
+;; (load-theme 'sanityinc-tomorrow-night t) ;; <- For console use.
 (use-package
   doom-themes
   :config
-  (load-theme 'doom-one t)
-  ;; brighter source buffers
-  (add-hook 'find-file-hook 'doom-buffer-mode)
-  ;; brighter minibuffer when active
-  (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
-  (setq doom-enable-brighter-comments t))
+  (load-theme 'doom-vibrant t)
+  (doom-themes-visual-bell-config))
+
+(use-package
+  solaire-mode
+  :config
+  (add-hook 'after-change-major-mode-hook #'turn-on-solaire-mode)
+  (add-hook 'after-revert-hook #'turn-on-solaire-mode)
+  (add-hook 'ediff-prepare-buffer-hook #'solaire-mode)
+  (add-hook 'minibuffer-setup-hook #'solaire-mode-in-minibuffer))
+
+(use-package
+  all-the-icons
+  ;; Run M-x all-the-icons-install-fonts
+  )
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
