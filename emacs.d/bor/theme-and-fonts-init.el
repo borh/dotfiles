@@ -9,10 +9,11 @@
 (use-package
   solaire-mode
   :config
-  (add-hook 'after-change-major-mode-hook #'turn-on-solaire-mode)
+  ;; (add-hook 'after-change-major-mode-hook #'turn-on-solaire-mode)
   (add-hook 'after-revert-hook #'turn-on-solaire-mode)
   (add-hook 'ediff-prepare-buffer-hook #'solaire-mode)
-  (add-hook 'minibuffer-setup-hook #'solaire-mode-in-minibuffer))
+  (add-hook 'minibuffer-setup-hook #'solaire-mode-in-minibuffer)
+  )
 
 (use-package
   all-the-icons
