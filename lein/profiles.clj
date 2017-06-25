@@ -4,6 +4,7 @@
                                   :url "https://clojars-mirror.tcrawley.org/repo/"}}
         :dependencies [[org.clojure/tools.nrepl "0.2.12"]
                        [cider/cider-nrepl "0.14.0"]]
+        :plugins [[lein-localrepo "0.5.3"]]
         :repl-options {:nrepl-middleware
                        [cider.nrepl.middleware.apropos/wrap-apropos
                         cider.nrepl.middleware.classpath/wrap-classpath
