@@ -60,7 +60,11 @@
                    (auto-complete-mode t)
                    (rainbow-delimiters-mode t)
                    (smartparens-strict-mode t))))
-    (add-hook 'cider-mode-hook 'eldoc-mode)))
+    (add-hook 'cider-mode-hook 'eldoc-mode))
+
+  (use-package hugsql-ghosts
+    :config
+    (add-hook 'cider-mode-hook 'hugsql-ghosts-install-hook)))
 
 (use-package clojure-mode-extra-font-locking ; Font-locking for Clojure mode
   :ensure t
