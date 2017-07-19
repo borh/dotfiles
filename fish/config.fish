@@ -1,4 +1,4 @@
-set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
+set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/bin/core_perl
 set -x SHELL /bin/bash
 set -x EDITOR /usr/bin/vim
 set -x MAILDIR $HOME/Mail
@@ -7,8 +7,8 @@ set -x SSH_ASKPASS /usr/bin/ksshaskpass
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
 set -x XDG_CURRENT_DESKTOP kde
 
-# set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
-# setxkbmap -option ctrl:nocaps
+set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
+setxkbmap -option ctrl:nocaps
 
 eval (python3 -m virtualfish)
 # source (conda info --root)/bin/conda.fish
@@ -19,6 +19,12 @@ eval (python3 -m virtualfish)
 # envoy -t gpg-agent -a id_rsa.gitlab
 # envoy -t gpg-agent -a id_rsa
 # source (envoy -pf)
+
+# Set GPG TTY
+set -x GPG_TTY (tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 #function run_gpg-agent
 #    if [ -x /usr/bin/gpg-agent ]
@@ -95,11 +101,11 @@ set -x GOARCH amd64
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
 
-# texlive
-set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
-set -x -e MANPATH # unset and get from manpath directly
-set -x MANPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/man (manpath)
-set -x INFOPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/info $INFOPATH
+# # texlive
+# set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
+# set -x -e MANPATH # unset and get from manpath directly
+# set -x MANPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/man (manpath)
+# set -x INFOPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/info $INFOPATH
 
 # Perl
 set -x PATH /usr/bin/vendor_perl $PATH
@@ -121,11 +127,11 @@ set -x MANPATH $HOME/.cabal/share/man $MANPATH
 # ruby gem path
 set -x PATH $PATH (ruby -rubygems -e "puts Gem.user_dir")/bin
 
-# Android
-set -x ANDROID_HOME /opt/android-sdk
-set -x ANDROID_SWT /usr/share/java
-set -x PATH $PATH $ANDROID_HOME/tools
-set -x PATH $PATH /opt/android-sdk/platform-tools
+# # Android
+# set -x ANDROID_HOME /opt/android-sdk
+# set -x ANDROID_SWT /usr/share/java
+# set -x PATH $PATH $ANDROID_HOME/tools
+# set -x PATH $PATH /opt/android-sdk/platform-tools
 # local config
 
 ## Arch Oracle JDK (AUR)
