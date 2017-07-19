@@ -34,6 +34,7 @@
     (describe 'defun)
     (register-handler 'defun)
     (s/fdef 'defun)
+    (fnk 'defun)
     (for-map 2)
     (GET 2)
     (POST 2)
