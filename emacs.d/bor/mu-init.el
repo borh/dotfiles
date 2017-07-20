@@ -1,4 +1,3 @@
-(add-to-list 'load-path "/run/current-system/sw/share/emacs/site-lisp/mu4e")
 (require 'mu4e)
 
 (setq mu4e-maildir "/home/bor/Mail")
@@ -9,7 +8,7 @@
       user-mail-address "bor@lang.osaka-u.ac.jp"
       user-full-name  "Bor Hodošček")
 (setq mu4e-compose-signature
-      "Bor Hodošček\nGraduate School of Language and Culture, Osaka University\nbor@lang.osaka-u.ac.jp | osaka@bor.space")
+      "Bor Hodošček\nGraduate School of Language and Culture, Osaka University\nbor@lang.osaka-u.ac.jp | osaka@bor.space | https://nlp.lang.osaka-u.ac.jp/")
 (setq mu4e-compose-keep-self-cc 0)
 
 ;; allow for updating mail using 'U' in the main view:
@@ -23,9 +22,9 @@
       smtpmail-auth-credentials    "~/.netrc"
       smtpmail-smtp-service        465
 
-      mu4e-sent-folder   "/Fastmail/INBOX.Sent"       ;; sent messages
-      mu4e-drafts-folder "/Fastmail/INBOX.Drafts"     ;; unfinished messages
-      mu4e-trash-folder  "/Fastmail/INBOX.Trash"      ;; trashed messages
+      mu4e-sent-folder   "/Fastmail/Sent"       ;; sent messages
+      mu4e-drafts-folder "/Fastmail/Drafts"     ;; unfinished messages
+      mu4e-trash-folder  "/Fastmail/Trash"      ;; trashed messages
       mu4e-refile-folder "/archive"    ;; saved messages
       ;; if you need offline mode, set these -- and create the queue dir
       ;; with 'mu mkdir', i.e.. mu mkdir /home/user/Mail/queue
