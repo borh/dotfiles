@@ -10,14 +10,14 @@
 # be disabled and audio files will only be accepted over ipc socket (using
 # file:// protocol) or streaming files over an accepted protocol.
 #
-music_directory			"/home/bor/music"
+music_directory			"/home/bor/Music"
 #
 # This setting sets the MPD internal playlist directory. The purpose of this
 # directory is storage for playlists created by MPD. The server will use 
 # playlist files not created by the server but only if they are in the MPD
 # format. This setting defaults to playlist saving being disabled.
 #
-playlist_directory		"/home/bor/mpd/playlists"
+playlist_directory		"/home/bor/.mpd/playlists"
 #
 # This setting sets the location of the MPD database. This file is used to
 # load the database at server start up and store the database while the 
@@ -25,7 +25,7 @@ playlist_directory		"/home/bor/mpd/playlists"
 # MPD to accept files over ipc socket (using file:// protocol) or streaming
 # files over an accepted protocol.
 #
-db_file			"/home/bor/mpd/database"
+db_file			"/home/bor/.mpd/database"
 # 
 # These settings are the locations for the daemon log files for the daemon.
 # These logs are great for troubleshooting, depending on your log_level
@@ -34,7 +34,7 @@ db_file			"/home/bor/mpd/database"
 # The special value "syslog" makes MPD use the local syslog daemon. This
 # setting defaults to logging to syslog, otherwise logging is disabled.
 #
-log_file			"/home/bor/mpd/log"
+log_file			"/home/bor/.mpd/log"
 #
 # This setting sets the location of the file which stores the process ID
 # for use of mpd --kill and some init scripts. This setting is disabled by
@@ -47,7 +47,7 @@ log_file			"/home/bor/mpd/log"
 # it was brought down. This setting is disabled by default and the server 
 # state will be reset on server start up.
 #
-state_file			"/home/bor/mpd/state"
+state_file			"/home/bor/.mpd/state"
 #
 # The location of the sticker database.  This is a database which
 # manages dynamic information attached to songs.
@@ -81,7 +81,7 @@ state_file			"/home/bor/mpd/state"
 bind_to_address		"localhost"
 #
 # And for Unix Socket
-bind_to_address		"/home/bor/mpd/socket"
+bind_to_address		"/home/bor/.mpd/socket"
 #
 # This setting is the TCP port that is desired for the daemon to get assigned
 # to.
@@ -196,16 +196,16 @@ input {
 #
 # An example of an ALSA output:
 #
-audio_output {
-	type		"alsa"
-	name		"My ALSA Device"
-##	device		"hw:0,0"	# optional
-##	format		"44100:16:2"	# optional
-##	mixer_type      "hardware"	# optional
-##	mixer_device	"default"	# optional
-##	mixer_control	"PCM"		# optional
-##	mixer_index	"0"		# optional
-}
+# audio_output {
+# 	type		"alsa"
+# 	name		"My ALSA Device"
+# ##	device		"hw:0,0"	# optional
+# ##	format		"44100:16:2"	# optional
+# ##	mixer_type      "hardware"	# optional
+# ##	mixer_device	"default"	# optional
+# ##	mixer_control	"PCM"		# optional
+# ##	mixer_index	"0"		# optional
+# }
 #
 # An example of an OSS output:
 #
@@ -269,12 +269,12 @@ audio_output {
 #
 # An example of a pulseaudio output (streaming to a remote pulseaudio server)
 #
-#audio_output {
-#	type		"pulse"
-#	name		"My Pulse Output"
-##	server		"remote_server"		# optional
-##	sink		"remote_server_sink"	# optional
-#}
+audio_output {
+	type		"pulse"
+	name		"My Pulse Output"
+#	server		"remote_server"		# optional
+#	sink		"remote_server_sink"	# optional
+}
 #
 ## Example "pipe" output:
 #
