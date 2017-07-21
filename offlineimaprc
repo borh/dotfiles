@@ -6,9 +6,9 @@ maxsyncaccounts = 1
 [Account Fastmail]
 localrepository = Fastmail-Local
 remoterepository = Fastmail-Remote
-status_backend = sqlite
-presynchook  = ~/.offlineimap/maildir-notmuch-sync pre  ~/Mail/Fastmail
-postsynchook = ~/.offlineimap/maildir-notmuch-sync post ~/Mail/Fastmail
+# presynchook  = ~/.offlineimap/maildir-notmuch-sync pre  ~/Mail/Fastmail
+# postsynchook = ~/.offlineimap/maildir-notmuch-sync post ~/Mail/Fastmail
+postsynchook = mu index -m ~/Mail
 autorefresh = 5
 quick = 5
 
@@ -18,30 +18,29 @@ localfolders = ~/Mail/Fastmail
 
 [Repository Fastmail-Remote]
 type = IMAP
-remotehost = mail.messagingengine.com
+remotehost = imap.fastmail.com
 remoteuser = bor@fastmail.com
 remoteport = 993
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
-[Account Osaka]
-localrepository = Osaka-Local
-remoterepository = Osaka-Remote
-status_backend = sqlite
-postsynchook = notmuch new
-autorefresh = 5
-quick = 10
-
-[Repository Osaka-Local]
-type = Maildir
-localfolders = ~/Mail/Osaka
-
-[Repository Osaka-Remote]
-type = IMAP
-remotehost = cc.mail.osaka-u.ac.jp
-remoteuser = bor+lang
-remoteport = 993
-ssl = yes
-cert_fingerprint = 4988bfd004f55bf5e9ae6dc0c267be9ca3d26e66
-auth_mechanisms = LOGIN
-folderfilter = lambda folder: folder not in ['INBOX.spam', 'INBOX.nospam']
+# [Account Osaka]
+# localrepository = Osaka-Local
+# remoterepository = Osaka-Remote
+# postsynchook = notmuch new
+# autorefresh = 5
+# quick = 10
+#
+# [Repository Osaka-Local]
+# type = Maildir
+# localfolders = ~/Mail/Osaka
+#
+# [Repository Osaka-Remote]
+# type = IMAP
+# remotehost = cc.mail.osaka-u.ac.jp
+# remoteuser = bor+lang
+# remoteport = 993
+# ssl = yes
+# cert_fingerprint = 4988bfd004f55bf5e9ae6dc0c267be9ca3d26e66
+# auth_mechanisms = LOGIN
+# folderfilter = lambda folder: folder not in ['INBOX.spam', 'INBOX.nospam']
