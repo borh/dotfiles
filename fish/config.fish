@@ -47,15 +47,19 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #end
 
 function nfc
-        perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'
+         perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'
 end
 
 function nfd
-        perl -MUnicode::Normalize -CSA -E 'say NFD( qq(@ARGV) )'
+         perl -MUnicode::Normalize -CSA -E 'say NFD( qq(@ARGV) )'
 end
 
 function nfkd
-        perl -MUnicode::Normalize -CSA -E 'say NFKC( qq(@ARGV) )'
+         perl -MUnicode::Normalize -CSA -E 'say NFKC( qq(@ARGV) )'
+end
+
+function pandoc-pdf
+         command pandoc -f markdown -t latex -F pandoc-crossref -F pandoc-citeproc --latex-engine=lualatex -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 alias xtime "/usr/bin/time -f '%Uu %Ss %er %MkB %C'"
