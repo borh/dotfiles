@@ -14,38 +14,11 @@ setxkbmap -option ctrl:nocaps
 eval (python3 -m virtualfish)
 # source (conda info --root)/bin/conda.fish
 
-# envoy -t gpg-agent -a id_ecdsa.osaka
-# envoy -t gpg-agent -a id_rsa.bitbucket
-# envoy -t gpg-agent -a id_rsa.github
-# envoy -t gpg-agent -a id_rsa.gitlab
-# envoy -t gpg-agent -a id_rsa
-# source (envoy -pf)
-
 # Set GPG TTY
 set -x GPG_TTY (tty)
 
 # Refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
-
-#function run_gpg-agent
-#    if [ -x /usr/bin/gpg-agent ]
-#        set -l PINENTRY /usr/bin/pinentry-kwallet
-#        set -l GPGINFO /tmp/gpg-agent.info
-#        if not pgrep -u $USER gpg-agent >/dev/null ^&1
-#            gpg-agent --daemon --enable-ssh-support --pinentry-program $PINENTRY --write-env-file $GPGINFO >/dev/null
-#            chmod 600 $GPGINFO
-#        end
-#        if [ -f $GPGINFO ]
-#            for l in (cat $GPGINFO)
-#                set -gx (echo $l | cut -d= -f1) (echo $l | cut -d= -f2)
-#            end
-#        else
-#            echo 'ERROR: gpg-agent info file not found'
-#        end
-#    else
-#        echo 'WARN: gpg-agent not found/installed'
-#    end
-#end
 
 function nfc
          perl -MUnicode::Normalize -CSA -E 'say NFC( qq(@ARGV) )'
