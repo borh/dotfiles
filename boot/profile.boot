@@ -7,7 +7,7 @@
 
                   [org.clojure/tools.nrepl "0.2.13"]
                   [cider/cider-nrepl "0.15.1-SNAPSHOT"]
-                  [refactor-nrepl "2.3.1"]])
+                  [refactor-nrepl "2.4.0-SNAPSHOT"]])
   (swap! @(resolve 'boot.repl/*default-middleware*)
          concat '[cider.nrepl/cider-middleware
                   refactor-nrepl.middleware/wrap-refactor])
