@@ -5,4 +5,6 @@
   (require 'ein-subpackages)
 
   (setq ein:console-args '("--ssh" "gpgpu-remote"))
-  (setq ein:console-security-dir "/home/bor/.jupyter/"))
+  (setq ein:console-security-dir "/home/bor/.jupyter/")
+
+  (add-hook 'ein:connect-mode-hook 'ein:jedi-setup))
