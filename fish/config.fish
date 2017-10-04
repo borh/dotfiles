@@ -151,6 +151,10 @@ alias wombat-vpn "sudo sshuttle --dns -vvr bor@wombat 0/0"
 
 alias dmesg 'dmesg -L --reltime'
 
+alias ls 'exa --git --sort=modified'
+alias ll 'exa --git --sort=modified -lh'
+alias lt 'exa --git --sort=name -lh --tree'
+
 # Arch specific
 # Pacman alias examples
 alias pacupg 'sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
