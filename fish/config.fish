@@ -76,10 +76,13 @@ set -x CC_OPT_FLAGS "-march=native"
 
 # TensorFlow
 
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:/opt/cuda/lib64
+set -x CUDA_HOME /opt/cuda
+
 set -x TF_NEED_JEMALLOC 1
 set -x TF_NEED_GCP 0
 set -x TF_NEED_HDFS 0
-set -x TF_ENABLE_XLA 1
+set -x TF_ENABLE_XLA 0
 set -x TF_NEED_VERBS 0
 set -x TF_NEED_OPENCL 0
 set -x TF_NEED_MKL 1
