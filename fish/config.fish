@@ -138,7 +138,7 @@ set -x PATH $PATH (ruby -rubygems -e "puts Gem.user_dir")/bin
 
 ## Arch Oracle JDK (AUR)
 set -x JAVA_HOME /usr/lib/jvm/default
-set -x LD_LIBRARY_PATH /usr/lib
+set -x BOOT_JVM_OPTIONS '-XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 
