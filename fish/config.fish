@@ -1,22 +1,14 @@
-set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/bin/core_perl
-
-# Load machine-specific config
-. ./config.(hostname).fish
-
+set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
 set -x SHELL /bin/bash
 set -x EDITOR /usr/bin/vim
 set -x MAILDIR $HOME/Mail
 set -x PAGER less
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
-set -x XDG_RUNTIME_DIR /run/user/(id -u)
 set -x XDG_CURRENT_DESKTOP kde
 set -x QT_QPA_PLATFORMTHEME qt5ct # Seems to crash keepassxc when set to KDE
 set -x XAPIAN_CJK_NGRAM 1
 set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
 setxkbmap -option ctrl:nocaps
-
-eval (python3 -m virtualfish)
-# source (conda info --root)/bin/conda.fish
 
 # Set GPG TTY
 set -x GPG_TTY (tty)
@@ -103,6 +95,9 @@ alias unidic-mecab "mecab -d /usr/lib64/mecab/dic/unidic -Ochasenu"
 alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab/dic/unidic/dicrc -r /etc/cabocharc-unidic -P UNIDIC"
 
 alias dmesg 'dmesg -L --reltime'
+
+# Load machine-specific config
+. ./config.(hostname).fish
 
 set fish_color_autosuggestion '666'  'green'
 set fish_color_command afffff

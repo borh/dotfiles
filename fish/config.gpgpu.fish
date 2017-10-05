@@ -1,3 +1,7 @@
+alias tmux "tmux-next -u"
+
+set -g VIRTUALFISH_VERSION 1.0.5;set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3;source /home/bor/.local/lib/python3.5/site-packages/virtualfish/virtual.fish;emit virtualfish_did_setup_plugins
+
 # TensorFlow
 
 set -x CUDA_HOME /usr/local/cuda
@@ -20,3 +24,7 @@ set -x TF_CUDA_VERSION (eval $CUDA_TOOLKIT_PATH/bin/nvcc --version | sed -n 's/^
 set -x CUDNN_INSTALL_PATH $CUDA_HOME/lib64
 set -x TF_CUDNN_VERSION (sed -n 's/^#define CUDNN_MAJOR\s*\(.*\).*/\1/p' $CUDNN_INSTALL_PATH/include/cudnn.h)
 set -x TF_CUDA_COMPUTE_CAPABILITIES '6.1'
+
+# DyNet
+
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$HOME/Dependencies/dynet/build/dynet

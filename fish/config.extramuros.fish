@@ -1,13 +1,17 @@
+eval (python3 -m virtualfish)
+
+set -x XDG_RUNTIME_DIR /run/user/(id -u)
+
 # vbox
 set -x VBOX_USB usbfs
 
 # Perl
-set -x PATH /usr/bin/vendor_perl $PATH
+set -x PATH /usr/bin/vendor_perl /usr/bin/core_perl $PATH
 
 # TensorFlow
 
-set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:/opt/cuda/lib64
 set -x CUDA_HOME /opt/cuda
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64
 
 set -x TF_NEED_JEMALLOC 1
 set -x TF_NEED_GCP 0
