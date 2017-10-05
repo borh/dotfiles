@@ -97,7 +97,7 @@ alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab
 alias dmesg 'dmesg -L --reltime'
 
 # Load machine-specific config
-source ./config.(hostname).fish
+source ~/.config/fish/config.(hostname).fish
 
 set fish_color_autosuggestion '666'  'green'
 set fish_color_command afffff
