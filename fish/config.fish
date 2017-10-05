@@ -65,56 +65,17 @@ set -x XMODIFIERS "@im=fcitx"
 set -x LOO_FORCE_DESKTOP gnome
 set -x OOO_FORCE_DESKTOP gnome
 
-# vbox
-set -x VBOX_USB usbfs
-
 # sane compile flags
 set -x CFLAGS "-O2 -march=native -pipe"
 set -x CXXFLAGS "-O2 -march=native -pipe"
 set -x CHOST "x86_64-pc-linux-gnu"
 set -x CC_OPT_FLAGS "-march=native"
 
-# TensorFlow
-
-set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:/opt/cuda/lib64
-set -x CUDA_HOME /opt/cuda
-
-set -x TF_NEED_JEMALLOC 1
-set -x TF_NEED_GCP 0
-set -x TF_NEED_HDFS 0
-set -x TF_ENABLE_XLA 0
-set -x TF_NEED_VERBS 0
-set -x TF_NEED_OPENCL 0
-set -x TF_NEED_MKL 1
-set -x TF_NEED_MPI 0
-set -x TF_NEED_CUDA 1
-set -x GCC_HOST_COMPILER_PATH /usr/bin/gcc-5
-set -x TF_CUDA_CLANG 0
-set -x CLANG_CUDA_COMPILER_PATH /usr/bin/clang
-set -x CUDA_TOOLKIT_PATH /opt/cuda
-set -x TF_CUDA_VERSION (eval $CUDA_TOOLKIT_PATH/bin/nvcc --version | sed -n 's/^.*release \(.*\),.*/\1/p')
-set -x CUDNN_INSTALL_PATH /opt/cuda
-set -x TF_CUDNN_VERSION (sed -n 's/^#define CUDNN_MAJOR\s*\(.*\).*/\1/p' $CUDNN_INSTALL_PATH/include/cudnn.h)
-set -x TF_CUDA_COMPUTE_CAPABILITIES '5.2,6.1'
-
 # go
 set -x GOOS linux
 set -x GOARCH amd64
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
-
-# # texlive
-# set -x PATH $HOME/Dropbox/Software/texlive/2015/bin/x86_64-linux $PATH
-# set -x -e MANPATH # unset and get from manpath directly
-# set -x MANPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/man (manpath)
-# set -x INFOPATH $HOME/Dropbox/Software/texlive/2015/texmf/doc/info $INFOPATH
-
-# Perl
-set -x PATH /usr/bin/vendor_perl $PATH
-## perlbrew
-#if test -e "$HOME/perl5/perlbrew/etc/perlbrew.fish"
-#    source "$HOME/perl5/perlbrew/etc/perlbrew.fish"
-#end
 
 # node.js
 set -x NPM_PACKAGES $HOME/node
@@ -129,15 +90,6 @@ set -x MANPATH $HOME/.cabal/share/man $MANPATH
 # ruby gem path
 set -x PATH $PATH (ruby -rubygems -e "puts Gem.user_dir")/bin
 
-# # Android
-# set -x ANDROID_HOME /opt/android-sdk
-# set -x ANDROID_SWT /usr/share/java
-# set -x PATH $PATH $ANDROID_HOME/tools
-# set -x PATH $PATH /opt/android-sdk/platform-tools
-# local config
-
-## Arch Oracle JDK (AUR)
-set -x JAVA_HOME /usr/lib/jvm/default
 set -x BOOT_JVM_OPTIONS '-XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
@@ -145,28 +97,8 @@ alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 alias pg_top 'sudo -u postgres pg_top'
 alias unidic-mecab "mecab -d /usr/lib64/mecab/dic/unidic -Ochasenu"
 alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab/dic/unidic/dicrc -r /etc/cabocharc-unidic -P UNIDIC"
-alias wombat-tunnel "ssh -nNT -R 4040:localhost:22 wombat"
-alias hinoki-tunnel "ssh -nNT -R 4040:localhost:22 hinoki"
-alias wombat-vpn "sudo sshuttle --dns -vvr bor@wombat 0/0"
 
 alias dmesg 'dmesg -L --reltime'
-
-alias ls 'exa --git --sort=modified'
-alias ll 'exa --git --sort=modified -lh'
-alias lt 'exa --git --sort=name -lh --tree'
-
-# Arch specific
-# Pacman alias examples
-alias pacupg 'sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
-alias pacin 'sudo pacman -S'           # Install specific package(s) from the repositories
-alias pacins 'sudo pacman -U'          # Install specific package not from the repositories but from a file
-alias pacre 'sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrem 'sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrep 'pacman -Si'              # Display information about a given package in the repositories
-alias pacreps 'pacman -Ss'             # Search for package(s) in the repositories
-alias pacloc 'pacman -Qi'              # Display information about a given package in the local database
-alias paclocs 'pacman -Qs'             # Search for package(s) in the local database
-
 
 set fish_color_autosuggestion '666'  'green'
 set fish_color_command afffff
