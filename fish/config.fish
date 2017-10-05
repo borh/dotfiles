@@ -3,11 +3,6 @@ set -x SHELL /bin/bash
 set -x EDITOR /usr/bin/vim
 set -x MAILDIR $HOME/Mail
 set -x PAGER less
-set -x SSH_ASKPASS /usr/bin/ksshaskpass
-set -x XDG_CURRENT_DESKTOP kde
-set -x QT_QPA_PLATFORMTHEME qt5ct # Seems to crash keepassxc when set to KDE
-set -x XAPIAN_CJK_NGRAM 1
-set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
 
 # Set GPG TTY
 set -x GPG_TTY (tty)
@@ -51,14 +46,6 @@ set -x LC_TIME en_US.utf-8
 set -x LC_ALL en_US.utf-8
 
 set -x TZ 'Asia/Tokyo'
-
-# IME (mozc)
-# using fcitx
-set -x GTK_IM_MODULE fcitx
-set -x QT_IM_MODULE fcitx
-set -x XMODIFIERS "@im=fcitx"
-set -x LOO_FORCE_DESKTOP gnome
-set -x OOO_FORCE_DESKTOP gnome
 
 # sane compile flags
 set -x CFLAGS "-O2 -march=native -pipe"
