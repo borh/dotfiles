@@ -1,4 +1,8 @@
 set -x PATH $HOME/local/bin $HOME/.local/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/bin/core_perl
+
+# Load machine-specific config
+. ./config.(hostname).fish
+
 set -x SHELL /bin/bash
 set -x EDITOR /usr/bin/vim
 set -x MAILDIR $HOME/Mail
