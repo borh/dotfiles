@@ -8,7 +8,7 @@ set -g VIRTUALFISH_VERSION 1.0.5;set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3
 # TensorFlow (GPU)
 
 set -x CUDA_HOME /usr/local/cuda
-set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64:$CUDA_HOME/extras/CUPTI/lib64
 
 set -x TF_NEED_JEMALLOC 1
 set -x TF_NEED_GCP 0

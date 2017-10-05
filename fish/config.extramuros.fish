@@ -12,7 +12,7 @@ set -x PATH /usr/bin/vendor_perl /usr/bin/core_perl $PATH
 # TensorFlow (GPU)
 
 set -x CUDA_HOME /opt/cuda
-set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64:$CUDA_HOME/extras/CUPTI/lib64
 
 set -x TF_NEED_JEMALLOC 1
 set -x TF_NEED_GCP 0
