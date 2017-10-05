@@ -8,7 +8,7 @@ set -x VBOX_USB usbfs
 # Perl
 set -x PATH /usr/bin/vendor_perl /usr/bin/core_perl $PATH
 
-# TensorFlow
+# TensorFlow (GPU)
 
 set -x CUDA_HOME /opt/cuda
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64

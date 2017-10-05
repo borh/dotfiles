@@ -1,11 +1,11 @@
 alias tmux "tmux-next -u"
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs-25.3'
 
-set -g VIRTUALFISH_VERSION 1.0.5;set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3;source /home/bor/.local/lib/python3.5/site-packages/virtualfish/virtual.fish;emit virtualfish_did_setup_plugins
-
 set -x JAVA_HOME /usr/lib/jvm/default-java
 
-# TensorFlow
+set -g VIRTUALFISH_VERSION 1.0.5;set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3;source /home/bor/.local/lib/python3.5/site-packages/virtualfish/virtual.fish;emit virtualfish_did_setup_plugins
+
+# TensorFlow (GPU)
 
 set -x CUDA_HOME /usr/local/cuda
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64
