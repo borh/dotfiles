@@ -67,6 +67,9 @@ set -x CXXFLAGS "-O2 -march=native -pipe"
 set -x CHOST "x86_64-pc-linux-gnu"
 set -x CC_OPT_FLAGS "-march=native"
 
+# Rust
+set -x PATH $HOME/.cargo/bin
+
 # go
 set -x GOOS linux
 set -x GOARCH amd64
