@@ -1,5 +1,8 @@
 alias tmux "tmux-next -u"
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs-25.3'
+alias ls 'exa --git --sort=modified'
+alias ll 'exa --git --sort=modified -lh'
+alias lt 'exa --git --sort=name -lh --tree'
 
 set -x JAVA_HOME /usr/lib/jvm/default-java
 
