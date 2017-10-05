@@ -21,7 +21,7 @@ set -x TF_CUDA_CLANG 0
 set -x CLANG_CUDA_COMPILER_PATH /usr/bin/clang
 set -x CUDA_TOOLKIT_PATH $CUDA_HOME
 set -x TF_CUDA_VERSION (eval $CUDA_TOOLKIT_PATH/bin/nvcc --version | sed -n 's/^.*release \(.*\),.*/\1/p')
-set -x CUDNN_INSTALL_PATH $CUDA_HOME/lib64
+set -x CUDNN_INSTALL_PATH $CUDA_HOME
 set -x TF_CUDNN_VERSION (sed -n 's/^#define CUDNN_MAJOR\s*\(.*\).*/\1/p' $CUDNN_INSTALL_PATH/include/cudnn.h)
 set -x TF_CUDA_COMPUTE_CAPABILITIES '6.1'
 
