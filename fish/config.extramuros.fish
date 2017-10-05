@@ -1,6 +1,7 @@
 eval (python3 -m virtualfish)
 
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
+setxkbmap -option ctrl:nocaps
 
 # vbox
 set -x VBOX_USB usbfs

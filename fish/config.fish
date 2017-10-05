@@ -8,7 +8,6 @@ set -x XDG_CURRENT_DESKTOP kde
 set -x QT_QPA_PLATFORMTHEME qt5ct # Seems to crash keepassxc when set to KDE
 set -x XAPIAN_CJK_NGRAM 1
 set -x XKB_DEFAULT_OPTIONS ctrl:nocaps
-setxkbmap -option ctrl:nocaps
 
 # Set GPG TTY
 set -x GPG_TTY (tty)
