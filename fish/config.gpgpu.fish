@@ -23,7 +23,7 @@ set -x TF_ENABLE_XLA 0
 set -x TF_NEED_VERBS 0
 set -x TF_NEED_OPENCL 0
 set -x TF_NEED_MKL 1
-set -x MKL_ROOT $INTEL_HOME/mkl
+set -x TF_MKL_ROOT $INTEL_HOME/mkl
 set -x TF_NEED_MPI 0
 set -x TF_NEED_CUDA 1
 set -x GCC_HOST_COMPILER_PATH /usr/bin/gcc
