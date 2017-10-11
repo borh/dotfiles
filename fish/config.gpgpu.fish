@@ -12,7 +12,7 @@ set -g VIRTUALFISH_VERSION 1.0.5;set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3
 
 # TensorFlow (GPU)
 
-set -x INTEL_HOME=/opt/intel
+set -x INTEL_HOME /opt/intel
 set -x CUDA_HOME /usr/local/cuda
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64:$CUDA_HOME/extras/CUPTI/lib64:$INTEL_HOME/mkl/lib/intel64
 
