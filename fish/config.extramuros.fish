@@ -2,6 +2,8 @@ source ~/.config/fish/config.desktop.fish
 
 eval (python3 -m virtualfish)
 
+set -x REQUESTS_CA_BUNDLE /etc/ssl/certs
+
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
 setxkbmap -option ctrl:nocaps
 
