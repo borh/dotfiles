@@ -22,6 +22,8 @@ set -x TF_NEED_HDFS 0
 set -x TF_ENABLE_XLA 0
 set -x TF_NEED_VERBS 0
 set -x TF_NEED_OPENCL 0
+set -x TF_NEED_S3 0
+set -x TF_NEED_GDR 0
 set -x TF_NEED_MKL 1
 set -x TF_MKL_ROOT $INTEL_HOME/mkl
 set -x TF_NEED_MPI 0
