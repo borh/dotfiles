@@ -66,11 +66,9 @@ set -x PATH $GOPATH/bin $PATH
 set -x NPM_PACKAGES $HOME/node
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 set -x PATH $NPM_PACKAGES/bin $PATH
-set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 
 # cabal
 set -x PATH $HOME/.cabal/bin $PATH
-set -x MANPATH $HOME/.cabal/share/man $MANPATH
 
 # ruby gem path
 set -x PATH $PATH (ruby -rubygems -e "puts Gem.user_dir")/bin
