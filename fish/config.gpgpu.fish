@@ -25,7 +25,8 @@ set -x TF_NEED_OPENCL 0
 set -x TF_NEED_S3 0
 set -x TF_NEED_GDR 0
 set -x TF_NEED_MKL 1
-set -x TF_MKL_ROOT $INTEL_HOME/mkl
+set -x MKL_ROOT $INTEL_HOME/mkl
+set -x TF_MKL_ROOT $MKL_ROOT
 set -x TF_NEED_MPI 0
 set -x TF_NEED_CUDA 1
 set -x GCC_HOST_COMPILER_PATH /usr/bin/gcc
