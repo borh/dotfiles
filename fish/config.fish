@@ -26,6 +26,15 @@ function pandoc-pdf
          command pandoc -f markdown -t latex -F pandoc-crossref -F pandoc-citeproc --latex-engine=lualatex -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
+function build-tensorflow
+        git pull
+        bazel clean
+        env PYTHON_BIN_PATH=(which python) PYTHON_LIB_PATH=(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") ./configure
+        bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+        bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+        pip install -I /tmp/tensorflow_pkg/tensorflow-1.4.0rc1-cp35-cp35m-linux_x86_64.whl
+end
+
 alias xtime "/usr/bin/time -f '%Uu %Ss %er %MkB %C'"
 alias top "htop"
 alias vi "vim"
