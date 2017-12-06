@@ -23,7 +23,7 @@ function nfkd
 end
 
 function pandoc-pdf
-         command pandoc -f markdown -t latex -F pandoc-crossref -F pandoc-citeproc --latex-engine=lualatex -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        command pandoc -f markdown -t latex -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function build-tensorflow
