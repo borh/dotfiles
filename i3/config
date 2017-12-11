@@ -208,6 +208,7 @@ assign [class="(?i)slack"] $ws8
 assign [class="(?i)riot"] $ws8
 assign [class="(?i)virtualbox"] $ws10
 assign [class="(?i)virt-manager"] $ws10
+assign [class="(?i)remmina"] $ws10
 
 # compatibility
 for_window [class="Plasma-desktop"] border none
