@@ -1,5 +1,5 @@
-(use-package
-  org-plus-contrib
+(use-package org
+  :ensure org-plus-contrib
   :config
 
   (setq org-directory "~/Dropbox/Org")
