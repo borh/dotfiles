@@ -11,7 +11,6 @@
 
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
 
 ;; Global to download and load all packages defined with use-package.
