@@ -4,7 +4,9 @@
   doom-themes
   :config
   (load-theme 'doom-vibrant t)
-  (doom-themes-visual-bell-config))
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config)
+  (doom-themes-neotree-config))
 
 (use-package
   solaire-mode
@@ -13,12 +15,10 @@
   (add-hook 'after-revert-hook #'turn-on-solaire-mode)
   (add-hook 'ediff-prepare-buffer-hook #'solaire-mode)
   (add-hook 'minibuffer-setup-hook #'solaire-mode-in-minibuffer)
-  )
+  (solaire-mode-swap-bg))
 
-(use-package
-  all-the-icons
-  ;; Run M-x all-the-icons-install-fonts
-  )
+(use-package ;; Run M-x all-the-icons-install-fonts
+  all-the-icons)
 
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
