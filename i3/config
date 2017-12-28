@@ -240,7 +240,6 @@ for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 32 px
 exec --no-startup-id xrandr --dpi 196
 exec --no-startup-id xinput --set-prop 'DLL07BF:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.7
 exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/.config/compton.conf -b
-#exec --no-startup-id i3-msg 'exec /usr/lib/polkit-kde/polkit-kde-authentication-agent-1'
 exec --no-startup-id i3-msg 'exec /usr/lib/polkit-kde/polkit-kde-authentication-agent-1'
 exec --no-startup-id i3-msg 'exec dropbox; exec fcitx; exec redshift; exec libinput-gestures-setup start'
 exec --no-startup-id feh --bg-scale '/home/bor/Dropbox/Wallpapers/4k-pattern-1.png'
