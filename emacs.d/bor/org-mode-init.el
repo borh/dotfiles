@@ -23,11 +23,27 @@
   (setq org-default-notes-file (concat org-directory "/Notes.org"))
   (define-key global-map (kbd "<f2>") 'org-capture)
 
+  (require 'org-protocol)
+  (defun transform-square-brackets-to-round-ones(string-to-transform)
+    "Transforms [ into ( and ] into ), other chars left unchanged."
+    (concat
+     (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform)))
+
+  (setq org-capture-templates
+        `(("p" "Protocol" entry (file+headline ,(concat org-directory "/Notes.org") "Inbox")
+           "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+          ("L" "Protocol Link" entry (file+headline ,(concat org-directory "/Notes.org") "Inbox")
+           "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")))
+
   (setq org-refile-targets '((nil :maxlevel . 3)
                              ;; all top-level headlines in the
                              ;; current buffer are used (first) as a
                              ;; refile target
                              (org-agenda-files :maxlevel . 3)))
+
+  (setq org-todo-keywords '((sequence "☛ TODO(t)" "|" "✔ DONE(d)")
+                            (sequence "⚑ WAITING(w)" "|")
+                            (sequence "|" "✘ CANCELED(c)")))
 
   (setq org-todo-keywords
         '((sequence "TODO" "WAITING" "NEXT" "|" "DONE" "CANCELED")))
