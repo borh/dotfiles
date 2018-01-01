@@ -6,6 +6,10 @@ icons = "awesome"
 # max_width = 80
 
 [[block]]
+block = "pacman"
+interval = 300
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/"
