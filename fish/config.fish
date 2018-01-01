@@ -23,11 +23,15 @@ function nfkd
 end
 
 function pandoc-pdf
-        command pandoc -f markdown -t latex --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function pandoc-pdf-ja
-        command pandoc -f markdown -t latex -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+end
+
+function pandoc-simple
+        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function build-tensorflow
