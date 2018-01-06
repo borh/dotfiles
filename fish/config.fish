@@ -88,7 +88,7 @@ set -x PATH $NPM_PACKAGES/bin $PATH
 set -x PATH $HOME/.cabal/bin $PATH
 
 # ruby gem path
-set -x PATH $PATH (ruby -rubygems -e "puts Gem.user_dir")/bin
+set -x PATH $PATH (ruby -e "puts Gem.user_dir")/bin
 
 set -x ANDROID_HOME $HOME/Android/Sdk
 alias android-studio "env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' android-studio"
