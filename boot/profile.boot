@@ -7,7 +7,7 @@
    (fn [{:keys [url] :as repo-map}]
      (merge repo-map (creds-data url)))))
 
-;;(task-options! push {:repo "https://repo.clojars.org/"})
+(task-options! push {:repo "https://repo.clojars.org/"})
 
 (deftask cider "CIDER profile"
   []
