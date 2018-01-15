@@ -1,11 +1,12 @@
 (import java.io.File)
 
 ;; Get credentials from a GPG encrypted file.
-(configure-repositories!
- (let [creds-file (File. (boot.App/bootdir) "credentials.gpg")
-       creds-data (gpg-decrypt creds-file :as :edn)]
-   (fn [{:keys [url] :as repo-map}]
-     (merge repo-map (creds-data url)))))
+(let [creds-file (File. (boot.App/bootdir) "credentials.gpg")]
+  (when (.exists creds-file)
+    (configure-repositories!
+     (let [creds-data (gpg-decrypt creds-file :as :edn)]
+       (fn [{:keys [url] :as repo-map}]
+         (merge repo-map (creds-data url)))))))
 
 (task-options! push {:repo "https://repo.clojars.org/"})
 
