@@ -18,10 +18,11 @@
 
   (setq cider-auto-select-error-buffer t)
   (setq cider-stacktrace-default-filters nil)
-  (setq cider-prompt-save-file-on-load nil)
+  (setq cider-save-file-on-load t)
   (setq cider-repl-toggle-print-length-limiting t)
   (setq cider-repl-print-length 100)
   (setq cider-repl-toggle-pretty-printing t)
+  (setq cider-pprint-fn "puget")
 
   (setq cider-overlays-use-font-lock t)
 
