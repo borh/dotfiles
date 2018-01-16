@@ -41,9 +41,11 @@ set -x TF_CUDA_COMPUTE_CAPABILITIES '5.2'
 # Arch Oracle JDK (AUR)
 set -x JAVA_HOME /usr/lib/jvm/default
 
-alias ls 'exa --git --sort=modified'
-alias ll 'exa --git --sort=modified -lh'
-alias lt 'exa --git --sort=name -lh --tree'
+set -x BOOT_JVM_OPTIONS $BOOT_JVM_OPTIONS' -Dclojure.compiler.direct-linking=true' # -XX:MaxDirectMemorySize=-1' -XX:+UseLargePages'
+
+alias ls 'exa -g --git --sort=modified'
+alias ll 'exa -g --git --sort=modified -lh'
+alias lt 'exa -g --git --sort=name -lh --tree'
 
 # Arch specific
 # Pacman alias examples
