@@ -23,15 +23,22 @@ function nfkd
 end
 
 function pandoc-pdf
-        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        command pandoc -f markdown -t latex -N --listings --biblatex -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=EquityTextA -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function pandoc-pdf-ja
-        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        command pandoc -f markdown -t latex -N --listings --biblatex -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function pandoc-simple
-        command pandoc -f markdown -t latex -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib $argv -o (string replace -r '\..+$' '.pdf' $argv)
+        set -l base_filename (basename -s .md $argv)
+        set -l tex_filename (string replace -r '\..+$' '.tex' $argv)
+        command pandoc -f markdown -t latex -N --listings --biblatex -F pandoc-crossref --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -s $argv -o $tex_filename
+        command lualatex --interaction=nonstopmode $tex_filename
+        command biber $base_filename
+        command lualatex --interaction=nonstopmode $tex_filename
+        command lualatex --interaction=nonstopmode $tex_filename
+        command rm $base_filename.{aux,bbl,bcf,blg,lof,log,lot,out,run.xml,tex,toc}
 end
 
 function build-tensorflow
