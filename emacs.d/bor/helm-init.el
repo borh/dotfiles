@@ -8,4 +8,7 @@
   :config
   (helm-linum-relative-mode 1))
 
-(use-package helm-ls-git)
+(use-package helm-ls-git
+  :config
+  (global-set-key (kbd "C-x C-d") 'helm-browse-project)
+  (global-set-key (kbd "C-<f6>") 'helm-ls-git-ls))
