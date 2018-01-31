@@ -13,6 +13,16 @@ set -x VBOX_USB usbfs
 # Perl
 set -x PATH /usr/bin/vendor_perl /usr/bin/core_perl $PATH
 
+# MKL
+set -x PATH /opt/intel/composerxe/linux/bin/intel64 $PATH
+set -x MKLROOT /opt/intel/composerxe/linux/mkl
+set -x INTEL_LICENSE_FILE /opt/intel/licenses /opt/intel/composerxe/linux/licenses /opt/intel/licenses ~/intel/licenses
+set -x LIBRARY_PATH /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin $LIBRARY_PATH
+set -x LD_LIBRARY_PATH $LIBRARY_PATH $LD_LIBRARY_PATH
+set -x NLSPATH /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N
+set -x CPATH /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include
+set -x IPPROOT /opt/intel/composerxe/linux/ipp
+
 # TensorFlow (GPU)
 
 set -x CUDA_HOME /opt/cuda
