@@ -143,3 +143,6 @@
 (defface org-block-end-line
   '((t (:overline "#003f8e" :foreground "#ffffff" :background "#002451")))
   "Face used for the line delimiting the end of source blocks.")
+
+(use-package centered-window :ensure t
+  :config (centered-window-mode t))
