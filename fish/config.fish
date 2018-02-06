@@ -41,15 +41,27 @@ function pandoc-simple
         command rm $base_filename.{aux,bbl,bcf,blg,log,out,run.xml,toc} texput.log
 end
 
+function pandoc-platex
+    set -l base_filename (basename -s .md $argv)
+    set -l tex_filename (string replace -r '\..+$' '.tex' $argv)
+    command pandoc -f markdown -t latex --template ~/.pandoc/templates/default.platex -N --biblatex -F pandoc-crossref --natbib --bibliography ~/Projects/homepage/content/bibliography.bib -s $argv -o $tex_filename
+    command platex --interaction=nonstopmode --shell-escape $tex_filename
+    command pbibtex -kanji=utf8 $base_filename
+    command platex --interaction=nonstopmode --shell-escape $tex_filename
+    command platex --interaction=nonstopmode --shell-escape $tex_filename
+    command xdvipdfmx $base_filename
+    command rm $base_filename.{aux,bbl,bcf,blg,log,out,run.xml,dvi}
+end
+
 function pandoc-beamer
-        set -l base_filename (basename -s .md $argv)
-        set -l tex_filename (string replace -r '\..+$' '.tex' $argv)
-        command pandoc -f markdown-smart -t beamer+smart --template ~/.pandoc/templates/default.beamer -N --listings --biblatex -F pandoc-crossref --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -s $argv -o $tex_filename
-        command lualatex --interaction=nonstopmode --shell-escape $tex_filename
-        command biber $base_filename
-        command lualatex --interaction=nonstopmode --shell-escape $tex_filename
-        command lualatex --interaction=nonstopmode --shell-escape $tex_filename
-        command rm $base_filename.{aux,bcf,log,out,run.xml,toc}
+    set -l base_filename (basename -s .md $argv)
+    set -l tex_filename (string replace -r '\..+$' '.tex' $argv)
+    command pandoc -f markdown-smart -t beamer+smart --template ~/.pandoc/templates/default.beamer -N --listings --biblatex -F pandoc-crossref --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -s $argv -o $tex_filename
+    command lualatex --interaction=nonstopmode --shell-escape $tex_filename
+    command biber $base_filename
+    command lualatex --interaction=nonstopmode --shell-escape $tex_filename
+    command lualatex --interaction=nonstopmode --shell-escape $tex_filename
+    command rm $base_filename.{aux,bcf,log,out,run.xml,toc}
 end
 
 function build-tensorflow
