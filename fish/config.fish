@@ -133,6 +133,8 @@ alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab
 
 alias dmesg 'dmesg -L --reltime'
 
+alias nheko 'env QT_SCALE_FACTOR=2 nheko'
+
 # Load machine-specific config
 source ~/.config/fish/config.(hostname).fish
 

@@ -208,6 +208,7 @@ assign [class="(?i)google-chrome-dev"] $ws4
 assign [class="(?i)keybase"] $ws7
 assign [class="(?i)slack"] $ws8
 assign [class="(?i)riot"] $ws8
+assign [class="(?i)nheko"] $ws8
 assign [class="(?i)virtualbox"] $ws10
 assign [class="(?i)virt-manager"] $ws10
 assign [class="(?i)remmina"] $ws10
