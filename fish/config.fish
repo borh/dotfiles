@@ -45,12 +45,12 @@ function pandoc-platex
     set -l base_filename (basename -s .md $argv)
     set -l tex_filename (string replace -r '\..+$' '.tex' $argv)
     command pandoc -f markdown -t latex --template ~/.pandoc/templates/default.platex -N --biblatex -F pandoc-crossref --natbib --bibliography ~/Projects/homepage/content/bibliography.bib -s $argv -o $tex_filename
-    command platex --interaction=nonstopmode --shell-escape $tex_filename
-    command pbibtex -kanji=utf8 $base_filename
-    command platex --interaction=nonstopmode --shell-escape $tex_filename
-    command platex --interaction=nonstopmode --shell-escape $tex_filename
+    command platex -kanji=utf8 --shell-escape --interaction=batchmode $tex_filename
+    command upbibtex -kanji=utf8 $base_filename
+    command platex -kanji=utf8 --shell-escape --interaction=batchmode $tex_filename
+    command platex -kanji=utf8 --shell-escape --interaction=batchmode $tex_filename
     command xdvipdfmx $base_filename
-    command rm $base_filename.{aux,bbl,bcf,blg,log,out,run.xml,dvi}
+    command rm $base_filename.{aux,bbl,blg,log,out,dvi}
 end
 
 function pandoc-beamer
