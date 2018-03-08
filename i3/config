@@ -247,6 +247,6 @@ exec --no-startup-id i3-msg 'exec /usr/lib/polkit-kde/polkit-kde-authentication-
 exec --no-startup-id i3-msg 'exec dropbox; exec fcitx; exec redshift; exec libinput-gestures-setup start'
 exec --no-startup-id feh --bg-scale '/home/bor/Dropbox/Wallpapers/4k-pattern-1.png'
 exec --no-startup-id i3-msg 'exec alacritty'
-exec --no-startup-id i3-msg 'exec emacs'
+exec --no-startup-id i3-msg 'exec emacsclient'
 exec --no-startup-id i3-msg 'exec nm-applet'
 exec --no-startup-id i3-msg 'exec keepassxc'
