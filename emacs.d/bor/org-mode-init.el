@@ -104,6 +104,24 @@
     (set (make-variable-buffer-local 'ispell-parser) 'tex))
   (add-hook 'org-mode-hook 'flyspell-ignore-tex)
 
+  ;; These two packages allow annotation of PDFs with org-mode
+  (use-package pdf-tools)
+  (use-package interleave)
+
+  (require 'netrc)
+
+  (defun get-authinfo (host)
+    (let* ((netrc (netrc-parse (expand-file-name "~/.netrc")))
+           (hostentry (netrc-machine netrc host)))
+      (when hostentry (netrc-get hostentry "password"))))
+
+  (use-package org-gcal
+    :config
+    (setq org-gcal-client-id (get-authinfo "gcal.client-id")
+          org-gcal-client-secret (get-authinfo "gcal.client-secret")
+          org-gcal-file-alist '(((get-authinfo "gcal.work-calendar") . (concat org-directory "/Work-Calendar.org"))
+                                ((get-authinfo "gcal.personal-calendar") . (concat org-directory "/Personal-Calendar.org")))))
+
   (require 'ox-publish)
   (setq org-publish-project-alist
         '(("org-html"
