@@ -26,6 +26,7 @@ set -x IPPROOT /opt/intel/composerxe/linux/ipp
 # TensorFlow (GPU)
 
 set -x CUDA_HOME /opt/cuda
+set -x CUDA_PATH /opt/cuda
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH:$CUDA_HOME/lib64:$CUDA_HOME/extras/CUPTI/lib64
 
 set -x TF_NEED_JEMALLOC 1
