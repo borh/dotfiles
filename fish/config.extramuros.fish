@@ -58,6 +58,8 @@ alias ls 'exa -g --git --sort=modified'
 alias ll 'exa -g --git --sort=modified -lh'
 alias lt 'exa -g --git --sort=name -lh --tree'
 
+alias julia-master ~/Dependencies/julia/julia
+
 # Arch specific
 # Pacman alias examples
 alias pacupg 'sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
