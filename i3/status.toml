@@ -1,9 +1,9 @@
 theme = "solarized-dark"
 icons = "awesome"
 
-# [[block]]
-# block = "focused_window"
-# max_width = 80
+[[block]]
+block = "focused_window"
+max_width = 80
 
 [[block]]
 block = "pacman"
@@ -53,10 +53,24 @@ block = "battery"
 interval = 10
 
 [[block]]
-block = "xrandr"
-interval = 2
-icons = true
-resolution = true
+block = "backlight"
+
+# [[block]]
+# block = "xrandr"
+# interval = 2
+# icons = true
+# resolution = true
+
+[[block]]
+block = "net"
+device = "wlp2s0"
+ssid = true
+ip = false
+speed_up = false
+speed_down = false
+graph_up = true
+graph_down = true
+interval = 1
 
 # [[block]]
 # block = "net"
