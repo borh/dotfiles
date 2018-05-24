@@ -126,6 +126,7 @@ alias android-studio "env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_
 set -x BOOT_JVM_OPTIONS '-XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
+alias emacsclient 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacsclient'
 
 alias pg_top 'sudo -u postgres pg_top'
 alias unidic-mecab "mecab -d /usr/lib64/mecab/dic/unidic -Ochasenu"
