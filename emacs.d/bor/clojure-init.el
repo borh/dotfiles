@@ -35,6 +35,7 @@
     (register-handler 'defun)
     (s/fdef 'defun)
     (fnk 'defun)
+    (fn-traced 'defun)
     (s/defrecord 'defun)
     (s/defschema 'defun)
     (for-map 2)
