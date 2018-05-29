@@ -128,6 +128,8 @@ set -x BOOT_JVM_OPTIONS '-XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemo
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 alias emacsclient 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacsclient'
 
+alias ip 'ip -br -c'
+
 alias pg_top 'sudo -u postgres pg_top'
 alias unidic-mecab "mecab -d /usr/lib64/mecab/dic/unidic -Ochasenu"
 alias unidic-cabocha "cabocha -d /usr/lib64/mecab/dic/unidic -b /usr/lib64/mecab/dic/unidic/dicrc -r /etc/cabocharc-unidic -P UNIDIC"
