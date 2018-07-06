@@ -1,11 +1,5 @@
-(use-package julia-mode)
-(use-package julia-shell)
-(use-package
-  flycheck-julia
+(use-package julia-mode
   :config
-  (flycheck-julia-setup)
-  (add-to-list 'flycheck-global-modes 'julia-mode)
-  (add-to-list 'flycheck-global-modes 'ess-julia-mode)
   (defun julia-completion-at-point ()
     (let ((bnds (bounds-of-thing-at-point 'symbol)))
       (when bnds
@@ -18,3 +12,13 @@
                 #'(lambda (arg)
                     (gethash arg julia-latexsubs ""))))))))
   (add-hook 'completion-at-point-functions 'julia-completion-at-point nil t))
+(use-package julia-repl
+  :config
+  (add-hook 'julia-mode-hook 'julia-repl-mode))
+(use-package julia-shell)
+;; (use-package
+;;   flycheck-julia
+;;   :config
+;;   (flycheck-julia-setup)
+;;   (add-to-list 'flycheck-global-modes 'julia-mode)
+;;   (add-to-list 'flycheck-global-modes 'ess-julia-mode))
