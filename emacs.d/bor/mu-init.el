@@ -1,5 +1,9 @@
 (require 'mu4e)
 
+(use-package mu4e-conversation
+  :config
+  (setq mu4e-view-func 'mu4e-conversation))
+
 (global-set-key (kbd "<f3>") 'mu4e)
 
 (setq mu4e-maildir "/home/bor/Mail")
@@ -130,28 +134,30 @@
 
 (add-to-list 'mu4e-header-info-custom
              '(:recipnum .
-                         ( :name "Number of recipients"  ;; long name, as seen in the message-view
-                                 :shortname "Recip#"           ;; short name, as seen in the headers view
-                                 :help "Number of recipients for this message" ;; tooltip
-                                 :function (lambda (msg)
-                                             (format "%d"
-                                                     (+ (length (mu4e-message-field msg :to))
-                                                        (length (mu4e-message-field msg :cc))))))))
+                         (:name "Number of recipients"  ;; long name, as seen in the message-view
+                                :shortname "Recip#"           ;; short name, as seen in the headers view
+                                :help "Number of recipients for this message" ;; tooltip
+                                :function (lambda (msg)
+                                            (format "%d"
+                                                    (+ (length (mu4e-message-field msg :to))
+                                                       (length (mu4e-message-field msg :cc))))))))
+
 (add-to-list 'mu4e-header-info-custom
              '(:full-mailing-list .
-                                  ( :name "Mailing-list"               ;; long name, as seen in the message-view
-                                          :shortname "ML"                    ;; short name, as seen in the headers view
-                                          :help "Full name for mailing list" ;; tooltip
-                                          :function (lambda (msg)
-                                                      (or (mu4e-message-field msg :mailing-list) "")))))
+                                  (:name "Mailing-list"               ;; long name, as seen in the message-view
+                                         :shortname "ML"                    ;; short name, as seen in the headers view
+                                         :help "Full name for mailing list" ;; tooltip
+                                         :function (lambda (msg)
+                                                     (or (mu4e-message-field msg :mailing-list) "")))))
 
 (setq mu4e-headers-fields
       '((:human-date        .  12)    ;; alternatively, use :human-date
         (:flags             .   6)
-        (:full-mailing-list .  20)
+        (:full-mailing-list .  10)
         (:from              .  30)
         (:to                .  20)
-        ;; (:recipnum      .   2)
+        (:cc                .   5)
+        ;; (:recipnum          .   2)
         (:thread-subject    .  nil)))
 
 ;; TODO http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/
