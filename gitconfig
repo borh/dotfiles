@@ -1,6 +1,7 @@
 [user]
-	email = bor.hodoscek@gmail.com
+	email = dev@bor.space
 	name = Bor Hodošček
+	singingkey = 0x4063F66CEACE3958
 [push]
 	default = simple
 	followTags = true
@@ -8,6 +9,8 @@
 	helper = cache --timeout 3600
 [diff]
 	indentHeuristic	= true
+[commit]
+	gpgsign = true
 [core]
         attributesfile = ~/.gitattributes_global
 [filter "nbstrip_full"]
