@@ -1,3 +1,6 @@
+;; In case of compilation related issues:
+;; (byte-recompile-directory package-user-dir nil 'force)
+
 (use-package
   inf-clojure
   :config
@@ -45,25 +48,29 @@
     (DELETE 2)
     (HEAD 2)
     (ANY 2)
-    (context 2))
+    (context 2)))
 
-  (use-package
-    clj-refactor
-    :config
-    (add-hook 'clojure-mode-hook
-              (lambda ()
-                (clj-refactor-mode 1)
-                (cljr-add-keybindings-with-prefix "C-c C-m"))))
-  (use-package
-    flyspell
-    :config
-    (use-package
-      flycheck-clojure
-      :config
-      ;; (flycheck-clojure-setup)
-      ;; (add-hook 'clojure-mode-hook (lambda ()
-      ;;                                (flyspell-prog-mode)))
-      (use-package
-        flycheck-pos-tip
-        :config
-        (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))))
+(use-package
+  clj-refactor
+  :config
+  (add-hook 'clojure-mode-hook
+            (lambda ()
+              (clj-refactor-mode 1)
+              (cljr-add-keybindings-with-prefix "C-c C-m"))))
+
+;; (use-package re-jump) ;; Not on MELPA yet.
+
+(use-package flyspell)
+
+(use-package
+  flycheck-clojure
+  :config
+  ;; (flycheck-clojure-setup)
+  ;; (add-hook 'clojure-mode-hook (lambda ()
+  ;;                                (flyspell-prog-mode)))
+  )
+
+(use-package
+  flycheck-pos-tip
+  :config
+  (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
