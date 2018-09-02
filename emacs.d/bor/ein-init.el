@@ -1,4 +1,5 @@
 (use-package ein
+  :defer t
   :config
   (require 'ein-loaddefs)
   (require 'ein-notebook)
