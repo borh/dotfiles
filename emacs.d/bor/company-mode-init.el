@@ -20,14 +20,8 @@
   :config
   (add-to-list 'company-backends 'company-math-symbols-unicode))
 
-(use-package company-ansible)
-
-(use-package company-bibtex
-  :config
-  (setq company-bibtex-bibliography
-        '("/home/bor/Projects/homepage/content/bibliography.bib"))
-  (add-to-list 'company-backends 'company-bibtex))
-
-(use-package company-web
-  :config
-  (add-to-list 'company-backends 'company-web-html))
+; (use-package company-bibtex
+;   :config
+;   (setq company-bibtex-bibliography
+;         '("/home/bor/Projects/homepage/content/bibliography.bib"))
+;   (add-to-list 'company-backends 'company-bibtex))
