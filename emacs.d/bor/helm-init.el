@@ -16,3 +16,5 @@
 (use-package helm-rg
   :config
   (global-set-key (kbd "C-<f1>") 'helm-rg))
+
+(use-package org-projectile-helm)
