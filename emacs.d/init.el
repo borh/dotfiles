@@ -24,7 +24,7 @@
                   ;; clojure related
                   clojure-mode
                   rainbow-delimiters rainbow-mode rainbow-identifiers
-                  align-cljlet cljsbuild-mode ;; clj-refactor ; <- fix yasnippet
+                  align-cljlet
                   latest-clojars flycheck-clojure
                   cider ac-cider
                   clj-refactor
@@ -68,7 +68,6 @@
                   dockerfile-mode
                   systemd
                   rust-mode flymake-rust flycheck-rust
-                  nix-mode company-nixos-options
                   sql-indent format-sql
                   ;;ansible ;;-> yasnippets error
                   ;;nxml-mode
