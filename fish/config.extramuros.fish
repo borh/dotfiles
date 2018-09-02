@@ -54,7 +54,7 @@ set -x TF_CUDA_COMPUTE_CAPABILITIES '5.2'
 # Arch Oracle JDK (AUR)
 set -x JAVA_HOME /usr/lib/jvm/default
 
-set -x BOOT_JVM_OPTIONS $BOOT_JVM_OPTIONS' -Dclojure.compiler.direct-linking=true' # -XX:MaxDirectMemorySize=-1' -XX:+UseLargePages'
+set -x BOOT_JVM_OPTIONS $BOOT_JVM_OPTIONS' -Dclojure.compiler.direct-linking=true -Dio.netty.tryReflectionSetAccessible=true --add-exports java.base/jdk.internal.misc=ALL-UNNAMED' # -XX:MaxDirectMemorySize=-1' -XX:+UseLargePages' --add-modules "java.xml.bind"
 
 alias ls 'exa -g --git --sort=modified'
 alias ll 'exa -g --git --sort=modified -lh'
