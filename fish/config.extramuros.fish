@@ -1,5 +1,7 @@
 source ~/.config/fish/config.desktop.fish
 
+source ~/.config/fish/credentials.(hostname).fish
+
 eval (python3 -m virtualfish)
 
 set -x REQUESTS_CA_BUNDLE /etc/ssl/certs
