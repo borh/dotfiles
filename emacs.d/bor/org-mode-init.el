@@ -26,7 +26,7 @@
   (setq org-startup-with-inline-images t)
 
   (require 'org-protocol)
-  (defun transform-square-brackets-to-round-ones(string-to-transform)
+  (defun transform-square-brackets-to-round-ones (string-to-transform)
     "Transforms [ into ( and ] into ), other chars left unchanged."
     (concat
      (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform)))
@@ -46,20 +46,20 @@
                             (sequence "⚑ WAITING(w)" "|")
                             (sequence "|" "✘ CANCELED(c)")))
 
-  (setq org-todo-keywords
-        '((sequence "TODO" "WAITING" "NEXT" "|" "DONE" "CANCELED")))
+  ;; (setq org-todo-keywords
+  ;;       '((sequence "TODO" "WAITING" "NEXT" "|" "DONE" "CANCELED")))
 
   (setq org-enforce-todo-checkbox-dependencies t)
 
-  (setq org-caldav-calendars
-        '((:calendar-id "<<Calendar-id>>"
-                        :url         "<<Main url>>"
-                        :inbox       "<<LOCAL ORG FILE TO RECEIVE EVENTS>>"
-                        :files       ("<<LOCAL FILE TO PUSH EVENTS>>"))
-          (:calendar-id "<<Calendar-id>>"
-                        :url         "<<Main url>>"
-                        :inbox       "<<LOCAL ORG FILE TO RECEIVE EVENTS>>"
-                        :files       ("<<LOCAL FILE TO PUSH EVENTS>>"))))
+  ;; (setq org-caldav-calendars
+  ;;       '((:calendar-id "<<Calendar-id>>"
+  ;;                       :url         "<<Main url>>"
+  ;;                       :inbox       "<<LOCAL ORG FILE TO RECEIVE EVENTS>>"
+  ;;                       :files       ("<<LOCAL FILE TO PUSH EVENTS>>"))
+  ;;         (:calendar-id "<<Calendar-id>>"
+  ;;                       :url         "<<Main url>>"
+  ;;                       :inbox       "<<LOCAL ORG FILE TO RECEIVE EVENTS>>"
+  ;;                       :files       ("<<LOCAL FILE TO PUSH EVENTS>>"))))
 
   ;; (add-hook 'org-mode-hook
   ;;           (lambda ()
@@ -86,9 +86,21 @@
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+  (use-package org-fancy-priorities
+    :config
+    (setq org-fancy-priorities-list '("HIGH" "MID" "LOW" "OPTIONAL")))
+
   (use-package ox-twbs
     :config
     ())
+
+  (use-package org-ac
+    :config
+    (org-ac/config-default))
+
+  (use-package org-autolist
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-autolist-mode))))
 
   ;; 1. hook flyspell into org-mode
   (add-hook 'org-mode-hook 'flyspell-mode)
@@ -115,12 +127,12 @@
            (hostentry (netrc-machine netrc host)))
       (when hostentry (netrc-get hostentry "password"))))
 
-  (use-package org-gcal
-    :config
-    (setq org-gcal-client-id (get-authinfo "gcal.client-id")
-          org-gcal-client-secret (get-authinfo "gcal.client-secret")
-          org-gcal-file-alist '(((get-authinfo "gcal.work-calendar") . (concat org-directory "/Work-Calendar.org"))
-                                ((get-authinfo "gcal.personal-calendar") . (concat org-directory "/Personal-Calendar.org")))))
+  ;; (use-package org-gcal
+  ;;   :config
+  ;;   (setq org-gcal-client-id (get-authinfo "gcal.client-id")
+  ;;         org-gcal-client-secret (get-authinfo "gcal.client-secret")
+  ;;         org-gcal-file-alist '('((get-authinfo "gcal.work-calendar") . (concat org-directory "/Work-Calendar.org"))
+  ;;                               '((get-authinfo "gcal.personal-calendar") . (concat org-directory "/Personal-Calendar.org")))))
 
   (require 'ox-publish)
   (setq org-publish-project-alist
