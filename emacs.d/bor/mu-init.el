@@ -84,6 +84,7 @@
               (signal 'quit nil))))
 
 (require 'mu4e-contrib)
+;; html2text is deprecated--any replacement?
 (setq mu4e-html2text-command 'mu4e-shr2text)
 
 (require 'org-mu4e)

@@ -1,5 +1,6 @@
 (use-package julia-mode
   :config
+  ;; (setq julia-program "/home/bor/Dependencies/julia/julia")
   (defun julia-completion-at-point ()
     (let ((bnds (bounds-of-thing-at-point 'symbol)))
       (when bnds

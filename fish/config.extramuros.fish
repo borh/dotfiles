@@ -2,11 +2,17 @@ source ~/.config/fish/config.desktop.fish
 
 source ~/.config/fish/credentials.(hostname).fish
 
+# set -x QT_QPA_PLATFORM wayland-egl
+# set -x SDL_VIDEODRIVER wayland
+
 eval (python3 -m virtualfish)
 
 set -x REQUESTS_CA_BUNDLE /etc/ssl/certs
 
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
+
+set -x XKB_DEFAULT_OPTIONS ctrl:nocaps,caps:none
+set -x XKB_DEFAULT_MODEL pc104
 setxkbmap -option ctrl:nocaps
 
 # vbox

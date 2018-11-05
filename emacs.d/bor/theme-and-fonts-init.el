@@ -3,10 +3,23 @@
 (use-package
   doom-themes
   :config
-  (load-theme 'doom-vibrant t)
+  (load-theme 'doom-one t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
-  (doom-themes-neotree-config))
+  (doom-themes-neotree-config)
+
+  ;; (let ((line (face-attribute 'mode-line :underline)))
+  ;;   (set-face-attribute 'mode-line-inactive nil :overline   line)
+  ;;   (set-face-attribute 'mode-line          nil :overline   line)
+  ;;   (set-face-attribute 'mode-line          nil :underline  line)
+  ;;   (set-face-attribute 'mode-line          nil :box        nil)
+  ;;   (set-face-attribute 'mode-line-inactive nil :box        nil)
+  ;;   (set-face-attribute 'mode-line-inactive nil :background (doom-color 'red)))
+  )
+
+;; (use-package klere-theme
+;;   :config
+;;   (load-theme 'klere t))
 
 (use-package
   solaire-mode
@@ -56,8 +69,11 @@
     (progn
       (scroll-bar-mode -1)
 
-      (make-cjk-fontset "fixed" "Fira Code" "Hiragino Kaku Gothic Pro" 14 0.8)
-      (make-cjk-fontset "variable" "Equity Text B" "Hiragino Mincho Pro W3" 14 0.7)
+
+      ;; (make-cjk-fontset "fixed" "Fira Code" "Hiragino Kaku Gothic Pro" 12 0.8)
+      (make-cjk-fontset "fixed" "Sarasa Mono T J" "Sarasa Mono T J" 12 1.0)
+      ;; (make-cjk-fontset "fixed" "Inziu Iosevka J" "Inziu Iosevka J" 12 1.0)
+      (make-cjk-fontset "variable" "Equity Text B" "Hiragino Mincho Pro W3" 12 0.7)
 
       ;; ;; https://gist.github.com/yoshinari-nomura/3465571
       ;; ;; フォントセットを作る

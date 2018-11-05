@@ -1,5 +1,6 @@
 (use-package
   fcitx
   :config
-  (fcitx-aggressive-setup)
-  (setq fcitx-use-dbus t))
+  ;; (fcitx-aggressive-setup)
+  ;; (setq fcitx-use-dbus t)
+  )

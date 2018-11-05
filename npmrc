@@ -1,1 +1,2 @@
-prefix = /home/bor/node
+prefix=/home/bor/node
+python=/usr/bin/python2

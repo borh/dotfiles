@@ -134,6 +134,10 @@
   ;;         org-gcal-file-alist '('((get-authinfo "gcal.work-calendar") . (concat org-directory "/Work-Calendar.org"))
   ;;                               '((get-authinfo "gcal.personal-calendar") . (concat org-directory "/Personal-Calendar.org")))))
 
+  (use-package org-msg
+    ;; TODO
+    )
+
   (require 'ox-publish)
   (setq org-publish-project-alist
         '(("org-html"
