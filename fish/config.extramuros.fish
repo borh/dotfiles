@@ -32,15 +32,15 @@ set -x VBOX_USB usbfs
 # Perl
 set -x PATH /usr/bin/vendor_perl /usr/bin/core_perl $PATH
 
-# MKL
-set -x PATH /opt/intel/composerxe/linux/bin/intel64 $PATH
-set -x MKLROOT /opt/intel/composerxe/linux/mkl
-set -x INTEL_LICENSE_FILE /opt/intel/licenses /opt/intel/composerxe/linux/licenses /opt/intel/licenses ~/intel/licenses
-set -x LIBRARY_PATH /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin $LIBRARY_PATH
-set -x LD_LIBRARY_PATH $LIBRARY_PATH $LD_LIBRARY_PATH
-set -x NLSPATH /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N
-set -x CPATH /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include
-set -x IPPROOT /opt/intel/composerxe/linux/ipp
+# # MKL
+# set -x PATH /opt/intel/composerxe/linux/bin/intel64 $PATH
+# set -x MKLROOT /opt/intel/composerxe/linux/mkl
+# set -x INTEL_LICENSE_FILE /opt/intel/licenses /opt/intel/composerxe/linux/licenses /opt/intel/licenses ~/intel/licenses
+# set -x LIBRARY_PATH /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin /opt/intel/composerxe/linux/ipp/lib/intel64 /opt/intel/composerxe/linux/compiler/lib/intel64_lin /opt/intel/composerxe/linux/mkl/lib/intel64_lin $LIBRARY_PATH
+# set -x LD_LIBRARY_PATH $LIBRARY_PATH $LD_LIBRARY_PATH
+# set -x NLSPATH /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N /opt/intel/composerxe/linux/compiler/lib/intel64/locale/%l_%t/%N /opt/intel/composerxe/linux/mkl/lib/intel64_lin/locale/%l_%t/%N
+# set -x CPATH /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include /opt/intel/composerxe/linux/ipp/include /opt/intel/composerxe/linux/mkl/include
+# set -x IPPROOT /opt/intel/composerxe/linux/ipp
 
 # TensorFlow (GPU)
 
@@ -64,18 +64,18 @@ set -x TF_CUDA_CLANG 0
 set -x CLANG_CUDA_COMPILER_PATH /usr/bin/clang
 set -x CUDA_TOOLKIT_PATH /opt/cuda
 set -x TF_CUDA_VERSION (eval $CUDA_TOOLKIT_PATH/bin/nvcc --version | sed -n 's/^.*release \(.*\),.*/\1/p')
-set -x CUDNN_INSTALL_PATH /opt/cuda
+set -x CUDNN_INSTALL_PATH /usr
 set -x TF_CUDNN_VERSION (sed -n 's/^#define CUDNN_MAJOR\s*\(.*\).*/\1/p' $CUDNN_INSTALL_PATH/include/cudnn.h)
 set -x TF_CUDA_COMPUTE_CAPABILITIES '5.2'
 
 # Arch Oracle JDK (AUR)
 set -x JAVA_HOME /usr/lib/jvm/default
 
-set -x BOOT_JVM_OPTIONS $BOOT_JVM_OPTIONS' -Dclojure.compiler.direct-linking=true -Dio.netty.tryReflectionSetAccessible=true --add-exports java.base/jdk.internal.misc=ALL-UNNAMED' # -XX:MaxDirectMemorySize=-1' -XX:+UseLargePages' --add-modules "java.xml.bind"
+set -x BOOT_JVM_OPTIONS $BOOT_JVM_OPTIONS' -Dclojure.compiler.direct-linking=true -Dio.netty.tryReflectionSetAccessible=true' # --add-exports java.base/jdk.internal.misc=ALL-UNNAMED' # -XX:MaxDirectMemorySize=-1' -XX:+UseLargePages' --add-modules "java.xml.bind"
 
-alias ls 'exa -g --git --sort=modified'
-alias ll 'exa -g --git --sort=modified -lh'
-alias lt 'exa -g --git --sort=name -lh --tree'
+alias ls 'lsd'
+alias ll 'lsd -l'
+alias lt 'lsd -l --tree'
 
 alias julia-master ~/Dependencies/julia/julia
 

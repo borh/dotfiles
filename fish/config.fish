@@ -31,7 +31,7 @@ function pandoc-pretty-pdf
 end
 
 function pandoc-pdf-ja
-        command pandoc -f markdown -t latex -N --listings --biblatex -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
+    command pandoc -f markdown -N --listings -F pandoc-crossref -F pandoc-citeproc --pdf-engine=lualatex --bibliography ~/Projects/homepage/content/bibliography.bib -V mainfont=SourceHanSansJP -V monofont=sourcecodeproregular -V fontsize=12pt $argv -o (string replace -r '\..+$' '.pdf' $argv)
 end
 
 function pandoc-simple
@@ -159,6 +159,14 @@ set -x ANDROID_HOME $HOME/Android/Sdk
 alias android-studio "env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' android-studio"
 
 set -x BOOT_JVM_OPTIONS '-XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError'
+
+alias s 'sudo systemctl status'
+alias r 'sudo systemctl restart'
+alias u 'sudo systemctl start'
+alias d 'sudo systemctl stop'
+alias j  'sudo journalctl'
+alias jf 'sudo journalctl -fu'
+alias cl 'sudo journalctl -b'
 
 alias emacs 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacs'
 alias emacsclient 'env LC_CTYPE=ja_JP.UTF-8 SHELL=/bin/bash emacsclient'
