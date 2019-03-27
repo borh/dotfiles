@@ -2,8 +2,19 @@ source ~/.config/fish/config.desktop.fish
 
 source ~/.config/fish/credentials.(hostname).fish
 
+source ~/.config/fish/fzf.fish
+
+set -x JSGC_DISABLE_POISONING 1
+set -x MOZ_ACCELERATED 1
+set -x MOZ_WEBRENDER 1
+
+set -x GTK_USE_PORTAL 1
+# # Wayland support:
 # set -x QT_QPA_PLATFORM wayland-egl
+# set -x QT_WAYLAND_DISABLE_WINDOWDECORATION 1
 # set -x SDL_VIDEODRIVER wayland
+# set -x GDK_BACKEND wayland
+# set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 eval (python3 -m virtualfish)
 
