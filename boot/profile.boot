@@ -15,8 +15,8 @@
   (require 'boot.repl)
   (swap! @(resolve 'boot.repl/*default-dependencies*)
          concat '[[criterium "0.4.4" :exclusions [org.clojure/clojure] :scope "test"]
-                  [nrepl "0.4.5" :scope "test"]
-                  [cider/cider-nrepl "0.19.0-SNAPSHOT" :scope "test"]
+                  [nrepl "0.6.0" :scope "test"]
+                  [cider/cider-nrepl "0.21.1" :scope "test"]
                   [refactor-nrepl "2.4.0" :scope "test"]])
   (swap! @(resolve 'boot.repl/*default-middleware*)
          concat '[cider.nrepl/cider-middleware
