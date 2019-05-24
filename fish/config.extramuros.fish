@@ -11,10 +11,16 @@ set -x MOZ_WEBRENDER 1
 set -x GTK_USE_PORTAL 1
 # # Wayland support:
 # set -x QT_QPA_PLATFORM wayland-egl
+# set -x QT_WAYLAND_FORCE_DPI physical
 # set -x QT_WAYLAND_DISABLE_WINDOWDECORATION 1
 # set -x SDL_VIDEODRIVER wayland
 # set -x GDK_BACKEND wayland
+# set -x CLUTTER_BACKEND wayland
 # set -x _JAVA_AWT_WM_NONREPARENTING 1
+# 
+# alias chromium "env GDK_BACKEND='' chromium"
+
+set -x LIBVA_DRIVER_NAME iHD
 
 eval (python3 -m virtualfish)
 
