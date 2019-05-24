@@ -2,7 +2,7 @@ set $mod Mod4
 set $term alacritty
 set $menu j4-dmenu-desktop
 
-font pango:Concourse T6 Tab 12
+font pango:Sarasa Mono T J 12
 
 new_window 1pixel
 
@@ -179,7 +179,7 @@ client.urgent               $rd        $rd         $tx
 bar {
         status_command env RUST_BACKTRACE=1 i3status-rs ~/.config/i3/status.toml
 
-	font pango:Inziu Iosevka J, PowerlineSymbols 12 # Concourse T4 Tab,
+	#font pango:Sarasa Mono J 11, PowerlineSymbols 10 # Concourse T4 Tab,
         #font pango:FontAwesome 12
         position top
 	colors {
