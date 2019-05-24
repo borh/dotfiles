@@ -63,7 +63,7 @@ block = "backlight"
 
 [[block]]
 block = "net"
-device = "wlp2s0"
+device = "wlan0"
 ssid = true
 ip = false
 speed_up = false
