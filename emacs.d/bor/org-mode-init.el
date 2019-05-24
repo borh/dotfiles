@@ -2,13 +2,15 @@
   :ensure org-plus-contrib
   :config
 
-  (setq org-directory "~/Dropbox/Org")
-  (setq org-agenda-files '("~/Dropbox/Org"))
-  (set-register ?c (cons 'file "~/Dropbox/Org/Classes.org"))
-  (set-register ?r (cons 'file "~/Dropbox/Org/Research.org"))
-  (set-register ?d (cons 'file "~/Dropbox/Org/Devops.org"))
-  (set-register ?a (cons 'file "~/Dropbox/Org/Administration.org"))
-  (set-register ?p (cons 'file "~/Dropbox/Org/Private.org"))
+  (setq org-directory "~/Cloud/Org")
+  (setq org-agenda-files (directory-files-recursively "~/Cloud/" "\\.org$")
+        ;; '("~/Cloud/Org")
+        )
+  (set-register ?c (cons 'file "~/Cloud/Org/Classes.org"))
+  (set-register ?r (cons 'file "~/Cloud/Org/Research.org"))
+  (set-register ?d (cons 'file "~/Cloud/Org/Devops.org"))
+  (set-register ?a (cons 'file "~/Cloud/Org/Administration.org"))
+  (set-register ?p (cons 'file "~/Cloud/Org/Private.org"))
 
   (global-set-key (kbd "C-c l") 'org-store-link)
   (global-set-key (kbd "C-c C-l") 'org-insert-link)
@@ -29,9 +31,9 @@
   (defun transform-square-brackets-to-round-ones (string-to-transform)
     "Transforms [ into ( and ] into ), other chars left unchanged."
     (concat
-     (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform)))
+     (mapcar #'(lambda (c) (if (equal c ?\[) ?\( (if (equal c ?\]) ?\) c))) string-to-transform)))
   (setq org-capture-templates
-        `(("p" "Protocol" entry (file+headline ,(concat org-directory "/Notes.org") "Inbox")
+        `(("r" "Protocol" entry (file+headline ,(concat org-directory "/Notes.org") "Inbox")
            "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
           ("L" "Protocol Link" entry (file+headline ,(concat org-directory "/Notes.org") "Inbox")
            "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")))
@@ -77,7 +79,7 @@
 
   (use-package ox-reveal
     :config
-    (setq org-reveal-root "file:///home/bor/Dropbox/Org/reveal.js-3.2.0/")
+    (setq org-reveal-root "file:///home/bor/Cloud/Org/reveal.js-3.2.0/")
     (setq org-reveal-hlevel 2)
 
     (setq org-src-fontify-natively t))
@@ -116,9 +118,9 @@
     (set (make-variable-buffer-local 'ispell-parser) 'tex))
   (add-hook 'org-mode-hook 'flyspell-ignore-tex)
 
-  ;; These two packages allow annotation of PDFs with org-mode
-  (use-package pdf-tools)
-  (use-package interleave)
+  ;; ;; These two packages allow annotation of PDFs with org-mode
+  ;; (use-package pdf-tools)
+  ;; (use-package interleave)
 
   (require 'netrc)
 
@@ -141,9 +143,9 @@
   (require 'ox-publish)
   (setq org-publish-project-alist
         '(("org-html"
-           :base-directory "~/Dropbox/Org/nlp/"
+           :base-directory "~/Cloud/Org/nlp/"
            :base-extension "org" ;; "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/Dropbox/Org/Publish/nlp/"
+           :publishing-directory "~/Cloud/Org/Publish/nlp/"
            :recursive t
            ;;:html-doctype "html5"
            ;;:html-html5-fancy t
@@ -161,10 +163,32 @@
            :publishing-function org-twbs-publish-to-html ;;org-html-publish-to-html ;;org-publish-attachment
            )
           ("org-static"
-           :base-directory "~/Dropbox/Org/nlp/"
+           :base-directory "~/Cloud/Org/nlp/"
            :base-extension "css\\|woff2\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/Dropbox/Org/Publish/nlp/"
+           :publishing-directory "~/Cloud/Org/Publish/nlp/"
            :recursive t
            :publishing-function org-publish-attachment
            )
           ("org" :components ("org-html" "org-static")))))
+
+(use-package org-projectile
+  :bind (("C-c n p" . org-projectile-project-todo-completing-read))
+  :config
+  (progn
+    (org-projectile-per-project)
+    (setq org-projectile-per-project-filepath "Notes.org")
+    (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+    (push (org-projectile-project-todo-entry) org-capture-templates))
+  :ensure t)
+
+(use-package org-super-agenda
+  ;; :defer t
+  :config
+  (progn
+    (org-super-agenda-mode +1)
+    (setq org-super-agenda-groups
+          '((:order-multi (1 (:name "High priority"
+                                    :priority> "MID")))
+            (:order-multi (1 (:name "Done today"
+                                    :and (:regexp "State \"DONE\""
+                                                  :log t))))))))
