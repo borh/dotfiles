@@ -107,7 +107,7 @@
 %%\\usepackage[style=ieee,sortcites=true,sorting=nyt,backend=biber,autocite=inline,hyperref=true,backref=false]{biblatex}
 \\DeclareLanguageMapping{american}{american-apa}
 \\let\\autocite=\\parencite
-\\bibliography{~/Dropbox/Org/Bibliography/bibliography}
+\\bibliography{~/Cloud/Org/Bibliography/bibliography}
 
 \\usepackage{enumitem}
 \\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
