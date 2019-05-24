@@ -2,7 +2,9 @@
 
 (use-package mu4e-conversation
   :config
-  (setq mu4e-view-func 'mu4e-conversation))
+  (global-mu4e-conversation-mode)
+  ;; (setq mu4e-view-func 'mu4e-conversation)
+  )
 
 (global-set-key (kbd "<f3>") 'mu4e)
 
@@ -11,8 +13,6 @@
 (setq mu4e-reply-to-address "bor@lang.osaka-u.ac.jp"
       user-mail-address "bor@lang.osaka-u.ac.jp"
       user-full-name  "Bor Hodošček")
-(setq mu4e-compose-signature
-      "Bor Hodošček\nGraduate School of Language and Culture, Osaka University\nbor@lang.osaka-u.ac.jp | osaka@bor.space | https://nlp.lang.osaka-u.ac.jp/")
 (setq mu4e-compose-keep-self-cc 0)
 
 ;; allow for updating mail using 'U' in the main view:
@@ -48,7 +48,7 @@
 
 (setq profile-binding-alist
       '(("Osaka-Lang"
-         (mu4e-compose-signature       . "Bor Hodošček, Assoc. Prof.,\nGraduate School of Language and Culture, Osaka University\nhttps://nlp.lang.osaka-u.ac.jp/")
+         (mu4e-compose-signature       . "Bor Hodošček / ホドシチェク ボル\nGraduate School of Language and Culture, Osaka University\nbor@lang.osaka-u.ac.jp | https://nlp.lang.osaka-u.ac.jp/")
          (user-mail-address            . "bor@lang.osaka-u.ac.jp")
          (smtpmail-default-smtp-server . "cc.mail.osaka-u.ac.jp")
          (smtpmail-smtp-server         . "cc.mail.osaka-u.ac.jp")
@@ -76,6 +76,7 @@
 (setq mu4e-use-fancy-chars nil)
 (setq mu4e-attachment-dir "~/Downloads")
 (setq mu4e-view-show-images t)
+(setq mu4e-view-use-gnus t)
 (setq mu4e-compose-format-flowed t)
 
 (add-hook 'message-send-hook
@@ -83,9 +84,9 @@
             (unless (yes-or-no-p "Sure you want to send this? ")
               (signal 'quit nil))))
 
-(require 'mu4e-contrib)
-;; html2text is deprecated--any replacement?
-(setq mu4e-html2text-command 'mu4e-shr2text)
+;; (require 'mu4e-contrib)
+;; ;; html2text is deprecated--any replacement?
+;; (setq mu4e-html2text-command 'mu4e-shr2text)
 
 (require 'org-mu4e)
 
@@ -106,22 +107,24 @@
 (setq gnus-dired-mail-mode 'mu4e-user-agent)
 (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
 
-;; (use-package mu4e-alert
-;;   :ensure t
-;;   :after mu4e
-;;   :init
-;;   (setq mu4e-alert-interesting-mail-query
-;;         (concat
-;;          "flag:unread maildir:/Fastmail/INBOX.Osaka"
-;;          "OR "
-;;          "flag:unread maildir:/Fastmail/INBOX"
-;;          ))
-;;   (mu4e-alert-enable-mode-line-display)
-;;   (defun gjstein-refresh-mu4e-alert-mode-line ()
-;;     (interactive)
-;;     (mu4e~proc-kill)
-;;     (mu4e-alert-enable-mode-line-display))
-;;   (run-with-timer 0 60 'gjstein-refresh-mu4e-alert-mode-line))
+(use-package mu4e-alert
+  :ensure t
+  :after mu4e
+  :init
+  (setq mu4e-alert-interesting-mail-query
+        (concat
+         "flag:unread maildir:/Fastmail/INBOX"
+         "OR "
+         "flag:unread maildir:/Fastmail/INBOX.Osaka.Classes"
+         "OR "
+         "flag:unread maildir:/Fastmail/INBOX.Osaka.Network"))
+  (mu4e-alert-enable-mode-line-display)
+  (mu4e-alert-set-default-style 'libnotify)
+  (defun gjstein-refresh-mu4e-alert-mode-line ()
+    (interactive)
+    (mu4e~proc-kill)
+    (mu4e-alert-enable-mode-line-display))
+  (run-with-timer 0 60 'gjstein-refresh-mu4e-alert-mode-line))
 
 (defun mml-attach-file--go-to-eob (orig-fun &rest args)
   "Go to the end of buffer before attaching files."
