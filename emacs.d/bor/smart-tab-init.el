@@ -13,7 +13,7 @@
 
   ;; JavaScript
   (add-hook 'js2-mode-hook 'smart-tabs-mode-enable)
-  ;;(smart-tabs-advice js2-indent-line js2-basic-offset) ; error?
+  (smart-tabs-advice js2-indent-line js2-basic-offset) ; error?
   (add-hook 'js3-mode-hook 'smart-tabs-mode-enable)
   (smart-tabs-advice js3-indent-line js3-basic-offset)
 
