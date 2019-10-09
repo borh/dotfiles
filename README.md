@@ -1,3 +1,7 @@
+# DEPRECATED
+
+I've since moved to [YADM](https://yadm.io/).
+
 dotfiles
 ========
 
